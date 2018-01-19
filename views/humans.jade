@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1= title
+	// .content= human.name
+	if humans
+		ul
+			each human in humans
+				li= human

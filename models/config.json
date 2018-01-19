@@ -1,0 +1,12 @@
+{
+    "model": {
+            "minLen": 3,
+            "minPassLen": 8,
+            "maxLen": 32,
+            "minLenText": "too short",
+            "maxLenText": "too long",
+            "maxLenAnons": 300,
+            "requiredText": "required text",
+            "incorrectText": "incorrect text"
+        }
+}

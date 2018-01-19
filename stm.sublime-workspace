@@ -1,0 +1,1563 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"m--",
+				"m--new-year"
+			],
+			[
+				"req",
+				"required\t(humans.js)"
+			],
+			[
+				"ex",
+				"exports\t(app.js)"
+			],
+			[
+				"error",
+				"errorHandler"
+			],
+			[
+				"Artis",
+				"ArtistModel\t(index.js)"
+			],
+			[
+				"vab",
+				"va-bl\tvertical-align: baseline;"
+			],
+			[
+				"bgsc",
+				"bgsz-cv\tbackground-size: cover;"
+			],
+			[
+				"bz",
+				"bxz-bb\tbox-sizing: border-box;"
+			],
+			[
+				"bzb",
+				"bxz-cb\tbox-sizing: content-box;"
+			],
+			[
+				"ba",
+				"background"
+			],
+			[
+				"text",
+				"text-align: "
+			],
+			[
+				"font-",
+				"font-size: "
+			],
+			[
+				"bac",
+				"background-position: "
+			],
+			[
+				"font",
+				"font-size: "
+			],
+			[
+				"lin",
+				"line-through"
+			],
+			[
+				"bor",
+				"border-bottom: "
+			],
+			[
+				"mar",
+				"margin-top: "
+			],
+			[
+				"fon",
+				"font-weight: "
+			],
+			[
+				"op",
+				"opacity_set"
+			],
+			[
+				"box-",
+				"box-sizing: "
+			],
+			[
+				"color-brow",
+				"color-brown-light-20"
+			],
+			[
+				"p",
+				"padding: "
+			],
+			[
+				"inline",
+				"inline-block"
+			],
+			[
+				"max-",
+				"max-width: "
+			],
+			[
+				"font-s",
+				"font-style: "
+			],
+			[
+				"margin-",
+				"margin-bottom: "
+			],
+			[
+				"pad",
+				"padding: "
+			],
+			[
+				"bar",
+				"bar_size"
+			],
+			[
+				"is_",
+				"is_last"
+			],
+			[
+				"lon",
+				"longread"
+			],
+			[
+				"on",
+				"onScroll"
+			],
+			[
+				"long",
+				"longread"
+			],
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"padd",
+				"padding-bottom: "
+			],
+			[
+				"rgba",
+				"rgba(r,g,b,a)"
+			],
+			[
+				"obj",
+				"object_id"
+			],
+			[
+				"fetc",
+				"fetchrow_hashref"
+			],
+			[
+				"fe",
+				"fetchrow_hashref"
+			],
+			[
+				"slid",
+				"slidesToScroll"
+			],
+			[
+				"slide",
+				"slidesToShow"
+			],
+			[
+				"tender_winn",
+				"tender_winner_canceled_untrusted"
+			],
+			[
+				"Pro",
+				"ProcessUntrustedFinish"
+			],
+			[
+				"sidebar",
+				"sidebar_banner"
+			],
+			[
+				"par",
+				"parseInt"
+			],
+			[
+				"sub",
+				"submit"
+			],
+			[
+				"fie",
+				"fieldSelector"
+			],
+			[
+				"list-sty",
+				"list-style-position"
+			],
+			[
+				"list-",
+				"list-style-image"
+			],
+			[
+				"tabs_ca",
+				"tabs_caption_item"
+			],
+			[
+				"servi",
+				"service_type"
+			],
+			[
+				"percent_j",
+				"percent_jewel_1"
+			],
+			[
+				"fetch",
+				"fetchall_arrayref"
+			],
+			[
+				"progr",
+				"progressline"
+			],
+			[
+				"captc",
+				"captcha_key"
+			],
+			[
+				"captch",
+				"captcha_img"
+			],
+			[
+				"capth",
+				"captcha_key"
+			],
+			[
+				"capt",
+				"captcha_sid"
+			],
+			[
+				"atta",
+				"attachments"
+			],
+			[
+				"ser",
+				"service_types"
+			],
+			[
+				"_form_",
+				"_form_class_name"
+			],
+			[
+				"service_ty",
+				"service_types"
+			],
+			[
+				"supp",
+				"suppliers"
+			],
+			[
+				"varia",
+				"variant_cats"
+			],
+			[
+				"suppli",
+				"supplier"
+			],
+			[
+				"prod_page",
+				"prod_pages"
+			],
+			[
+				"emp",
+				"employee_cat"
+			],
+			[
+				"project_fil",
+				"project_filter_value"
+			],
+			[
+				"filter",
+				"filter_query"
+			],
+			[
+				"clas",
+				"class_name"
+			],
+			[
+				"var",
+				"variants"
+			],
+			[
+				"ty",
+				"type"
+			],
+			[
+				"empl",
+				"employees"
+			],
+			[
+				"pro",
+				"projects"
+			],
+			[
+				"proje",
+				"project"
+			],
+			[
+				"proj",
+				"project"
+			],
+			[
+				"pic",
+				"picture"
+			],
+			[
+				"dr",
+				"drawings"
+			],
+			[
+				"dra",
+				"draws"
+			],
+			[
+				"pictu",
+				"pictures"
+			],
+			[
+				"artic",
+				"article"
+			],
+			[
+				"promo",
+				"promos"
+			],
+			[
+				"Con",
+				"ConstructURL"
+			],
+			[
+				"adv",
+				"advantages"
+			],
+			[
+				"ad",
+				"advantages"
+			],
+			[
+				"fa",
+				"feature"
+			],
+			[
+				"fea",
+				"feature"
+			],
+			[
+				"aret",
+				"article"
+			],
+			[
+				"arti",
+				"article"
+			],
+			[
+				"adva",
+				"advantage"
+			],
+			[
+				"water",
+				"watermark"
+			],
+			[
+				"agr",
+				"agreement_sms"
+			],
+			[
+				"pas",
+				"password"
+			],
+			[
+				"passw",
+				"password__password"
+			],
+			[
+				"pass",
+				"password__password"
+			],
+			[
+				"SERVICE_S",
+				"SERVICE_DISCOUNT"
+			],
+			[
+				"mess",
+				"messages"
+			],
+			[
+				"m",
+				"message"
+			],
+			[
+				"incom",
+				"incoming__bool"
+			],
+			[
+				"inco",
+				"incoming__bool"
+			],
+			[
+				"App",
+				"Application"
+			],
+			[
+				"st",
+				"string"
+			],
+			[
+				"T_PA_SHOP_PROD",
+				"T_PA_SHOP_PRODUCTS"
+			],
+			[
+				"stoc",
+				"stocks"
+			],
+			[
+				"por",
+				"product_code"
+			],
+			[
+				"SHOP_GET",
+				"SHOP_GET_USERS"
+			],
+			[
+				"erro",
+				"errors"
+			],
+			[
+				"of",
+				"offer"
+			],
+			[
+				"modifi",
+				"modification_id"
+			],
+			[
+				"fetcha",
+				"fetchall_arrayref"
+			],
+			[
+				"Ini",
+				"InitTemplateFunctions"
+			],
+			[
+				"prod",
+				"products"
+			],
+			[
+				"modi",
+				"modification"
+			],
+			[
+				"modif",
+				"modification_id"
+			],
+			[
+				"PrepareVa",
+				"PrepareValue"
+			],
+			[
+				"stock_in",
+				"stock_info_id"
+			],
+			[
+				"user",
+				"user_id"
+			],
+			[
+				"hid",
+				"hidden_data"
+			],
+			[
+				"hi",
+				"hidden_data"
+			],
+			[
+				"produ",
+				"product_count"
+			],
+			[
+				"cabi",
+				"cabinet_tree"
+			],
+			[
+				"pr",
+				"product_name"
+			],
+			[
+				"SHP_GET_PRODUCTS_",
+				"SHOP_GET_PRODUCTS_PRODUCERS_REL"
+			],
+			[
+				"model",
+				"model_id"
+			],
+			[
+				"err",
+				"errors"
+			],
+			[
+				"SHOP_CREATE_PRODUCT_",
+				"SHOP_CREATE_PRODUCT_PRODUCER_REL"
+			],
+			[
+				"pru",
+				"producer_id"
+			],
+			[
+				"_SHOP_PRO",
+				"_SHOP_PRODUCTS"
+			],
+			[
+				"model_use",
+				"model_use_id"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "app.js",
+			"settings":
+			{
+				"buffer_size": 1497,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "routes/admin.js",
+			"settings":
+			{
+				"buffer_size": 596,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"contents": "doctype html\nhtml\n  head\n    title= title\n    link(rel='stylesheet', href='/css/style.css')\n  body\n    block content",
+			"file": "views/layout.jade",
+			"file_size": 124,
+			"file_write_time": 131548851305407123,
+			"settings":
+			{
+				"buffer_size": 116,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "insta",
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Upgrade Package"
+			],
+			[
+				"Package Control: Ins",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 464.0
+	},
+	"console":
+	{
+		"height": 248.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b4428bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/projects/express",
+		"/C/projects/express/models",
+		"/C/projects/express/routes",
+		"/C/projects/express/views"
+	],
+	"file_history":
+	[
+		"/C/Users/chernenko/Downloads/MUWFqMX98EBTM68V1TK5ZSduNtANWReB6Q9zcat9QDw",
+		"/C/Users/chernenko/Downloads/Без названия",
+		"/C/projects/express/views/error.jade",
+		"/C/projects/express/views/humans.jade",
+		"/C/projects/express/views/addhuman.jade",
+		"/C/projects/express/models/Artists.js",
+		"/C/projects/express/models/index.js",
+		"/C/projects/express/config.json",
+		"/C/Users/chernenko/AppData/Local/Temp/scp18464/usr/local/flexites/projects/tehnomet/templates/xslate/classes/home_page.tx",
+		"/C/Users/chernenko/AppData/Local/Temp/scp17997/usr/local/flexites/projects/tehnomet/templates/xslate/includes/header.tx",
+		"/C/Users/chernenko/AppData/Local/Temp/scp20268/usr/local/flexites/projects/tehnomet/css/less/includes/page.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp32246/usr/local/flexites/projects/tehnomet/css/less/includes/snow.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp17915/usr/local/flexites/projects/tehnomet/templates/xslate/home_site_frame.tx",
+		"/C/Users/chernenko/AppData/Local/Temp/scp43607/usr/local/flexites/projects/tehnomet/templates/xslate/site_frame.tx",
+		"/C/Users/chernenko/AppData/Local/Temp/scp17375/usr/local/flexites/projects/tehnomet/templates/xslate/includes/header_home_page.tx",
+		"/C/Users/chernenko/AppData/Local/Temp/scp53550/usr/local/flexites/projects/tehnomet/css/less/includes/new2017.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp44329/usr/local/flexites/projects/tehnomet/js/snow.js",
+		"/C/Users/chernenko/AppData/Local/Temp/scp53819/usr/local/flexites/projects/tehnomet/css/main.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp52288/usr/local/flexites/projects/tehnomet/css/style.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp44946/usr/local/flexites/projects/tehnomet/templates/xslate/includes/head.tx",
+		"/C/Users/chernenko/AppData/Local/Temp/scp43317/usr/local/flexites/projects/tehnomet/templates/xslate/includes/scripts.tx",
+		"/C/Users/chernenko/AppData/Local/Temp/scp53553/usr/local/flexites/projects/tehnomet/css/less/layout.less",
+		"/C/Users/chernenko/AppData/Local/Temp/scp55203/usr/local/flexites/projects/tehnomet/css/less/vars.less",
+		"/C/Users/chernenko/AppData/Local/Temp/scp48813/usr/local/flexites/projects/tehnomet/controllers/__site__.pm",
+		"/C/Users/chernenko/AppData/Local/Temp/scp44214/usr/local/flexites/projects/tehnomet/js/proj.js",
+		"/C/projects/express/routes/humans.js",
+		"/C/Users/chernenko/AppData/Local/Temp/scp32284/usr/local/flexites/projects/tehnomet/css/less/modules/snow.less",
+		"/C/Users/chernenko/AppData/Local/Temp/scp56520/home/bitrix/certbot-auto",
+		"/C/Users/chernenko/AppData/Local/Temp/scp40558/home/bitrix/www/bitrix/.settings.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp39464/home/bitrix/www/bitrix/php_interface/init.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp38873/home/bitrix/www/bitrix/php_interface/dbconn.php",
+		"/C/cmder/bin/Readme.md",
+		"/C/Users/chernenko/AppData/Local/minergate/log/bcn.log",
+		"/C/projects/express/routes/index.js",
+		"/C/projects/express/views/config.json",
+		"/C/projects/express/views/confog.json",
+		"/C/projects/express/app.js",
+		"/C/projects/express/models/humans.js",
+		"/C/projects/express/models/users.js",
+		"/C/projects/express/models/files.js",
+		"/C/projects/express/models/artists.js",
+		"/C/projects/express/models/articles.js",
+		"/C/projects/express/models/config.json",
+		"/C/projects/express/bin/errorHandler.js",
+		"/C/Users/chernenko/Desktop/presets.txt",
+		"/C/projects/express/config/index.js",
+		"/C/Users/chernenko/Downloads/Не в отдельный справочник/000000001/import___d3b127d4-1df6-4983-a612-30040a5e4644.xml",
+		"/C/Users/chernenko/Downloads/Реквизиты в отдельный справочник/000000001/properties/1/import___42b79e94-0ed2-4462-afef-9772a8ae9010.xml",
+		"/C/Users/chernenko/Downloads/Реквизиты в отдельный справочник/000000001/import___612b80b4-5c1a-4590-9680-73c1ae271850.xml",
+		"/C/Users/chernenko/Downloads/Реквизиты в отдельный справочник/000000001/documents/1/documents___07ee424f-b2fc-4ef8-a3d0-ef01da442200.xml",
+		"/C/Users/chernenko/Downloads/Реквизиты в отдельный справочник/000000001/goods/1/import___daffd780-c75a-4971-a8e1-9536a5907fa6.xml",
+		"/C/projects/express/bin/www",
+		"/C/projects/express/startDB.bat",
+		"/C/projects/express/views/layout.jade",
+		"/C/projects/express/views/addarticle.jade",
+		"/C/projects/express/routes/human.js",
+		"/C/projects/express/logger/index.js",
+		"/C/projects/express/bin/db.js",
+		"/C/projects/express/routes/articles.js",
+		"/C/projects/express/routes/home.js",
+		"/C/projects/express/routes/artists.js",
+		"/C/projects/express/routes/users.js",
+		"/C/projects/express/views/users.jade",
+		"/C/projects/express/views/index.jade",
+		"/C/projects/express/models/posts.js",
+		"/C/projects/express/routes/auth.js",
+		"/C/projects/express/package.json",
+		"/C/projects/express/middleware/mongoose/index.js",
+		"/C/projects/express/config.js",
+		"/C/Users/chernenko/AppData/Local/Temp/scp45853/var/www/u0391061/data/www/usy74.ru/js/misc.js",
+		"/C/Users/chernenko/AppData/Local/Temp/scp51821/var/www/u0391061/data/www/usy74.ru/css/animate.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp52802/var/www/u0391061/data/www/usy74.ru/js/wow.min.js",
+		"/C/Users/chernenko/AppData/Local/Temp/scp14670/var/www/u0391061/data/www/usy74.ru/css/style.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp09392/var/www/u0391061/data/www/usy74.ru/test1.html",
+		"/C/Users/chernenko/AppData/Local/Temp/scp07510/var/www/u0391061/data/www/usy74.ru/test3.html",
+		"/C/Users/chernenko/Downloads/animate.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp19933/var/www/u0391061/data/www/usy74.ru/index.html",
+		"/C/Users/chernenko/AppData/Local/Temp/scp34009/var/www/u0391061/data/.bash_history",
+		"/C/Users/chernenko/AppData/Local/Temp/scp32787/var/www/u0391061/data/www/usy74.ru/alexacrawls",
+		"/C/Users/chernenko/AppData/Local/Temp/scp12206/contacts.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp19894/var/www/u0391061/data/www/usy74.ru/robots.txt",
+		"/C/Users/chernenko/AppData/Local/Temp/scp17553/auth/index.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp12922/index.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp16380/bitrix/php_interface/after_connect_d7.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp15501/bitrix/php_interface/after_connect.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp13358/web.config",
+		"/C/Users/chernenko/AppData/Local/Temp/scp11843/.htaccess",
+		"/C/Users/chernenko/AppData/Local/Temp/scp12254/all_styles.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp12273/agreement.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp12550/404.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp50309/distribution/posm-materialy.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp50662/distribution/member.4.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp48893/ishop/personal/cart/.section.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp48956/ishop/.access.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp46827/.access.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp11600/bitrix/.settings.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp46308/bitrix/.access.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp48441/ishop/personal/index.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp48162/ishop/index.php",
+		"/C/Users/chernenko/AppData/Local/Temp/scp08895/usr/local/flexites/projects/safechel/templates/includes/scripts.xhtml",
+		"/C/Users/chernenko/AppData/Local/Temp/scp08739/usr/local/flexites/projects/safechel/templates/includes/css.xhtml",
+		"/C/Users/chernenko/AppData/Local/Temp/scp17748/usr/local/flexites/projects/safechel/templates/XCatNew/classes/rack_page.xhtml",
+		"/C/Users/chernenko/AppData/Local/Temp/scp52644/usr/local/flexites/projects/safechel/js/proj/racks.js",
+		"/C/Users/chernenko/AppData/Local/Temp/scp51155/usr/local/flexites/projects/safechel/js/proj.js",
+		"/C/Users/chernenko/AppData/Local/Temp/scp14323/usr/local/flexites/projects/safechel/css/main.css",
+		"/C/Users/chernenko/AppData/Local/Temp/scp16346/home/common/КЛИЕНТЫ/Инчел/2017/Дизайн/доработка октябрь 2017/03.jpg",
+		"/C/projects/mysite/startDB.bat",
+		"/C/Users/chernenko/Desktop/Lamar_files/script.js",
+		"/C/Users/chernenko/Desktop/Lamar_files/slick.min.js",
+		"/C/Users/chernenko/Desktop/Lamar_files/slick.css",
+		"/G/torrent/Alcohol 120% v2.0.3 Build 9902 Retail Ml_Rus/info/Процедура лечения.txt",
+		"/G/torrent/Alcohol 120% v2.0.3 Build 9902 Retail Ml_Rus/tool uninstall Alcohol/Readme.txt",
+		"/G/torrent/Alcohol 120% v2.0.3 Build 9902 Retail Ml_Rus/info/Readme.txt",
+		"/G/torrent/Alcohol 120% v2.0.3 Build 9902 Retail Ml_Rus/info/Известные проблемы и их лечение (советы от пользователей).txt",
+		"/C/projects/jsonServer/db.json",
+		"/C/Users/chernenko/AppData/Local/Temp/Rar$DIa0.451/Инструкция.txt",
+		"/G/СРС/1/Безмолвный крик.txt",
+		"/G/СРС/Что это.txt",
+		"/G/СРС/Хочешь изучть  наконец-то английский.txt",
+		"/G/СРС/из крапивина.txt",
+		"/G/СРС/useful code.txt",
+		"/G/СРС/New Text Document.txt",
+		"/G/СРС/Новая папка/options.js",
+		"/G/СРС/Новая папка/manifest.json",
+		"/G/СРС/Новая папка/background.js",
+		"/G/СРС/Новая папка/add_button.js",
+		"/G/СРС/australia/Новый текстовый документ.txt",
+		"/C/projects/mysite/bin/master.js"
+	],
+	"find":
+	{
+		"height": 23.0
+	},
+	"find_in_files":
+	{
+		"height": 104.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"models",
+			".logo",
+			"header .logo",
+			"logo",
+			"new",
+			".wrapper",
+			"wrapper",
+			"yaCounter21018715 ",
+			"\"",
+			"yaCounter21018715 ",
+			"human",
+			"render",
+			"conte",
+			"handler",
+			"aler",
+			"handler",
+			"conso",
+			"unexpected text",
+			"db",
+			"slug",
+			"errorHandler",
+			"familyName",
+			"required",
+			"artists",
+			"dev",
+			"const",
+			"models.Humans",
+			"models.",
+			"models.humans",
+			"titl",
+			"textRequired",
+			"artists",
+			"artist",
+			"artists",
+			"post",
+			"posts",
+			"articles",
+			"article",
+			"articles",
+			"post",
+			"Posts",
+			"articles",
+			"onListening",
+			"posts",
+			"Posts",
+			"/post",
+			"Post",
+			"unique",
+			"var",
+			"hell",
+			"logger",
+			"logg",
+			"console",
+			"mongo",
+			"postSchema",
+			",\"",
+			":[",
+			":{",
+			":[",
+			",\"",
+			"log.error",
+			"artistModel",
+			"artists",
+			"article",
+			"//:",
+			"//",
+			"/api/articles",
+			"app",
+			"ArticleModel ",
+			"mongoose.connection",
+			"port",
+			"config",
+			"port",
+			"connect",
+			"env"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"family",
+			"files",
+			"Humans",
+			"models.Humans",
+			"humans",
+			"human",
+			"humans",
+			"articles",
+			"Artists",
+			"artist",
+			"artists",
+			"artist",
+			"Articles",
+			"users",
+			"articles",
+			"Articles",
+			"/articles",
+			"Posts",
+			"const",
+			"logger",
+			"artists",
+			", \"",
+			": [",
+			": {",
+			": [",
+			", \"",
+			"console.log",
+			"ArtistModel",
+			"artist",
+			"/:",
+			"/",
+			"router",
+			"db"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "app.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1497,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								62,
+								62
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										62,
+										63
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										57,
+										58
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "routes/admin.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 596,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								106,
+								106
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										565,
+										566
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/curly_bracket.png",
+										"region.purplish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										130,
+										131
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										106,
+										107
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										99,
+										100
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "views/layout.jade",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 116,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								79,
+								79
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.clone": -1,
+							"bracket_highlighter.clone_locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.clone_regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+									"1":
+									[
+										89,
+										90
+									]
+								},
+								"icon":
+								{
+									"1":
+									[
+										"Packages/BracketHighlighter/icons/single_quote.png",
+										"region.greenish"
+									]
+								},
+								"open":
+								{
+									"1":
+									[
+										74,
+										75
+									]
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content"
+							],
+							"syntax": "Packages/Pug/Syntaxes/Pug.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 23.0
+	},
+	"input":
+	{
+		"height": 37.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.mdpopups":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/LESS-build/LESS.sublime-build",
+	"project": "stm.sublime-project",
+	"replace":
+	{
+		"height": 42.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 247.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

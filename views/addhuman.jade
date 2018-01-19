@@ -1,0 +1,85 @@
+extends layout
+
+block content
+	h1 Добавить новое лицо студии STM
+	form(method="post" action="/humans").form
+		table.form__table
+			tr
+				td.form__label-container
+					label(for="name") Имя*
+				td.form__input-container
+					input(type="text", id="name", name="name" value="" placeholder="name" required).form__input
+			tr
+				td.form__label-container
+					label(for="family") Фамилия
+				td.form__input-container
+					input(type="text", id="family" name="family", value="" placeholder="family").form__input
+			tr
+				td.form__label-container
+					label(for="surname") Отчество
+				td.form__input-container
+					input(type="text", id="surname", name="surname" value="" placeholder="surname").form__input
+			tr
+				td.form__label-container
+					label(for="birthday") Дата рождения
+				td.form__input-container
+					input(type="date", name="birthday", value="").form__input
+			tr
+				td.form__label-container
+					label(for="birthday") E-mail
+				td.form__input-container
+					input(type="text", name="email", value="" placeholder="email").form__input
+		input(type="submit", value="Submit").form__input
+	if humans
+		table
+			thead
+				tr
+					td Имя
+					td Отчество
+					td Фамилия
+					td Дата рождения
+					td E-mail
+					td Публиковать?
+					td Редактировать?
+					td Удалить?
+				each human in humans
+					tr
+						td
+							if human.name
+								= human.name
+						td
+							if human.surname
+								= human.surname
+						td
+							if human.familyName
+								= human.familyName
+						td
+							if human.birthday
+								= human.birthday
+						td
+							if human.email
+								= human.email
+						td
+							if human.active
+								= human.active
+						td Редактировать
+						td Удалить
+	script.
+		//- 1. Создаём новый объект XMLHttpRequest
+		var xhr = new XMLHttpRequest();
+		//- xhr.onload = handler;
+		//- 2. Конфигурируем его: GET-запрос на URL 'config.json'
+		xhr.open('GET', './config.json', false);
+
+		//- 3. Отсылаем запрос
+		xhr.send();
+
+		//- 4. Если код ответа сервера не 200, то это ошибка
+		if (xhr.status != 200) {
+				// обработать ошибку
+			alert( xhr.status + ': ' + xhr.statusText ); // пример вывода: 404: Not Found
+			} 
+		//- else {
+		//- 		// вывести результат
+		//- 	alert( xhr.responseText ); // responseText -- текст ответа.
+		//- 	}

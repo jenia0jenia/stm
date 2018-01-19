@@ -1,0 +1,9 @@
+extends layout
+
+block content
+	h1= title
+	p Welcome to #{title}
+	
+	if users
+		each item in users
+			li= item.name

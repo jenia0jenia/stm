@@ -1,0 +1,15 @@
+{
+    "db": {
+        "mongoUri": "mongodb://127.0.0.1/armleo-test",
+        "pullSize": 10,
+        "reconnectTimes": 5
+    },
+
+    "app": {
+        "port": 3000
+    },
+
+    "site": {
+        "title": "STM"
+    }
+}

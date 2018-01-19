@@ -1,0 +1,3 @@
+*.sublime*
+*.git
+node_modules
