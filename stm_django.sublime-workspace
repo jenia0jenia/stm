@@ -1,0 +1,941 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"for",
+				"foreach\tforeach …"
+			],
+			[
+				"sec",
+				"section"
+			],
+			[
+				"section",
+				"SECTION_ID"
+			],
+			[
+				"tex",
+				"text-align\tproperty"
+			],
+			[
+				"ta",
+				"text-align\tproperty"
+			],
+			[
+				"produ",
+				"product__image"
+			],
+			[
+				"font",
+				"font-size\tproperty"
+			],
+			[
+				"max",
+				"max-height\tproperty"
+			],
+			[
+				"TEMPLATE",
+				"SITE_TEMPLATE_PATH"
+			],
+			[
+				"add",
+				"addClass"
+			],
+			[
+				"max-",
+				"max-height\tproperty"
+			],
+			[
+				"e",
+				"else"
+			],
+			[
+				"trans",
+				"transform\tproperty"
+			],
+			[
+				"jc",
+				"jc-sb\tjustify-content: space-between;"
+			],
+			[
+				"jcf",
+				"jc-fe\tjustify-content: flex-end;"
+			],
+			[
+				"bgs",
+				"bgsz\tbackground-size"
+			],
+			[
+				"ob",
+				"object-fit\tproperty"
+			],
+			[
+				"BASE",
+				"BASE_PRICE"
+			],
+			[
+				"DISA",
+				"DISPLAY_PROPERTIES"
+			],
+			[
+				"bg",
+				"background-color\tproperty"
+			],
+			[
+				"d",
+				"display\tproperty"
+			],
+			[
+				"h",
+				"height\tproperty"
+			],
+			[
+				"text-a",
+				"text-align\tproperty"
+			],
+			[
+				"int",
+				"intval"
+			],
+			[
+				"key",
+				"key_j"
+			],
+			[
+				"con",
+				"continue"
+			],
+			[
+				"tt",
+				"text-transform\tproperty"
+			],
+			[
+				"fw",
+				"font-weight\tproperty"
+			],
+			[
+				"text",
+				"text-align\tproperty"
+			],
+			[
+				"b",
+				"bottom\tvertical-align"
+			],
+			[
+				"inl",
+				"inline-block\tdisplay"
+			],
+			[
+				"flex",
+				"flex-wrap\tproperty"
+			],
+			[
+				"a",
+				"auto\theight"
+			],
+			[
+				"bore",
+				"border\tproperty"
+			],
+			[
+				"flex-",
+				"flex-flow\tproperty"
+			],
+			[
+				"space",
+				"space-between\tjustify-content"
+			],
+			[
+				"table",
+				"table-row\tdisplay"
+			],
+			[
+				"os",
+				"ov-s\toverflow: scroll;"
+			],
+			[
+				"ali",
+				"align-items\tproperty"
+			],
+			[
+				"hidden",
+				"hiddenClass"
+			],
+			[
+				"class",
+				"activeClass"
+			],
+			[
+				"end",
+				"endforeach"
+			],
+			[
+				"ac",
+				"addClass"
+			],
+			[
+				"modal",
+				"modalClose"
+			],
+			[
+				"targ",
+				"targetDelivery"
+			],
+			[
+				"print",
+				"print_r"
+			],
+			[
+				"bgsc",
+				"bgsz-cv\tbackground-size: cover;"
+			],
+			[
+				"remove",
+				"removeClass"
+			],
+			[
+				"medal",
+				"medal_g.png\tw:92 h:104"
+			],
+			[
+				"vis",
+				"visibility"
+			],
+			[
+				"cup_",
+				"cup_1.png\tw:140 h:242"
+			],
+			[
+				"tal",
+				"tal-a\ttext-align-last: auto;"
+			],
+			[
+				"margin-",
+				"margin-bottom"
+			],
+			[
+				"Basket",
+				"BasketButton"
+			],
+			[
+				"min-",
+				"min-height"
+			],
+			[
+				"fon",
+				"font-weight"
+			],
+			[
+				"font-",
+				"font-size"
+			],
+			[
+				"te",
+				"text-transform"
+			],
+			[
+				"repea",
+				"repeat-x  (value)"
+			],
+			[
+				"w",
+				"width"
+			],
+			[
+				"prod_",
+				"prod_types"
+			],
+			[
+				"su",
+				"super_cat_id"
+			],
+			[
+				"fetch",
+				"fetchall_hashref"
+			],
+			[
+				"bra",
+				"brand_cat"
+			],
+			[
+				"CONS",
+				"constant  (module)"
+			],
+			[
+				"padd",
+				"padding"
+			],
+			[
+				"border",
+				"border"
+			],
+			[
+				"bacgr",
+				"background"
+			],
+			[
+				"inse",
+				"insertBefore  (function)"
+			],
+			[
+				"cur",
+				"cursor"
+			],
+			[
+				"text-",
+				"text-transform"
+			],
+			[
+				"Com",
+				"CompareBlocks"
+			],
+			[
+				"create",
+				"createElement"
+			],
+			[
+				"pos",
+				"position"
+			],
+			[
+				"pa",
+				"parent"
+			],
+			[
+				"crea",
+				"createElement  (function)"
+			],
+			[
+				"lo",
+				"found-loading"
+			],
+			[
+				"foun",
+				"found-loading"
+			],
+			[
+				"_SHOP_VA",
+				"_SHOP_VALUES_LIST_BOOLEAN"
+			],
+			[
+				"moz-bo",
+				"-moz-border-radius:   (property)"
+			],
+			[
+				"price_",
+				"price_where"
+			],
+			[
+				"attr",
+				"attributes"
+			],
+			[
+				"prod",
+				"producer"
+			],
+			[
+				"atr",
+				"attributes"
+			],
+			[
+				"g_",
+				"g_pre_res"
+			],
+			[
+				"parse",
+				"parseFloat"
+			],
+			[
+				"pro",
+				"properties"
+			],
+			[
+				"sele",
+				"selected_params"
+			],
+			[
+				"att",
+				"attrs"
+			],
+			[
+				"sel",
+				"selected_params"
+			],
+			[
+				"cre",
+				"createElement  (function)"
+			],
+			[
+				"prd",
+				"products"
+			],
+			[
+				"C",
+				"Cache"
+			],
+			[
+				"q",
+				"queue"
+			],
+			[
+				"at",
+				"Attributes"
+			],
+			[
+				"_",
+				"_updated"
+			],
+			[
+				"va",
+				"values"
+			],
+			[
+				"gro",
+				"groups"
+			],
+			[
+				"CAT_",
+				"CAT_SET_OBJECT_ATTR"
+			],
+			[
+				"group_",
+				"group_name"
+			],
+			[
+				"atru",
+				"attributes"
+			],
+			[
+				"list",
+				"lists"
+			],
+			[
+				"Attributes",
+				"AttributesUpdate"
+			],
+			[
+				"Гру",
+				"Группы"
+			],
+			[
+				"GetAtri",
+				"GetAttributesAll"
+			],
+			[
+				"A",
+				"Attributes"
+			],
+			[
+				"grop",
+				"groupType"
+			],
+			[
+				"conne",
+				"connectWith"
+			],
+			[
+				"groups",
+				"groups_options"
+			],
+			[
+				"rece",
+				"receive"
+			],
+			[
+				"show",
+				"show_type"
+			],
+			[
+				"file",
+				"filter_group_name"
+			],
+			[
+				"att_",
+				"attr_name"
+			],
+			[
+				"_SHOP_FIL",
+				"_SHOP_FILTERS_GROUPS"
+			],
+			[
+				"fil",
+				"filter_group_id"
+			],
+			[
+				"count",
+				"count_template"
+			],
+			[
+				"time",
+				"timezone"
+			],
+			[
+				"min",
+				"min-height"
+			],
+			[
+				"_SHOP",
+				"_SHOP_GROUPS_REL"
+			],
+			[
+				"group",
+				"group_name"
+			],
+			[
+				"icon",
+				"icon-delete"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"tab",
+				"table-cell"
+			],
+			[
+				"_SHOP_",
+				"_SHOP_ATTRS_LIST"
+			],
+			[
+				"_SHO",
+				"_SHOP_VALUES_"
+			],
+			[
+				"type",
+				"type_id"
+			],
+			[
+				"__",
+				"__PRODUCTS__CACHE"
+			],
+			[
+				"els",
+				"elsif"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "stm_site/urls.py",
+			"settings":
+			{
+				"buffer_size": 1304,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "theatre/models.py",
+			"settings":
+			{
+				"buffer_size": 503,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "stm_site/settings.py",
+			"settings":
+			{
+				"buffer_size": 4584,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 294.0,
+		"last_filter": "install",
+		"selected_items":
+		[
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Enable Package"
+			],
+			[
+				"Snippet: ",
+				"Snippet: $.trim"
+			]
+		],
+		"width": 657.0
+	},
+	"console":
+	{
+		"height": 178.0,
+		"history":
+		[
+			"import urllib.request,os,hashlib; h = 'eb2297e1a458f27d836c04bb0cbaf282' + 'd0e7a3098092775ccb37ca9d6b2e4b7d'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/home/jenia/projects/django/stm_site",
+		"/home/jenia/projects/django/stm_site/static"
+	],
+	"file_history":
+	[
+		"/home/jenia/projects/django/stm_site/theatre/models.py",
+		"/home/jenia/projects/django/static_cdn/tinymce/css/prism.css",
+		"/home/jenia/projects/django/stm_site/theatre/urls.py",
+		"/home/jenia/projects/django/stm_site/theatre/views.py",
+		"/home/jenia/projects/django/stm_site/theatre/admin.py",
+		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/robots.txt",
+		"/home/jenia/projects/django/stm_site/polls/urls.py",
+		"/home/jenia/projects/django/stm_site/polls/templates/polls/results.html",
+		"/home/jenia/projects/django/stm_site/polls/views.py",
+		"/home/jenia/projects/django/stm_site/stm_site/templates/stm_site/robots.txt",
+		"/home/jenia/projects/django/stm_site/templates/stm_site/robots.txt",
+		"/home/jenia/projects/django/stm_site/stm_site/settings.py",
+		"/home/jenia/projects/django/stm_site/static/robots.txt",
+		"/home/jenia/projects/django/stm_site/polls/templates/polls/detail.html",
+		"/home/jenia/projects/django/stm_site/polls/templates/polls/index.html",
+		"/home/jenia/projects/django/stm_site/polls/models.py",
+		"/home/jenia/projects/django/stm_site/polls/admin.py",
+		"/home/jenia/projects/django/stm_site/stm_site/urls.py",
+		"/home/jenia/projects/django/stm_site/polls/migrations/0001_initial.py",
+		"/home/jenia/projects/django/stm_site/text.sql_text",
+		"/home/jenia/projects/stm-site/htaccess.txt",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex/css/postcss/modules/action.css",
+		"/home/jenia/projects/stm-site/configuration.php",
+		"/home/jenia/projects/stm-site/index.php",
+		"/home/jenia/projects/stm-site/web.config.txt",
+		"/home/jenia/projects/stm-site/administrator/logs/joomla_update.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.sale/confirm.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/personal/cart/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/make/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/payment/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print/styles.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_template/bill_new/head.tmpl",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print/css/fonts.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print/css/styles.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/header.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print/header.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/admin/reports/bill_intersvet74.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_payment/bill_intersvet/payment.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_template/bill_new/foot.tmpl",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/basket.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.personal.order.list/personal/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/flex/store.sale.basket.basket/flex.basket/basket_items.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/flex/store.sale.basket.basket/flex.basket/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_template/bill3/head.tmpl",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/admin/reports/2_bill_intersvet74.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/sale.order.payment/component.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/admin/reports/3_bill_intersvet74.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print/description.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.basket.basket.line/flex.basket/top_template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/payment/result.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print_P/header.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/new_make/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.sale/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/personal/order/new_make/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/personal/order/make/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/add2cart.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.element/flex.fastview/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.element/catalog/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/js/main.js",
+		"/home/jenia/servers/combat/home/bitrix/www/personal/order/payment/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/sale.order.payment/.description.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/product.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/cart_top.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/changeQuantity.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/vars.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/filter.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/about/o-nas/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/layout.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-sub-main.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/footer.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-footer.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/buy/form.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/main.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news.list/reviews/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/about/vazhnaya/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/q-form.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-top.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/design.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/tizer.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-sub-sidebar.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-sidebar.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/footer.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/ab/catalog.section/lastview/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.section/flex.section/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.section.list/catalog/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news.list/flex.select.manuf/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/lastview/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/ab/catalog.section/lastview/lang/ru/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/menu_middle/result_modifier.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/menu_middle/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/.menu_middle.menu.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-main.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/flex.sidebar.menu/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/flex.sub.main/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/menu/component.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.smart.filter/flex.filter/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.smart.filter/flex.adv_filter/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/button.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/.menu_middle.menu_ext.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/.left.menu_ext.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/.left_information.menu.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/menu/stub.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/style.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/sale.order.ajax/class.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.cart/summary.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.cart/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.cart/summary.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.order.ajax/cart_n_order/summary.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.order.ajax/cart_n_order/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news/action/news.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news/action/section.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news/action/bitrix/news.detail/.default/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/action/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news/action/bitrix/news.list/.default/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/plugins/normalize.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news.list/action/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news/action/detail.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/news/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/new-products/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/urlrewrite.php",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/action.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/header.css",
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/account.css",
+		"/home/jenia/servers/combat/home/bitrix/www/test/news/.section.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/fast_view/index.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print/components/bitrix/store.sale.basket.basket/flex.basket_P/template.php",
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print_P/components/flex/store.sale.basket.basket/flex.basket/template.php"
+	],
+	"find":
+	{
+		"height": 22.0
+	},
+	"find_in_files":
+	{
+		"height": 163.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"BASE_DIR",
+			"STATIC_ROOT",
+			"MEDIA_ROOT",
+			"MEDIA_URL",
+			"theatre",
+			"static",
+			"fore"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "stm_site/urls.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1304,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1110,
+								1110
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "theatre/models.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 503,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "stm_site/settings.py",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 4584,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								4583,
+								4583
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Python/Python.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 2159.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 22.0
+	},
+	"input":
+	{
+		"height": 103.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "stm_django.sublime-project",
+	"replace":
+	{
+		"height": 40.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 392.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 592.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 295.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
