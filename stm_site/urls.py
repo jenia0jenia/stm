@@ -30,6 +30,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
+    path('content_gallery/', include('content_gallery.urls')),
 ]
 
 if settings.DEBUG:
