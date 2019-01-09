@@ -1,21 +1,21 @@
 from django.contrib import admin
 from django.utils.html import format_html
+from django.utils.translation import gettext as _
 from django.conf.locale.en import formats as en_formats
-
 from filebrowser.base import FileObject
 from filebrowser.settings import ADMIN_THUMBNAIL
-
-from .models import Genre, Spectacle, Artist, Role, Afisha
+from .models import Genre, Performance, Artist, Role, Poster
 
 from content_gallery.admin import ImageAdminInline
 
 en_formats.DATETIME_FORMAT = "d b Y H:i"
 
+
 class TheatreBaseAdmin(admin.ModelAdmin):
     base_list_editable = ('publication',)
     base_fieldsets = [
-        ('Позиция / Публикация', {
-            'fields': ['position', 'publication'], 'classes': ['collapse']
+        (None, {
+            'fields': ['publication'], 'classes': ['']
         })
     ]
 
@@ -25,7 +25,7 @@ class TheatreBaseAdmin(admin.ModelAdmin):
 
 class ArtistAdmin(TheatreBaseAdmin):
     fieldsets = [
-        ('ФИО', {
+        (_('Full name'), {
             'fields': ['last_name', 'first_name', 'middle_name'],
             'classes': ['collapse']
         }),
@@ -49,7 +49,7 @@ class ArtistAdmin(TheatreBaseAdmin):
             return ""
 
     photo_thumbnail.allow_tags = True
-    photo_thumbnail.short_description = "Аватар"
+    photo_thumbnail.short_description = _('Photo')
 
 
 class GenreAdmin(TheatreBaseAdmin):
@@ -66,7 +66,7 @@ class GenreAdmin(TheatreBaseAdmin):
 class RoleAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
-            'fields': ['name', 'description', 'artists', 'spectacle', 'photo']
+            'fields': ['name', 'description', 'artists', 'performance', 'photo']
         })
     ] + TheatreBaseAdmin.base_fieldsets
     list_display = ('name', 'publication')
@@ -77,17 +77,17 @@ class RoleAdmin(TheatreBaseAdmin):
     ]
 
 
-class SpectacleAdmin(TheatreBaseAdmin):
+class PerformanceAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
             'fields': ['name', 'description', 'genre', 'photo']
         }),
-        ('Закрытие / Открытие', {
+        (_('Opening / Closing performance'), {
             'fields': ['premiere_date', 'close_date', 'is_premiere'],
             'classes': ['collapse']
         }),
-        ('Рейтинг', {
-            'fields': ['rating_yes', 'rating_no'],
+        (_('Rating'), {
+            'fields': ['votes_yes', 'votes_no'],
             'classes': ['collapse']
         })
     ] + TheatreBaseAdmin.base_fieldsets
@@ -99,7 +99,7 @@ class SpectacleAdmin(TheatreBaseAdmin):
     ]
 
 
-class AfishaAdmin(TheatreBaseAdmin):
+class PosterAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
             'fields': ['event', 'description', 'event_date', 'photo']
@@ -115,6 +115,6 @@ class AfishaAdmin(TheatreBaseAdmin):
 
 admin.site.register(Role, RoleAdmin)
 admin.site.register(Genre, GenreAdmin)
-admin.site.register(Spectacle, SpectacleAdmin)
+admin.site.register(Performance, PerformanceAdmin)
 admin.site.register(Artist, ArtistAdmin)
-admin.site.register(Afisha, AfishaAdmin)
+admin.site.register(Poster, PosterAdmin)

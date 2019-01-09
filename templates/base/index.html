@@ -1,0 +1,23 @@
+{% load static %}
+{% load cache %}
+{#% load compress %#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}{{ page.title }}{% endblock %} - Студия-Театр "Манекен" - STM</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body class="body">
+    {% if artists %}
+        <ul>
+        {% for artist in artists %}
+            <li><a href="{% url 'theatre:artist_detail' artist.id %}">{{ artist.last_name }}</a></li>
+        {% endfor %}
+        </ul>
+    {% else %}
+        <p>No artists are available.</p>
+    {% endif %}
+</body>
+</html>

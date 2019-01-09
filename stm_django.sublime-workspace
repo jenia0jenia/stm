@@ -4,6 +4,10 @@
 		"selected_items":
 		[
 			[
+				"Thea",
+				"theatre"
+			],
+			[
 				"Role",
 				"RoleInline"
 			],
@@ -510,39 +514,16 @@
 			[
 				"icon",
 				"icon-delete"
-			],
-			[
-				"paddin",
-				"padding-top"
 			]
 		]
 	},
 	"buffers":
 	[
 		{
-			"file": "theatre/models.py",
+			"file": "theatre/views.py",
 			"settings":
 			{
-				"buffer_size": 4241,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "theatre/admin.py",
-			"settings":
-			{
-				"buffer_size": 3569,
-				"encoding": "UTF-8",
-				"line_ending": "Unix"
-			}
-		},
-		{
-			"file": "stm_site/settings.py",
-			"settings":
-			{
-				"buffer_size": 5029,
-				"encoding": "UTF-8",
+				"buffer_size": 1941,
 				"line_ending": "Unix"
 			}
 		}
@@ -593,33 +574,63 @@
 	"expanded_folders":
 	[
 		"/home/jenia/projects/django/stm_site",
-		"/home/jenia/projects/django/stm_site/polls",
 		"/home/jenia/projects/django/stm_site/stm_site",
-		"/home/jenia/projects/django/stm_site/templates",
-		"/home/jenia/projects/django/stm_site/templates/admin",
 		"/home/jenia/projects/django/stm_site/theatre"
 	],
 	"file_history":
 	[
+		"/var/log/kern.log",
+		"/home/jenia/projects/django/stm_site/templates/base/index.html",
+		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/artist_list.html",
+		"/home/jenia/projects/django/stm_site/theatre/views.py",
+		"/home/jenia/Downloads/Манна-Уитни.R",
+		"/home/jenia/projects/django/stm_site/theatre/templatetags/theatre_tags.py",
+		"/home/jenia/projects/django/stm_site/theatre/models.py",
+		"/home/jenia/projects/django/stm_site/theatre/urls.py",
+		"/home/jenia/projects/django/stm_site/stm_site/urls.py",
+		"/home/jenia/projects/django/stm_site/theatre/templatetags/__init__.py",
+		"/home/jenia/projects/django/stm_site/stm_site/templates/index.html",
+		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/index.html",
+		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/artist_index.html",
+		"/home/jenia/projects/django/stm_site/theatre/static/style.css",
 		"/home/jenia/projects/django/stm_site/stm_site/settings.py",
+		"/home/jenia/servers/bag/public_html/bitrix/components/bitrix/system.auth.registration/component.php",
+		"/home/jenia/servers/bag/public_html/catalog/index.php",
+		"/home/jenia/servers/bag/public_html/bitrix/templates/aspro_mshop/components/bitrix/catalog/main/section.php",
+		"/home/jenia/servers/bag/public_html/catalog/index_ask.php",
+		"/home/jenia/projects/django/stm_site/theatre/admin.py",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/utils.py",
+		"/home/jenia/projects/django/stm_site/menu/views.py",
+		"/home/jenia/projects/django/stm_site/menu/admin.py",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/models.py",
+		"/home/jenia/projects/django/stm_site/menu/models.py",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/admin.py",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/default_settings.py",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/views.py",
+		"/home/jenia/projects/django/stm_site/theatre/utils.py",
+		"/home/jenia/projects/django/stm_site/theatre/migrations/0014_auto_20181005_0130.py",
+		"/home/jenia/projects/django/stm_site/theatre/migrations/0001_initial.py",
+		"/home/jenia/projects/django/stm_site/theatre/migrations/0016_auto_20181010_1558.py",
+		"/home/jenia/projects/django/stm_site/menu/apps.py",
+		"/home/jenia/projects/django/stm_site/theatre/apps.py",
+		"/home/jenia/projects/django/stm_site/locale/ru/LC_MESSAGES/django.po",
+		"/home/jenia/projects/django/stm_site/locale/en/LC_MESSAGES/django.po",
+		"/home/jenia/servers/bag/public_html/order/index.php",
+		"/home/jenia/Downloads/webdata-1/webdata/000000001/contragents/1/contragents___5d8744cc-4e40-445d-b86e-400d27094d09.xml",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/templates/content_gallery/admin/image_admin_inline.html",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/js/content-gallery-view.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/admin/js/content-gallery-inline-admin.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/admin/js/content-gallery-admin-view.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/utils.py",
-		"/home/jenia/projects/django/stm_site/stm_site/urls.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/js/content-gallery-site-view.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/js/content-gallery-view.min.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/forms/boundfield.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/contrib/admin/templatetags/admin_modify.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/contrib/admin/templatetags/admin_static.py",
-		"/home/jenia/projects/django/stm_site/theatre/models.py",
-		"/home/jenia/projects/django/stm_site/theatre/admin.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/prepopulate_init.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/contrib/admin/templates/admin/index.html",
 		"/home/jenia/projects/django/stm_site/polls/admin.py",
 		"/home/jenia/projects/django/stm_site/.gitignore",
-		"/home/jenia/projects/django/stm_site/theatre/apps.py",
-		"/home/jenia/projects/django/stm_site/theatre/views.py",
 		"/home/jenia/projects/django/stm_site/polls/models.py",
 		"/home/jenia/projects/django/stm_site/templates/admin/base.html",
 		"/home/jenia/projects/django/stm_site/templates/admin/base_site.html",
@@ -630,7 +641,6 @@
 		"/home/jenia/projects/django/stm_site/polls/tests.py",
 		"/home/jenia/projects/django/stm_site/polls/views.py",
 		"/home/jenia/projects/django/static_cdn/tinymce/css/prism.css",
-		"/home/jenia/projects/django/stm_site/theatre/urls.py",
 		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/robots.txt",
 		"/home/jenia/projects/django/stm_site/polls/urls.py",
 		"/home/jenia/projects/django/stm_site/polls/templates/polls/results.html",
@@ -696,43 +706,11 @@
 		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/main.css",
 		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news.list/reviews/template.php",
 		"/home/jenia/servers/combat/home/bitrix/www/test/about/vazhnaya/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/q-form.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-top.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/design.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/tizer.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-sub-sidebar.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-sidebar.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/footer.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/ab/catalog.section/lastview/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.section/flex.section/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.section.list/catalog/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news.list/flex.select.manuf/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/lastview/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/ab/catalog.section/lastview/lang/ru/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/menu_middle/result_modifier.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/menu_middle/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/.menu_middle.menu.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-main.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/flex.sidebar.menu/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/menu/flex.sub.main/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/menu/component.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.smart.filter/flex.filter/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.smart.filter/flex.adv_filter/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/button.css",
-		"/home/jenia/servers/combat/home/bitrix/www/test/.menu_middle.menu_ext.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/.left.menu_ext.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/.left_information.menu.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/menu/stub.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/style.css",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/sale.order.ajax/class.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.cart/summary.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.cart/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.cart/summary.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.order.ajax/cart_n_order/summary.php"
+		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/q-form.css"
 	],
 	"find":
 	{
-		"height": 39.0
+		"height": 22.0
 	},
 	"find_in_files":
 	{
@@ -748,6 +726,66 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"get_context_data",
+			"выв",
+			"result_df",
+			"\n    ",
+			"ArtistDetail",
+			"model",
+			"$sort",
+			"sort",
+			"arSorts",
+			"sort",
+			"BACKEND",
+			"sort",
+			"BACKEND",
+			"CACHES",
+			"MENU_ALLOWED_CONTENT_TYPES",
+			"__init__",
+			"generic",
+			"list_editable",
+			"IntegerRangeField",
+			"MenuItem",
+			"fore",
+			"MenuNodeManager",
+			"ItemManager",
+			"apps",
+			"LOCALE_PATHS",
+			"apps",
+			"Theatre",
+			"header",
+			"Theatre",
+			"Add",
+			"mm",
+			"\n\n\n",
+			"msgid (.*)",
+			"msgstr",
+			"msgid",
+			"msgstr \"\"",
+			"angua",
+			"local",
+			"performance",
+			"Performance",
+			"rating",
+			"Afisha",
+			"Spectacle",
+			"Afis",
+			"'Спектакли'",
+			"'Труппа'",
+			"'Студиец'",
+			"Studios",
+			"'Роль'",
+			"Artists",
+			"Artist",
+			"'Студийцы'",
+			"'Студиец'",
+			"Spectacle",
+			"'Спектакль'",
+			"'Описание'",
+			"position",
+			"ImageAdminInline",
+			"ContentGalleryMixin",
+			"IntegerRangeField",
 			"BASE",
 			"ImageAdminInline",
 			"RoleInline",
@@ -816,6 +854,30 @@
 		"regex": false,
 		"replace_history":
 		[
+			"\n\n",
+			"\n",
+			"msgstr_new",
+			"msgstr",
+			"",
+			"votes",
+			"Poster",
+			"performance",
+			"Performance",
+			"_('Performances')",
+			"_('Artists')",
+			"_('Artist')",
+			"students",
+			"Students",
+			"_('Role')",
+			"studios",
+			"Studios",
+			"Studian",
+			"_('Studios')",
+			"_('Studian')",
+			"performance",
+			"Performance",
+			"_('Spectacle')",
+			"_('Description')",
 			"reverse",
 			"list_display = (",
 			"base_list_editable = ('publication',)",
@@ -840,80 +902,24 @@
 	"groups":
 	[
 		{
-			"selected": 1,
+			"selected": 0,
 			"sheets":
 			[
 				{
 					"buffer": 0,
-					"file": "theatre/models.py",
-					"semi_transient": false,
+					"file": "theatre/views.py",
+					"semi_transient": true,
 					"settings":
 					{
-						"buffer_size": 4241,
+						"buffer_size": 1941,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								4065,
-								4065
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 1053.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 1,
-					"type": "text"
-				},
-				{
-					"buffer": 1,
-					"file": "theatre/admin.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 3569,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								856,
-								856
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 164.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				},
-				{
-					"buffer": 2,
-					"file": "stm_site/settings.py",
-					"semi_transient": false,
-					"settings":
-					{
-						"buffer_size": 5029,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								458,
-								458
+								80,
+								80
 							]
 						],
 						"settings":
@@ -924,7 +930,7 @@
 						"translation.y": 0.0,
 						"zoom_level": 1.0
 					},
-					"stack_index": 2,
+					"stack_index": 0,
 					"type": "text"
 				}
 			]

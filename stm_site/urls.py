@@ -25,9 +25,10 @@ from filebrowser.sites import site
 app_name = 'stm_site'
 
 urlpatterns = [
-    path('', include('theatre.urls')),
-    path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls),
+    path('', include('theatre.urls')),
+    
+    path('polls/', include('polls.urls')),
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('content_gallery/', include('content_gallery.urls')),

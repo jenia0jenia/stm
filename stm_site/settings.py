@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -39,12 +40,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'polls.apps.PollsConfig',
-    'theatre.apps.TheatreConfig',
+    'mptt',
     'tinymce',
     'filebrowser',
     'content_gallery',
     'admin_jqueryui',
+
+    # apps
+    'menu.apps.MenuConfig',
+    'polls.apps.PollsConfig',
+    'theatre.apps.TheatreConfig',
 ]
 
 MIDDLEWARE = [
@@ -55,6 +60,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    
+    'django.middleware.locale.LocaleMiddleware',
 ]
 
 ROOT_URLCONF = 'stm_site.urls'
@@ -112,7 +119,22 @@ AUTH_PASSWORD_VALIDATORS = [
 # Internationalization
 # https://docs.djangoproject.com/en/2.1/topics/i18n/
 
-LANGUAGE_CODE = 'en-us'
+# A list of directories where Django looks for translation files
+LOCALE_PATHS = [
+    '/home/jenia/projects/django/stm_site/locale',
+    # '/var/local/translations/locale',
+]
+
+# LANGUAGE_CODE = 'en-us'
+LANGUAGE_CODE = 'ru-ru'
+LANGUAGES = [
+    ('en', _('English')),
+    ('ru', _('Russian')),
+]
+LANGUAGE_COOKIE_NAME = 'django_language'
+LANGUAGE_COOKIE_AGE = None
+LANGUAGE_COOKIE_DOMAIN = None
+LANGUAGE_COOKIE_PATH = '/'
 
 TIME_ZONE = 'Asia/Yekaterinburg'
 

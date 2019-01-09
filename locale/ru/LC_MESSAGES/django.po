@@ -1,0 +1,202 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# Envegiy Chernenko <jenia0jenia@mail.ru>, 2018.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2018-10-10 15:56+0500\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <jenia0jenia@mail.ru>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Report-Msgstr-Bugs-To: \n"
+"Plural-Forms: nplurals=4; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
+"%100>=11 && n%100<=14)? 2 : 3);\n"
+
+#: stm_site/settings.py:127
+msgid "English"
+msgstr "Ангийский"
+
+#: stm_site/settings.py:128
+msgid "Russian"
+msgstr "Русский"
+
+#: templates/admin/base.html:35
+msgid "Welcome,"
+msgstr "Добро пожаловать,"
+
+#: templates/admin/base.html:40
+msgid "View site"
+msgstr "Перейти на сайт"
+
+#: templates/admin/base.html:45
+msgid "Documentation"
+msgstr "Документация"
+
+#: templates/admin/base.html:49
+msgid "Change password"
+msgstr "Изменить пароль"
+
+#: templates/admin/base.html:51
+msgid "Log out"
+msgstr "Выйти"
+
+#: templates/admin/base.html:61
+msgid "Home"
+msgstr "Домой"
+
+#: templates/admin/base_site.html:3
+msgid "Django site admin"
+msgstr ""
+
+#: templates/admin/base_site.html:6
+msgid "Django administration"
+msgstr "Администрирование Django"
+
+#: theatre/admin.py:28
+msgid "Full name"
+msgstr "Полное мия"
+
+#: theatre/admin.py:52
+msgid "Photo"
+msgstr "Фото"
+
+#: theatre/admin.py:85
+msgid "Opening / Closing performance"
+msgstr "Открытие / Закрытие спектакля"
+
+#: theatre/admin.py:89
+msgid "Rating"
+msgstr "Рейтинг"
+
+#: theatre/apps.py:6
+msgid "Theatre"
+msgstr "Театр"
+
+#: theatre/models.py:18
+msgid "Publication"
+msgstr "Публиковать?"
+
+#: theatre/models.py:40 theatre/models.py:45 theatre/models.py:56
+msgid "Genre"
+msgstr "Жанр"
+
+#: theatre/models.py:41 theatre/models.py:55 theatre/models.py:116
+msgid "Description"
+msgstr "Описание"
+
+#: theatre/models.py:42
+msgid "Genre's photo"
+msgstr "Фото жанра"
+
+#: theatre/models.py:46
+msgid "Genres"
+msgstr "Жанры"
+
+#: theatre/models.py:54 theatre/models.py:98
+msgid "Name"
+msgstr "Имя"
+
+#: theatre/models.py:57
+msgid "Performance's photo"
+msgstr "Фото спектакля"
+
+#: theatre/models.py:59
+msgid "Votes \"yes!\""
+msgstr "Голосов \"Да!\""
+
+#: theatre/models.py:60
+msgid "Votes \"No!\""
+msgstr "Голосов \"Нет!\""
+
+#: theatre/models.py:62
+msgid "Premiere date"
+msgstr "Дата премьеры"
+
+#: theatre/models.py:63
+msgid "Closing date"
+msgstr "Дата закрытия"
+
+#: theatre/models.py:65
+msgid "Is premiere"
+msgstr "Премьера?"
+
+#: theatre/models.py:66 theatre/models.py:90 theatre/models.py:100
+msgid "Artists"
+msgstr "Артисты"
+
+#: theatre/models.py:69 theatre/models.py:101
+msgid "Performance"
+msgstr "Спектакль"
+
+#: theatre/models.py:70
+msgid "Performances"
+msgstr "Спектакли"
+
+#: theatre/models.py:78
+msgid "Last name"
+msgstr "Имя"
+
+#: theatre/models.py:79
+msgid "First name"
+msgstr "Фамилия"
+
+#: theatre/models.py:80
+msgid "Middle name"
+msgstr "Отчество"
+
+#: theatre/models.py:82
+msgid "About artis"
+msgstr "Об артисте"
+
+#: theatre/models.py:84
+msgid "Artist's photo"
+msgstr "Фото артиста"
+
+#: theatre/models.py:86
+msgid "In theatre from year..."
+msgstr "В театре с года..."
+
+#: theatre/models.py:89
+msgid "Artist"
+msgstr "Артист"
+
+#: theatre/models.py:99
+msgid "About role"
+msgstr "О роли"
+
+#: theatre/models.py:102
+msgid "Role's photo"
+msgstr "Фото роли"
+
+#: theatre/models.py:105
+msgid "Role"
+msgstr "Роль"
+
+#: theatre/models.py:106
+msgid "Roles"
+msgstr "Роли"
+
+#: theatre/models.py:114
+msgid "Event date"
+msgstr "Дата события"
+
+#: theatre/models.py:115 theatre/models.py:120
+msgid "Event"
+msgstr "Событие"
+
+#: theatre/models.py:117
+msgid "Poster's photo"
+msgstr "Фото афиши"
+
+#: theatre/models.py:121
+msgid "Poster"
+msgstr "Афиша"

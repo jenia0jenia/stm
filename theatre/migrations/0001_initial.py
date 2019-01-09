@@ -25,7 +25,7 @@ class Migration(migrations.Migration):
                 ('middle_name', models.CharField(blank=True, max_length=100, null=True, verbose_name='Отчество')),
                 ('description', tinymce.models.HTMLField(blank=True, verbose_name='О студийце')),
                 ('photo', models.ImageField(blank=True, null=True, upload_to='uploads/artist/')),
-                ('year', theatre.views.IntegerRangeField(blank=True, default=2018, null=True, verbose_name='В студии с года...')),
+                ('year', theatre.utils.IntegerRangeField(blank=True, default=2018, null=True, verbose_name='В студии с года...')),
             ],
             options={
                 'verbose_name': 'Студиец',

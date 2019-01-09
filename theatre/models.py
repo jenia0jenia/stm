@@ -1,61 +1,93 @@
 import os
 from django.db import models
 from django.utils import timezone
-
-from filebrowser.fields import FileBrowseField
-
+from django.utils.translation import gettext as _
 from datetime import date
+from filebrowser.fields import FileBrowseField
 from tinymce import HTMLField
-
-from .views import IntegerRangeField
-
-from django.db import models
 from content_gallery.models import ContentGalleryMixin
 
+from .utils import IntegerRangeField
 
 def upload_path(path):
     return os.path.join('uploads', str(path))
 
 class TheatreBase(models.Model):
-    position = models.IntegerField('Позиция', default=0)
-    publication = models.BooleanField('Публиковать?', default=True)
+    publication = models.BooleanField(_('Publication'), default=True)
 
     class Meta:
         abstract = True
 
+    # def save(self, *args, **kwargs):
+    #     """
+    #     Re-order all items from 10 upwards, at intervals of 10.
+    #     This makes it easy to insert new items in the middle of
+    #     existing items without having to manually shuffle
+    #     them all around.
+    #     """
+    #     super().save(*args, **kwargs)
+
+    #     current = 10
+    #     for item in MenuItem.objects.filter(menu=self).order_by('order'):
+    #         item.order = current
+    #         item.save()
+    #         current += 10
+
 
 class Genre(TheatreBase):
-    name = models.CharField('Жанр', max_length=100)
-    description = models.CharField('Описание', max_length=400, blank=True)
-    photo = FileBrowseField('Фото жанра', max_length=200, directory=upload_path('genre/'), extensions=['.jpg', '.png', '.gif', '.svg'], blank=True, null=True)
+    name = models.CharField(_('Genre'), max_length=100)
+    description = HTMLField(_('Description'), max_length=400, blank=True)
+    
+    photo = photo = FileBrowseField(
+        _('Genre\'s photo'),
+        max_length=200,
+        directory=upload_path('genre/'),
+        extensions=['.jpg', '.png', '.gif', '.svg'],
+        blank=True,
+        null=True
+        )
 
     class Meta:
-        verbose_name = 'Жанр'
-        verbose_name_plural = 'Жанры'
+        verbose_name = _('Genre')
+        verbose_name_plural = _('Genres')
         ordering = ['name']
 
     def __str__(self):
         return self.name
 
 
-class Spectacle(ContentGalleryMixin, TheatreBase):
-    name = models.CharField('Название', max_length=200)
-    description = HTMLField('Описание', blank=True)
-    genre = models.ForeignKey(Genre, on_delete=models.SET_DEFAULT, verbose_name='Жанр', null=True, blank=True, default=None)
-    photo = FileBrowseField('Главное фото', max_length=200, directory=upload_path('event/'), extensions=['.jpg', '.png', '.gif', '.svg'], blank=True, null=True)
+class Performance(ContentGalleryMixin, TheatreBase):
+    name = models.CharField(_('Name'), max_length=200)
+    description = HTMLField(_('Description'), blank=True)
+    genre = models.ForeignKey(
+        Genre,
+        on_delete=models.SET_DEFAULT,
+        verbose_name=_('Genre'),
+        null=True,
+        blank=True,
+        default=None
+    )
+    photo = FileBrowseField(
+        _('Performance\'s photo'),
+        max_length=200,
+        directory=upload_path('event/'),
+        extensions=['.jpg', '.png', '.gif', '.svg'],
+        blank=True,
+        null=True
+    )
 
-    rating_yes = models.IntegerField('Голосов "Понравилось"', blank=True, default=0)
-    rating_no = models.IntegerField('Голосов "Не понравилось"', blank=True, default=0)
+    votes_yes = models.IntegerField(_('Votes "yes!"'), blank=True, default=0)
+    votes_no = models.IntegerField(_('Votes "No!"'), blank=True, default=0)
 
-    premiere_date = models.DateField('Дата премьеры', blank=True, default=timezone.now)
-    close_date = models.DateField('Дата закрытия спектакля', blank=True, default=date.min)
+    premiere_date = models.DateField(_('Premiere date'), blank=True, default=timezone.now)
+    close_date = models.DateField(_('Closing date'), blank=True, default=date.min)
 
-    is_premiere = models.BooleanField('Премьера?', blank=True, default=False)
-    artists = models.ManyToManyField('Artist', verbose_name='Артисты', blank=True)
+    is_premiere = models.BooleanField(_('Is premiere'), blank=True, default=False)
+    artists = models.ManyToManyField('Artist', verbose_name=_('Artists'), blank=True)
 
     class Meta:
-        verbose_name = 'Спектакль'
-        verbose_name_plural = 'Спектакли'
+        verbose_name = _('Performance')
+        verbose_name_plural = _('Performances')
         ordering = ['name']
 
     def __str__(self):
@@ -63,50 +95,90 @@ class Spectacle(ContentGalleryMixin, TheatreBase):
 
 
 class Artist(ContentGalleryMixin, TheatreBase):
-    last_name = models.CharField('Фамилия', max_length=100, null=True)
-    first_name = models.CharField('Имя', max_length=100, blank=True, null=True)
-    middle_name = models.CharField('Отчество', max_length=100, blank=True, null=True)
+    last_name = models.CharField(_('Last name'), max_length=100, null=True)
+    first_name = models.CharField(_('First name'), max_length=100, blank=True, null=True)
+    middle_name = models.CharField(_('Middle name'), max_length=100, blank=True, null=True)
+    views = models.PositiveIntegerField(_('Views'), default=0)
 
-    description = HTMLField('О студийце', blank=True)
+    description = HTMLField(_('About artis'), blank=True)
 
-    photo = FileBrowseField('Аватар', max_length=200, directory=upload_path('people/'), extensions=['.jpg', '.png', '.gif', '.svg'], blank=True, null=True)
+    photo = FileBrowseField(
+        _('Artist\'s photo'),
+        max_length=200,
+        directory=upload_path('people/'),
+        extensions=['.jpg', '.png', '.gif', '.svg'],
+        blank=True,
+        null=True
+    )
 
-    year = IntegerRangeField('В студии с года...', min_value=1994, max_value=date.today().year, default=2018, blank=True, null=True)
+    year = IntegerRangeField(
+        _('In theatre from year...'),
+        min_value=1994,
+        max_value=date.today().year,
+        default=2018,
+        blank=True,
+        null=True
+    )
 
     class Meta:
-        verbose_name = 'Студиец'
-        verbose_name_plural = 'Труппа'
+        verbose_name = _('Artist')
+        verbose_name_plural = _('Artists')
         ordering = ['last_name']
 
     def __str__(self):
         return self.last_name
 
+    def viewed(self):
+        self.views += 1
+        self.save(update_fields=['views'])
+
 
 class Role(ContentGalleryMixin, TheatreBase):
-    name = models.CharField('Имя персонажа', max_length=200, null=True)
-    description = HTMLField('О роли', blank=True)
-    artists = models.ManyToManyField(Artist, verbose_name='Студийцы', blank=True)
-    spectacle = models.ForeignKey(Spectacle, verbose_name='Спектакль', on_delete=models.CASCADE)
-    photo = FileBrowseField('Фото роли', max_length=200, directory=upload_path('people/'), extensions=['.jpg', '.png', '.gif', '.svg'], blank=True, null=True)
+    name = models.CharField(_('Name'), max_length=200, null=True)
+    description = HTMLField(_('About role'), blank=True)
+    artists = models.ManyToManyField(Artist, verbose_name=_('Artists'), blank=True)
+    performance = models.ForeignKey(
+        Performance,
+        verbose_name=_('Performance'),
+        on_delete=models.CASCADE,
+        null=True
+    )
+    
+    photo = FileBrowseField(
+        _('Role\'s photo'),
+        max_length=200,
+        directory=upload_path('people/'),
+        extensions=['.jpg', '.png', '.gif', '.svg'],
+        blank=True,
+        null=True
+    )
 
     class Meta:
-        verbose_name = 'Роль'
-        verbose_name_plural = 'Роли'
-        ordering = ['spectacle']
+        verbose_name = _('Role')
+        verbose_name_plural = _('Roles')
+        ordering = ['performance']
 
     def __str__(self):
         return self.name
 
 
-class Afisha(ContentGalleryMixin, TheatreBase):
-    event_date = models.DateTimeField('Дата события', blank=True, null=True, default=timezone.now)
-    event = models.ForeignKey(Spectacle, verbose_name='Событие', on_delete=models.CASCADE)
-    description = HTMLField('Комментарий к событию', blank=True)
-    photo = FileBrowseField('Фото афиши', max_length=200, directory=upload_path('event/'), extensions=['.jpg', '.png', '.gif', '.svg'], blank=True, null=True)
+class Poster(ContentGalleryMixin, TheatreBase):
+    event_date = models.DateTimeField(_('Event date'), blank=True, null=True, default=timezone.now)
+    event = models.ForeignKey(Performance, verbose_name=_('Event'), on_delete=models.CASCADE)
+    description = HTMLField(_('Description'), blank=True)
+    
+    photo = FileBrowseField(
+        _('Poster\'s photo'),
+        max_length=200,
+        directory=upload_path('event/'),
+        extensions=['.jpg', '.png', '.gif', '.svg'],
+        blank=True,
+        null=True
+    )
 
     class Meta:
-        verbose_name = 'Событие'
-        verbose_name_plural = 'Афиша'
+        verbose_name = _('Event')
+        verbose_name_plural = _('Poster')
         ordering = ['event_date']
 
     def __str__(self):
