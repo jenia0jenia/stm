@@ -1,0 +1,15 @@
+.social {
+    padding: 20px;
+
+    &__link {
+        font-size: 27px;
+        padding: 12px;
+        color: #fff;
+        text-decoration: none;
+        transition: color .7s ease;
+
+        &:hover {
+            color: $color-orange;
+        }
+    }
+}

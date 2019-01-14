@@ -1,15 +1,11 @@
+{% extends "base/base.html" %}
+
 {% load static %}
 {% load cache %}
+{% block title %}Официальный сайт{% endblock %}
 {#% load compress %#}
 
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{{ page.title }}{% endblock %} - Студия-Театр "Манекен" - STM</title>
-    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
-</head>
-<body class="body">
+{% block content %}
     {% if artists %}
         <ul>
         {% for artist in artists %}
@@ -19,5 +15,4 @@
     {% else %}
         <p>No artists are available.</p>
     {% endif %}
-</body>
-</html>
+{% endblock %}

@@ -28,7 +28,7 @@ class MenuBase(models.Model):
 
     publication = models.BooleanField(
         _('Publication'),
-        default=True
+            default=True
         )
 
 
@@ -61,6 +61,9 @@ class Menu(MenuBase):
         verbose_name = _('Menu')
         verbose_name_plural = _('Menus')
 
+    def __str__(self):
+        return self.name
+
 
 class MenuItem(MPTTModel, MenuBase):
     name = models.CharField(
@@ -79,7 +82,7 @@ class MenuItem(MPTTModel, MenuBase):
 
     menu = models.ForeignKey(
         Menu,
-        verbose_name=('Menu'),
+        verbose_name=_('Menu'),
         on_delete=models.CASCADE
         )
 
@@ -97,10 +100,11 @@ class MenuItem(MPTTModel, MenuBase):
         default=500,
         )
 
-    # tree = Menu()
+    def __str__(self):
+        return self.name
 
     class MPTTMeta:
         order = ['order']
-        order_insertion_by = ['name']
+        order_insertion_by = ['order']
         verbose_name = _('Menu item')
         verbose_name_plural = _('Menu items')

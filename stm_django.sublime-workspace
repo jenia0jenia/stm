@@ -4,6 +4,30 @@
 		"selected_items":
 		[
 			[
+				"no",
+				"nowrap\twhite-space"
+			],
+			[
+				"ww",
+				"wow\tword-wrap"
+			],
+			[
+				"max-",
+				"max-width\tproperty"
+			],
+			[
+				"trans",
+				"transition\tproperty"
+			],
+			[
+				"menu",
+				"MenuItem"
+			],
+			[
+				"min",
+				"min-width\tproperty"
+			],
+			[
 				"Thea",
 				"theatre"
 			],
@@ -72,16 +96,8 @@
 				"addClass"
 			],
 			[
-				"max-",
-				"max-height\tproperty"
-			],
-			[
 				"e",
 				"else"
-			],
-			[
-				"trans",
-				"transform\tproperty"
 			],
 			[
 				"jc",
@@ -498,35 +514,11 @@
 			[
 				"time",
 				"timezone"
-			],
-			[
-				"min",
-				"min-height"
-			],
-			[
-				"_SHOP",
-				"_SHOP_GROUPS_REL"
-			],
-			[
-				"group",
-				"group_name"
-			],
-			[
-				"icon",
-				"icon-delete"
 			]
 		]
 	},
 	"buffers":
 	[
-		{
-			"file": "theatre/views.py",
-			"settings":
-			{
-				"buffer_size": 1941,
-				"line_ending": "Unix"
-			}
-		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -574,36 +566,80 @@
 	"expanded_folders":
 	[
 		"/home/jenia/projects/django/stm_site",
-		"/home/jenia/projects/django/stm_site/stm_site",
-		"/home/jenia/projects/django/stm_site/theatre"
+		"/home/jenia/projects/django/stm_site/templates",
+		"/home/jenia/projects/django/stm_site/theatre",
+		"/home/jenia/projects/django/stm_site/theatre/templates",
+		"/home/jenia/projects/django/stm_site/theatre/templatetags",
+		"/home/jenia/projects/django/stm_site/theatre/templatetags/__pycache__"
 	],
 	"file_history":
 	[
-		"/var/log/kern.log",
-		"/home/jenia/projects/django/stm_site/templates/base/index.html",
-		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/artist_list.html",
-		"/home/jenia/projects/django/stm_site/theatre/views.py",
-		"/home/jenia/Downloads/Манна-Уитни.R",
-		"/home/jenia/projects/django/stm_site/theatre/templatetags/theatre_tags.py",
-		"/home/jenia/projects/django/stm_site/theatre/models.py",
 		"/home/jenia/projects/django/stm_site/theatre/urls.py",
+		"/home/jenia/projects/django/stm_site/theatre/views.py",
+		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/poster_list.html",
+		"/home/jenia/projects/django/stm_site/src/css/poster.scss",
+		"/home/jenia/projects/django/stm_site/templates/base/base.html",
+		"/home/jenia/Downloads/json.txt",
+		"/home/jenia/projects/django/stm_site/src/css/main-menu.scss",
+		"/home/jenia/projects/django/stm_site/src/css/main.scss",
+		"/home/jenia/projects/django/stm_site/src/css/vars.scss",
+		"/home/jenia/projects/django/stm_site/src/css/y-map.scss",
+		"/home/jenia/projects/django/stm_site/theatre/models.py",
+		"/home/jenia/projects/django/stm_site/theatre/templates/contacts.html",
+		"/home/jenia/projects/django/stm_site/src/css/header.scss",
+		"/home/jenia/projects/django/stm_site/menu/admin.py",
+		"/home/jenia/projects/django/stm_site/src/css/social.scss",
+		"/home/jenia/projects/django/stm_site/menu/models.py",
+		"/home/jenia/projects/django/stm_site/theatre/templates/include/main_menu.html",
+		"/home/jenia/projects/django/stm_site/theatre/templatetags/theatre_tags.py",
+		"/home/jenia/projects/django/stm_site/src/js/index.js",
+		"/home/jenia/projects/django/stm_site/menu/views.py",
+		"/home/jenia/projects/django/stm_site/tezaurus.txt",
+		"/home/jenia/projects/django/stm_site/templates/base/index.html",
+		"/home/jenia/projects/django/stm_site/webpack.config.js",
+		"/home/jenia/projects/django/stm_site/src/js/map.js",
+		"/home/jenia/projects/django/stm_site/stm_site/settings.py",
+		"/home/jenia/projects/django/stm_site/src/css/normalize.scss",
+		"/home/jenia/projects/django/stm_site/.babelrc",
+		"/home/jenia/projects/django/stm_site/.eslintrc.json",
+		"/home/jenia/projects/django/django-content-gallery/requirements.txt",
+		"/home/jenia/projects/django/django-content-gallery/setup.py",
+		"/home/jenia/projects/django/stm_site/static/dist/dist.js",
+		"/home/jenia/projects/django/stm_site/static/dist/style.js",
+		"/home/jenia/projects/django/stm_site/dist/sdfd",
+		"/home/jenia/projects/django/stm_site/.gitignore",
+		"/home/jenia/projects/django/stm_site/theatre/static/css/style.css",
+		"/home/jenia/projects/django/stm_site/static/js/map.js",
+		"/home/jenia/projects/django/stm_site/static/js/index.js",
+		"/home/jenia/projects/django/stm_site/package.json",
+		"/home/jenia/projects/django/stm_site/theatre/admin.py",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/utils.py",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/admin/_image_view.html",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/admin/base_site.html",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/admin/image_admin.html",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/admin/image_admin_inline.html",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/_image_view.html",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/admin/js/content-gallery-admin-view.js",
+		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/js/content-gallery-view.js",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/templatetags/preview.html",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/templatetags/small_preview.html",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/admin/base.html",
+		"/home/jenia/projects/django/stm_site/templates/content_gallery/admin/edit_inline/image_widget.html",
+		"/var/log/kern.log",
+		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/artist_list.html",
+		"/home/jenia/Downloads/Манна-Уитни.R",
 		"/home/jenia/projects/django/stm_site/stm_site/urls.py",
 		"/home/jenia/projects/django/stm_site/theatre/templatetags/__init__.py",
 		"/home/jenia/projects/django/stm_site/stm_site/templates/index.html",
 		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/index.html",
 		"/home/jenia/projects/django/stm_site/theatre/templates/theatre/artist_index.html",
 		"/home/jenia/projects/django/stm_site/theatre/static/style.css",
-		"/home/jenia/projects/django/stm_site/stm_site/settings.py",
 		"/home/jenia/servers/bag/public_html/bitrix/components/bitrix/system.auth.registration/component.php",
 		"/home/jenia/servers/bag/public_html/catalog/index.php",
 		"/home/jenia/servers/bag/public_html/bitrix/templates/aspro_mshop/components/bitrix/catalog/main/section.php",
 		"/home/jenia/servers/bag/public_html/catalog/index_ask.php",
-		"/home/jenia/projects/django/stm_site/theatre/admin.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/utils.py",
-		"/home/jenia/projects/django/stm_site/menu/views.py",
-		"/home/jenia/projects/django/stm_site/menu/admin.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/models.py",
-		"/home/jenia/projects/django/stm_site/menu/models.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/admin.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/default_settings.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/mpttmenu/views.py",
@@ -618,10 +654,7 @@
 		"/home/jenia/servers/bag/public_html/order/index.php",
 		"/home/jenia/Downloads/webdata-1/webdata/000000001/contragents/1/contragents___5d8744cc-4e40-445d-b86e-400d27094d09.xml",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/templates/content_gallery/admin/image_admin_inline.html",
-		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/js/content-gallery-view.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/admin/js/content-gallery-inline-admin.js",
-		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/admin/js/content-gallery-admin-view.js",
-		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/utils.py",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/js/content-gallery-site-view.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/content_gallery/static/content_gallery/js/content-gallery-view.min.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/forms/boundfield.py",
@@ -630,7 +663,6 @@
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/contrib/admin/static/admin/js/prepopulate_init.js",
 		"/home/jenia/projects/django/stm/lib/python3.6/site-packages/django/contrib/admin/templates/admin/index.html",
 		"/home/jenia/projects/django/stm_site/polls/admin.py",
-		"/home/jenia/projects/django/stm_site/.gitignore",
 		"/home/jenia/projects/django/stm_site/polls/models.py",
 		"/home/jenia/projects/django/stm_site/templates/admin/base.html",
 		"/home/jenia/projects/django/stm_site/templates/admin/base_site.html",
@@ -669,44 +701,7 @@
 		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/admin/reports/bill_intersvet74.php",
 		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_payment/bill_intersvet/payment.php",
 		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_template/bill_new/foot.tmpl",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/basket.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.personal.order.list/personal/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/flex/store.sale.basket.basket/flex.basket/basket_items.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/flex/store.sale.basket.basket/flex.basket/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_template/bill3/head.tmpl",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/admin/reports/2_bill_intersvet74.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/sale.order.payment/component.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/admin/reports/3_bill_intersvet74.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print/description.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.basket.basket.line/flex.basket/top_template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/payment/result.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/templates/flex.print_P/header.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/personal/order/new_make/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/sale.order.ajax/flex.sale/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/personal/order/new_make/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/personal/order/make/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/add2cart.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.element/flex.fastview/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/catalog.element/catalog/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/js/main.js",
-		"/home/jenia/servers/combat/home/bitrix/www/personal/order/payment/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/components/bitrix/sale.order.payment/.description.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/product.css",
-		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/cart_top.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/changeQuantity.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/vars.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/filter.css",
-		"/home/jenia/servers/combat/home/bitrix/www/test/about/o-nas/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/layout.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-sub-main.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/footer.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/menu-footer.css",
-		"/home/jenia/servers/combat/home/bitrix/www/test/ajax/buy/form.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/main.css",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/components/bitrix/news.list/reviews/template.php",
-		"/home/jenia/servers/combat/home/bitrix/www/test/about/vazhnaya/index.php",
-		"/home/jenia/servers/combat/home/bitrix/www/bitrix/templates/flex/css/postcss/modules/q-form.css"
+		"/home/jenia/servers/combat/home/bitrix/www/test/bitrix/php_interface/include/sale_template/bill_new/foot.tmpl"
 	],
 	"find":
 	{
@@ -726,6 +721,33 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"http://web.archive.org/web/20171216115730/",
+			"posters",
+			"TEMPLATE_CONTEXT_PROCESSORS",
+			"ForeignKey",
+			"order",
+			"sort",
+			"ord",
+			"order",
+			"menu",
+			"sassLoader",
+			"Ymap",
+			"babel",
+			"sorta",
+			"ootstrap",
+			"webpackBootstrap",
+			"ootstrap",
+			"webpackBootstrap",
+			"dist",
+			"app.",
+			"style",
+			"html",
+			"chunkhash",
+			"prem",
+			"['.jpg', '.png', '.gif', '.svg']",
+			"CONTENT_GALLERY = {\n",
+			"image",
+			"template_name",
 			"get_context_data",
 			"выв",
 			"result_df",
@@ -826,27 +848,7 @@
 			"spectacle",
 			"publ_pos_fieldsets",
 			"admin.ModelAdmin",
-			"fieldsets",
-			"TheatreBaseAdmin",
-			"TheatreBaseAdmin.fieldsets",
-			"default_position",
-			"position = models.IntegerField('Позиция', default=0)",
-			"Spectacle",
-			"upload_",
-			"upload_path",
-			"upload",
-			"spectacle",
-			"spectacles",
-			"app_list",
-			"\"",
-			"future_question",
-			"BASE_DIR",
-			"STATIC_ROOT",
-			"MEDIA_ROOT",
-			"MEDIA_URL",
-			"theatre",
-			"static",
-			"fore"
+			"fieldsets"
 		],
 		"highlight": true,
 		"in_selection": false,
@@ -854,6 +856,11 @@
 		"regex": false,
 		"replace_history":
 		[
+			"",
+			"YMap",
+			"YMaps",
+			"upload_photo_ext",
+			"upload_photo_ext\n",
 			"\n\n",
 			"\n",
 			"msgstr_new",
@@ -902,37 +909,8 @@
 	"groups":
 	[
 		{
-			"selected": 0,
 			"sheets":
 			[
-				{
-					"buffer": 0,
-					"file": "theatre/views.py",
-					"semi_transient": true,
-					"settings":
-					{
-						"buffer_size": 1941,
-						"regions":
-						{
-						},
-						"selection":
-						[
-							[
-								80,
-								80
-							]
-						],
-						"settings":
-						{
-							"syntax": "Packages/Python/Python.sublime-syntax"
-						},
-						"translation.x": 0.0,
-						"translation.y": 0.0,
-						"zoom_level": 1.0
-					},
-					"stack_index": 0,
-					"type": "text"
-				}
 			]
 		}
 	],

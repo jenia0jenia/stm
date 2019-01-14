@@ -9,6 +9,8 @@ from content_gallery.models import ContentGalleryMixin
 
 from .utils import IntegerRangeField
 
+upload_photo_ext = ['.jpg', '.png', '.gif', '.svg']
+
 def upload_path(path):
     return os.path.join('uploads', str(path))
 
@@ -37,12 +39,11 @@ class TheatreBase(models.Model):
 class Genre(TheatreBase):
     name = models.CharField(_('Genre'), max_length=100)
     description = HTMLField(_('Description'), max_length=400, blank=True)
-    
-    photo = photo = FileBrowseField(
+    photo = FileBrowseField(
         _('Genre\'s photo'),
         max_length=200,
         directory=upload_path('genre/'),
-        extensions=['.jpg', '.png', '.gif', '.svg'],
+        extensions=upload_photo_ext,
         blank=True,
         null=True
         )
@@ -71,18 +72,14 @@ class Performance(ContentGalleryMixin, TheatreBase):
         _('Performance\'s photo'),
         max_length=200,
         directory=upload_path('event/'),
-        extensions=['.jpg', '.png', '.gif', '.svg'],
+        extensions=upload_photo_ext,
         blank=True,
         null=True
     )
-
     votes_yes = models.IntegerField(_('Votes "yes!"'), blank=True, default=0)
     votes_no = models.IntegerField(_('Votes "No!"'), blank=True, default=0)
-
     premiere_date = models.DateField(_('Premiere date'), blank=True, default=timezone.now)
     close_date = models.DateField(_('Closing date'), blank=True, default=date.min)
-
-    is_premiere = models.BooleanField(_('Is premiere'), blank=True, default=False)
     artists = models.ManyToManyField('Artist', verbose_name=_('Artists'), blank=True)
 
     class Meta:
@@ -106,7 +103,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
         _('Artist\'s photo'),
         max_length=200,
         directory=upload_path('people/'),
-        extensions=['.jpg', '.png', '.gif', '.svg'],
+        extensions=upload_photo_ext,
         blank=True,
         null=True
     )
@@ -148,7 +145,7 @@ class Role(ContentGalleryMixin, TheatreBase):
         _('Role\'s photo'),
         max_length=200,
         directory=upload_path('people/'),
-        extensions=['.jpg', '.png', '.gif', '.svg'],
+        extensions=upload_photo_ext,
         blank=True,
         null=True
     )
@@ -165,6 +162,7 @@ class Role(ContentGalleryMixin, TheatreBase):
 class Poster(ContentGalleryMixin, TheatreBase):
     event_date = models.DateTimeField(_('Event date'), blank=True, null=True, default=timezone.now)
     event = models.ForeignKey(Performance, verbose_name=_('Event'), on_delete=models.CASCADE)
+    is_premiere = models.BooleanField(_('Is premiere'), blank=True, default=False)
     description = HTMLField(_('Description'), blank=True)
     
     photo = FileBrowseField(

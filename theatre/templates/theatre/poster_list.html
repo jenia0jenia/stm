@@ -1,0 +1,15 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% load cache %}
+{% block title %}Афиша{% endblock %}
+
+{% block content %}
+    <h1 class="h1 poster">Афиша</h1>
+    {% for poster_item in poster_list %}
+        <h2 class="h2">{{ poster_item }}</h2>
+        <div class="poster__image">
+            <img class="poster__image-img" src="{{ poster_item.photo.url }}" alt="{{ poster_item }}">
+        </div>
+    {% endfor %}
+{% endblock %}

@@ -64,18 +64,22 @@ class GenreAdmin(TheatreBaseAdmin):
 
 
 class RoleAdmin(TheatreBaseAdmin):
+    def get_performance(self, obj):
+        return obj.performance.name
+
+    get_performance.admin_order_field = 'performance'
+    get_performance.short_description = _('Performance Name')
     fieldsets = [
         (None, {
             'fields': ['name', 'description', 'artists', 'performance', 'photo']
         })
     ] + TheatreBaseAdmin.base_fieldsets
-    list_display = ('name', 'publication')
+    list_display = ('name', 'get_performance', 'publication')
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('name',)
     inlines = [
         ImageAdminInline,
     ]
-
 
 class PerformanceAdmin(TheatreBaseAdmin):
     fieldsets = [
@@ -83,7 +87,7 @@ class PerformanceAdmin(TheatreBaseAdmin):
             'fields': ['name', 'description', 'genre', 'photo']
         }),
         (_('Opening / Closing performance'), {
-            'fields': ['premiere_date', 'close_date', 'is_premiere'],
+            'fields': ['premiere_date', 'close_date'],
             'classes': ['collapse']
         }),
         (_('Rating'), {
@@ -91,7 +95,7 @@ class PerformanceAdmin(TheatreBaseAdmin):
             'classes': ['collapse']
         })
     ] + TheatreBaseAdmin.base_fieldsets
-    list_display = ('name', 'genre', 'premiere_date', 'close_date', 'is_premiere', 'publication')
+    list_display = ('name', 'genre', 'premiere_date', 'close_date', 'publication')
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('name',)
     inlines = [
@@ -102,10 +106,10 @@ class PerformanceAdmin(TheatreBaseAdmin):
 class PosterAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
-            'fields': ['event', 'description', 'event_date', 'photo']
+            'fields': ['event', 'description', 'event_date', 'photo', 'is_premiere']
         })
     ] + TheatreBaseAdmin.base_fieldsets
-    list_display = ('event', 'event_date', 'publication')
+    list_display = ('event', 'event_date', 'is_premiere', 'publication')
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('event',)
     inlines = [

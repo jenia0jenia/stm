@@ -199,6 +199,4 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 CONTENT_GALLERY = {
-    "image_width": 1024,
-    "image_height": 768,
 }

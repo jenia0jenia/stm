@@ -1,0 +1,26 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% load cache %}
+
+{% block title %}Контакты{% endblock %}
+
+{% block content %}
+    <h1 class="h1">Контакты</h1>
+    <div id="main">
+        <h2>Контакты</h2>
+        <p><span>Телефон студии</span><br>
+        (351)267-94-77 </p>
+        <p> <span>По разным вопросам</span><br>
+        <a href="https://vk.com/ilya_random">Илья</a> - 8-909-073-83-34, ilyavtyurin@gmail.com</p>
+        <p> <span>По билетам</span><br>
+        <a href="https://vk.com/id81237595">Таня</a> - 8-982-314-17-23<br>
+        </p><p> <span>Написать письмо художественному руководителю</span><br>
+        Филонов Владимир Фёдорович - <a href="mailto:filonov@studiomaneken.com">filonov@studiomaneken.com</a></p>
+        <p> <span>Мы в соцсетях</span><br>
+        <a href="https://vk.com/studiom">VK</a>
+        <a href="http://instagram.com/studio_maneken">Instagram</a>
+        <a href="http://www.facebook.com/studiomaneken">Facebook</a>
+        <a href="http://www.twitter.com/manekenstudio">Twitter</a></p>
+    </div>
+{% endblock %}

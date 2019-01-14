@@ -1,0 +1,106 @@
+/* main.scss */
+
+@import "normalize.scss";
+@import "vars.scss";
+
+@import "header.scss";
+@import "main-menu.scss";
+@import "poster.scss";
+@import "y-map.scss";
+@import "social.scss";
+
+body {
+    font-family: Arial;
+}
+
+a {
+    color: $color-white;
+    transition: color .7s ease;
+
+    &:visited {
+        color: $color-gray-lightest;
+    }
+
+    &:hover {
+        color: $color-orange;
+    }
+}
+
+.body {
+    display: flex;
+    flex-flow: column;
+}
+
+.container {
+    max-width: 960px;
+    height: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    position: relative;
+    background-color: rgba(0, 0, 0, .5);
+    color: #fff;
+
+/*     &::before {
+    content: '';
+    width: 120px;
+    height: 650px;
+    background-color: #000;
+    position: absolute;
+    right: 200px;
+    top: 300px;
+    z-index: 2;
+    border: 2px solid white;
+} */
+}
+
+.logo {
+    width: 200px;
+    
+    &__image {
+        width: 100%;
+    }
+}
+
+.tickets {
+    &__link {
+        display: block;
+        padding: 6px;
+        margin: 20px auto;
+        border: 2px solid $color-white;
+        text-align: center;
+        color: $color-white;
+        font-size: 26px;
+        text-transform: uppercase;
+        background-color: transparent;
+        transition: background-color .7s ease;
+        cursor: pointer;
+
+        &:hover {
+            background-color: $color-orange;
+        }
+    }
+}
+
+/* fixed bubble footer */
+@media only screen and (min-height: 400px) {
+    .header {
+        position: relative;
+        z-index: 1;
+    }
+
+    .main {
+        height: 1000px;
+        margin-bottom: 500px;
+        position: relative;
+        background-size: 100%;
+        background-image: url('#{$i}/bar.jpg');
+        z-index: 1;
+    }
+
+    .footer {
+        position: fixed;
+        width: 100%;
+        bottom: 0;
+        z-index: 0;
+    }
+}
