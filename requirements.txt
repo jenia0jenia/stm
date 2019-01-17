@@ -1,0 +1,12 @@
+awesome-slugify 
+
+django-content-gallery (ошибки в utils)
+
+django-filebrowser-no-grappelli
+django-admin-jqueryui112
+django-js-asset
+django-mptt
+
+django-mptt-menu (pip install git+git://github.com/lauxley/django_mptt_menu.git)
+
+django-tinymce4-lite

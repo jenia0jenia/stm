@@ -14,8 +14,8 @@ import os
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -28,7 +28,7 @@ SECRET_KEY = 'u&pm*-lku%qs#pdq!!#)*#u0(io$-th_bj!=4$43459-t5ltt3'
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['localhost']
+ALLOWED_HOSTS = ['localhost', '31.31.196.247', 'studiomaneken.com']
 
 
 # Application definition
@@ -95,7 +95,15 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'u0630501_default',
+#         'USER': 'u0630501_default',
+#         'PASSWORD': '1E0h0H5j',
+#         'HOST': 'localhost',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -121,7 +129,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # A list of directories where Django looks for translation files
 LOCALE_PATHS = [
-    '/home/jenia/projects/django/stm_site/locale',
+    os.path.join(BASE_DIR, 'locale'),
     # '/var/local/translations/locale',
 ]
 

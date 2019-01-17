@@ -1,6 +1,7 @@
 *.pyc
 *__pycache__*
-*back_*
+*.back_*
 *.sublime-*
 migrations/
 node_modules/
+access.py

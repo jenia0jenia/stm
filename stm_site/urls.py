@@ -14,7 +14,7 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import re_path, path, include
 from django.views.generic import TemplateView
 
 from django.conf import settings
@@ -26,9 +26,9 @@ app_name = 'stm_site'
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+
     path('', include('theatre.urls')),
-    
-    path('polls/', include('polls.urls')),
+    # path('polls/', include('polls.urls')),
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('content_gallery/', include('content_gallery.urls')),
