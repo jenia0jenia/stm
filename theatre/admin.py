@@ -18,6 +18,7 @@ class TheatreBaseAdmin(admin.ModelAdmin):
             'fields': ['publication'], 'classes': ['']
         })
     ]
+    empty_value_display = _('-empty-')
 
     class Meta:
         abstract = True
@@ -26,16 +27,20 @@ class TheatreBaseAdmin(admin.ModelAdmin):
 class ArtistAdmin(TheatreBaseAdmin):
     fieldsets = [
         (_('Full name'), {
-            'fields': ['last_name', 'first_name', 'middle_name'],
+            'fields': ['last_name', 'first_name', 'middle_name', 'slug', ],
             'classes': ['collapse']
         }),
         (None, {
             'fields': ['description', 'photo', 'year']
         })
     ] + TheatreBaseAdmin.base_fieldsets
+
+    prepopulated_fields = {'slug': ('last_name', 'first_name', 'middle_name', )}
+
     list_display = ('last_name', 'photo_thumbnail', 'publication')
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('last_name',)
+
     inlines = [
         ImageAdminInline,
     ]
@@ -81,10 +86,11 @@ class RoleAdmin(TheatreBaseAdmin):
         ImageAdminInline,
     ]
 
+
 class PerformanceAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
-            'fields': ['name', 'description', 'genre', 'photo']
+            'fields': ['name', 'slug', 'description', 'genre', 'photo']
         }),
         (_('Opening / Closing performance'), {
             'fields': ['premiere_date', 'close_date'],
@@ -95,9 +101,13 @@ class PerformanceAdmin(TheatreBaseAdmin):
             'classes': ['collapse']
         })
     ] + TheatreBaseAdmin.base_fieldsets
+
     list_display = ('name', 'genre', 'premiere_date', 'close_date', 'publication')
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('name',)
+
+    prepopulated_fields = {'slug': ('name',)}
+
     inlines = [
         ImageAdminInline,
     ]
@@ -106,10 +116,10 @@ class PerformanceAdmin(TheatreBaseAdmin):
 class PosterAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
-            'fields': ['event', 'description', 'event_date', 'photo', 'is_premiere']
+            'fields': ['event', 'description', 'date', 'photo', 'is_premiere']
         })
     ] + TheatreBaseAdmin.base_fieldsets
-    list_display = ('event', 'event_date', 'is_premiere', 'publication')
+    list_display = ('event', 'date', 'is_premiere', 'publication')
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('event',)
     inlines = [

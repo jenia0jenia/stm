@@ -6,14 +6,21 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 const devMode = process.env.NODE_ENV !== 'production';
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const DIST = 'static/dist/';
+const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 module.exports = {
     devtool: false, //devtool: 'eval', // Enable to debug js code
-    entry: { 
+    entry: {
             dist: [
-                './src/css/main.scss',
-                './src/js/index.js'
+                './src/css/style.scss',
+                './src/js/index.js',
             ],
+
+            // 'webgl-worker': './src/earth/worker.js'
+            // 'earth': './static/earth/earth.js'
+
+            // dist: './src/css/main.scss',
+            // main: './src/js/index.js'
         },
     output: {
         path: path.resolve(__dirname, DIST),
@@ -26,7 +33,8 @@ module.exports = {
             // both options are optional
             filename: devMode ? '[name].css' : '[name].[contenthash].css',
             chunkFilename: devMode ? '[id].css' : '[id].[contenthash].css',
-        })
+        }),
+        new LiveReloadPlugin({})
     ],
     module: {
         rules: [

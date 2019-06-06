@@ -1,0 +1,42 @@
+/* style.scss */
+
+@import "normalize.scss";
+@import "vars.scss";
+
+/* modules */
+@import "entry-card.scss";
+@import "font.scss";
+@import "animation.scss";
+@import "header.scss";
+@import "main.scss";
+@import "logo.scss";
+@import "menu.scss";
+@import "container.scss";
+@import "content.scss";
+@import "footer.scss";
+@import "poster.scss";
+@import "performance.scss";
+@import "page.scss";
+@import "tickets.scss";
+@import "sticky.scss";
+@import "y-map.scss";
+@import "social.scss";
+@import "earth.scss";
+@import "cube.scss";
+@import "u.scss";
+
+body {
+    font-family: 'Montserrat', Roboto, Arial;
+}
+
+a {
+}
+
+.h2 {
+	font-weight: bold;
+	font-size: 24px;
+}
+
+.singular-section {
+	padding: 40px 0;
+}

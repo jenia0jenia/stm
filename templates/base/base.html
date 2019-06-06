@@ -1,48 +1,103 @@
 {% load static %}
-{% load cache %}
-{#% load compress %#}
+{# {% load stm %} #}
+{% load sitetree %}
+{% load thumbnail %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ru">
 <head>
-    <meta charset="UTF-8">
-    <title>{% block title %}{{ page.title }}{% endblock %} – Студия-Театр "Манекен" ЮУрГУ Челябинск</title>
-    <script src="https://api-maps.yandex.ru/2.1/?apikey=3af1063e-5af6-4559-a0d3-4faa6beb2277&lang=ru_RU&load=Geolink,Map" type="text/javascript"></script>
-    <script src="{% static 'dist/dist.js' %}" type="text/javascript"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'dist/dist.css' %}">
-</head>
-<body class="body">
-    <main class="main">
-        <div class="container">
-            <header class="header">
-                <div class="header__top">
-                    <div class="social">
-                        <a class="social__link" href="https://vk.com/studiom" target="_blank">Vk</a>
-                        <a class="social__link" href="https://www.instagram.com/studio_maneken/" target="_blank">Inst</a>
-                        <a class="social__link" href="http://www.twitter.com/manekenstudio">Twitter</a>
-                        <a class="social__link" href="http://www.facebook.com/studiomaneken">Facebook</a>
-                    </div>
-                    <a href="/" class="logo"><img src="{% static 'i/logo_bre.jpg' %}" alt="" class="logo__image"></a>
-                    <div class="tickets">
-                        <!-- <button class="tickets__button">Билеты</button> -->
-                        <a class="tickets__link" href="https://docs.google.com/forms/d/e/1FAIpQLSd_w92WXfTcKb6cVAMkFCnHv2qJCUID_pLFdr64sawH-Y53-g/viewform?formkey=dGJJWDlyN0Y4R1Nzcy1iSDhrNkZsZkE6MQ#gid=0">Билеты</a>
-                        <a href="https://vk.com/id81237595">Таня</a> - <a href="tel:+79823141723">+7-982-31-41-723</a><br>
-                        <a href="https://vk.com/id37364296">Мария</a> - <a href="tel:+79080662621">+7-908-06-62-621</a><br><br>
-                        <span class="ymaps-geolink y-map__geolink" data-type="biz" data-description='Студия-Театр "Манекен"' data-bounds="[55.156552, 61.370844]">Челябинск, Сони Кривой 79а</span>
-                    </div>
-                </div>
-                <div class="header__middle">
-                    {% include 'include/main_menu.html' %}
-                </div>
-            </header>
-            {% block content %}{% endblock %}
-        </div>
-    </main>
-    <footer class="footer">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta property="og:title" content="{{ sitename }}">
+  <meta name="twitter:title" content="{{ sitename }}">
 
-        <div id="map" class="y-map">
-            <iframe src="https://yandex.ru/map-widget/v1/-/CBRjRRR11C" width="100%" height="100%" frameborder="0" allowfullscreen="true"></iframe>
+  {% block meta %}
+    <title>{% block title %}{{ page.title }} – {{ sitename }}{% endblock %}</title>
+  {% endblock meta %}
+
+  <script
+    src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
+    integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
+    crossorigin="anonymous"></script>
+
+  <!-- 
+
+  -->
+  <script type="text/javascript" src="{% static 'js/webgl/three.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/webgl/TGALoader.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/webgl/WebGL.js' %}"></script>
+  <script type="text/javascript" src="{% static 'js/webgl/OrbitControls.js' %}"></script>
+  {# preload #}
+  <link type="preload" as="script" href="{% static 'dist/webgl-worker.js' %}">
+  <link type="preload" as="script" href="{% static 'js/webgl/TGALoader.js' %}" id="tga">
+  <link type="preload" as="script" href="{% static 'js/webgl/WebGL.js' %}" id="webgl">
+  <link type="preload" as="script" href="'https://cdnjs.cloudflare.com/ajax/libs/three.js/104/three.js'" id="treejs">
+
+  <link type="preload" as="image" href="{% static 'textures/earth/map.png' %}">
+  <link type="preload" as="image" href="{% static 'textures/earth/here.png' %}">
+  {# preload #}
+
+  <script type="text/javascript" src="{% static 'dist/dist.js' %}"></script>
+  <link rel="stylesheet" href="{% static 'dist/dist.css' %}">
+
+  <script src="http://localhost:35729/livereload.js"></script>
+
+</head>
+
+<body class="body">
+
+  <header class="header header_scroll">
+    {# <div class="container"> #}
+      <div class="header__fixed" id="mainMenu">
+        <div class="header__logo logo">
+          <a href="/" class="logo__link">
+            <img class="logo__image" src="{% static 'i/stm_logo.jpg' %}" alt="">
+          </a>
         </div>
-    </footer>
+
+        {% sitetree_menu from "menu_main" include "trunk,topmenu" %}        
+      </div>
+
+      {% block header %}
+        
+      {% endblock header %}
+    {# </div> #}
+  </header>
+
+  <main class="main">
+    <div class="content">
+      <div class="container">
+        <div class="singular-section">
+        {% block content %}
+        <div class="container">
+        </div>
+        {% endblock content %}
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="footer footer_scroll">
+    {% block footer %}
+      
+    {% endblock footer %}
+    <div class="footer__fixed" id="socialMenu">
+      {% sitetree_menu from "menu_social" include "trunk,topmenu" template "sitetree/menu_social.html" %}
+    </div>
+  </footer>
+
+
+  <div class="canvas cube">
+    <canvas id="canvasCube" width="400" height="400"></canvas>
+  </div>
+
+  {% comment %}
+    <div class="globe">
+      <div class="earth">
+        <div class="earth_loading"></div>
+        <canvas class="earth_canvas" id="canvasEarth" width="345" height="345"></canvas>
+      </div>
+    </div>
+  {% endcomment %}
 </body>
 </html>

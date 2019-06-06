@@ -13,6 +13,7 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+
 from django.contrib import admin
 from django.urls import re_path, path, include
 from django.views.generic import TemplateView
@@ -25,8 +26,8 @@ from filebrowser.sites import site
 app_name = 'stm_site'
 
 urlpatterns = [
+    re_path(r'^robots.txt$', TemplateView.as_view(template_name="base/robots.txt", content_type='text/plain')),
     path('admin/', admin.site.urls),
-
     path('', include('theatre.urls')),
     # path('polls/', include('polls.urls')),
     path('admin/filebrowser/', site.urls),
@@ -35,5 +36,5 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL , document_root = settings.STATIC_ROOT )
-    urlpatterns += static(settings.MEDIA_URL , document_root = settings.MEDIA_ROOT )
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

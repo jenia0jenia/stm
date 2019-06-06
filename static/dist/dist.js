@@ -86,10 +86,10 @@
 /************************************************************************/
 /******/ ({
 
-/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/css/main.scss":
-/*!**************************************************************************************************************************************************************************!*\
-  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--6-3!./src/css/main.scss ***!
-  \**************************************************************************************************************************************************************************/
+/***/ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/css/style.scss":
+/*!***************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js??ref--6-3!./src/css/style.scss ***!
+  \***************************************************************************************************************************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -606,15 +606,15 @@ module.exports = function (css) {
 
 /***/ }),
 
-/***/ "./src/css/main.scss":
-/*!***************************!*\
-  !*** ./src/css/main.scss ***!
-  \***************************/
+/***/ "./src/css/style.scss":
+/*!****************************!*\
+  !*** ./src/css/style.scss ***!
+  \****************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
 
-var content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/lib/loader.js??ref--6-3!./main.scss */ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/css/main.scss");
+var content = __webpack_require__(/*! !../../node_modules/mini-css-extract-plugin/dist/loader.js!../../node_modules/css-loader/dist/cjs.js!../../node_modules/sass-loader/lib/loader.js??ref--6-3!./style.scss */ "./node_modules/mini-css-extract-plugin/dist/loader.js!./node_modules/css-loader/dist/cjs.js!./node_modules/sass-loader/lib/loader.js?!./src/css/style.scss");
 
 if(typeof content === 'string') content = [[module.i, content, '']];
 
@@ -636,6 +636,177 @@ if(false) {}
 
 /***/ }),
 
+/***/ "./src/earth/earth.js":
+/*!****************************!*\
+  !*** ./src/earth/earth.js ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+function query(selector) {
+  return document.querySelector(selector);
+} // let initializing, location, earthLoaded, postMessage, rotateStart
+
+
+var initializing, earthLoaded, postMessage, rotateStart;
+var earth, canvas, workerUrl;
+
+function move(x, y) {
+  console.log('move');
+  console.log(x);
+  console.log(y);
+  postMessage(['move', rotateStart, [x, y]]);
+  rotateStart = [x, y];
+}
+
+function mouseMove(e) {
+  console.log('mouseMove');
+  console.log(e.clientX);
+  console.log(e.clientY);
+  move(e.clientX, e.clientY);
+  move(e.clientX, e.clientY);
+}
+
+function mouseUp() {
+  document.body.classList.remove('is-grabbing');
+  document.removeEventListener('mousemove', mouseMove, false);
+  document.removeEventListener('mouseup', mouseUp, false);
+}
+
+function detectAndStartEarth(offscreen) {
+  var webP = new Image();
+  webP.src = 'data:image/webp;base64,' + 'UklGRhoAAABXRUJQVlA4TA0AAAAvAAAAEAcQERGIiP4HAA==';
+
+  webP.onload = webP.onerror = function () {
+    startEarth(offscreen, !!webP.height);
+  };
+}
+
+function startEarth(offscreen, isWebP) {
+  earthLoaded = true;
+  postMessage(['init', offscreen, earth.clientWidth, earth.clientHeight, window.devicePixelRatio, query('[as=image][href*=map]').href, query('[as=image][href*=here]').href, isWebP], [offscreen]);
+  window.addEventListener('resize', function () {
+    postMessage(['resize', earth.clientWidth, earth.clientHeight]);
+  });
+  if (location) setLocation(location);
+  canvas.addEventListener('mousedown', function (e) {
+    if (e.button === 0) {
+      // left
+      rotateStart = [e.clientX, e.clientY];
+      e.preventDefault();
+      document.addEventListener('mousemove', mouseMove, false);
+      document.addEventListener('mouseup', mouseUp, false);
+      document.body.classList.add('is-grabbing');
+    }
+  });
+
+  if (window.innerWidth > 980) {
+    canvas.addEventListener('touchstart', function (e) {
+      if (e.touches.length === 1) {
+        rotateStart = [e.touches[0].pageX, e.touches[0].pageY];
+      }
+    }, {
+      passive: true
+    });
+    canvas.addEventListener('touchmove', function (e) {
+      if (e.touches.length === 1) {
+        move(e.touches[0].pageX, e.touches[0].pageY);
+      }
+    }, {
+      passive: true
+    });
+  } else {
+    canvas.addEventListener('touchstart', function (e) {
+      if (e.touches.length === 1) {
+        e.preventDefault();
+        rotateStart = [e.touches[0].pageX, e.touches[0].pageY];
+      }
+    });
+    canvas.addEventListener('touchmove', function (e) {
+      if (e.touches.length === 1) {
+        e.preventDefault();
+        move(e.touches[0].pageX, e.touches[0].pageY);
+      }
+    });
+  }
+}
+
+function stopLoading() {
+  canvas.style.opacity = 1;
+  query('.earth_loading').remove();
+}
+
+function setLocation(l) {
+  if (earthLoaded) {
+    postMessage(['here', l.latitude, l.longitude]);
+  } else {
+    location = l;
+  }
+}
+
+var Earth =
+/*#__PURE__*/
+function () {
+  function Earth() {
+    _classCallCheck(this, Earth);
+  }
+
+  _createClass(Earth, [{
+    key: "init",
+    value: function init() {
+      earth = query('.earth');
+      canvas = query('.earth_canvas');
+      workerUrl = query('[as=script]').href;
+      if (initializing) return;
+      initializing = true;
+      var test = document.createElement('canvas');
+
+      if (!test.getContext('webgl')) {
+        earth.classList.add('is-disabled');
+        return;
+      }
+
+      if (canvas.transferControlToOffscreen) {
+        var worker = new Worker(workerUrl);
+        console.log(worker);
+
+        postMessage = function postMessage(data, transfer) {
+          return worker.postMessage(data, transfer);
+        };
+
+        worker.onmessage = stopLoading;
+        detectAndStartEarth(canvas.transferControlToOffscreen());
+      } else {
+        var script = document.createElement('script');
+        script.src = workerUrl;
+        script.async = true;
+
+        script.onload = function () {
+          postMessage = window.wS;
+          detectAndStartEarth(canvas);
+        };
+
+        window.wM = stopLoading;
+        document.head.appendChild(script);
+      }
+    }
+  }]);
+
+  return Earth;
+}();
+
+module.exports = {
+  Earth: Earth
+};
+
+/***/ }),
+
 /***/ "./src/js/index.js":
 /*!*************************!*\
   !*** ./src/js/index.js ***!
@@ -647,19 +818,84 @@ if(false) {}
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./map.js */ "./src/js/map.js");
 /* harmony import */ var _map_js__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_map_js__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _webgl_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./webgl.js */ "./src/js/webgl.js");
+/* harmony import */ var _webgl_js__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(_webgl_js__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _src_earth_earth_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../src/earth/earth.js */ "./src/earth/earth.js");
+/* harmony import */ var _src_earth_earth_js__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_src_earth_earth_js__WEBPACK_IMPORTED_MODULE_2__);
 
 /* index.js */
 
 
 
+ // console.log(utils)
+
 (function Main() {
   var indexjs = function indexjs() {
-    console.log('index.js working...');
+    console.log('index.js working...'); // console.log(Earth);
+    // if( window.innerWidth > 600 ) {
+
+    var webgl = new _webgl_js__WEBPACK_IMPORTED_MODULE_1__["WebGL"]();
+    webgl.init();
+    webgl.startCube(); // let earth = new Earth;
+    // earth.init();
+    // }
+
+    site();
   };
 
-  indexjs();
-  var map = new _map_js__WEBPACK_IMPORTED_MODULE_0__["YMap"](); // map.init([55.156552, 61.370844]);
+  document.addEventListener("DOMContentLoaded", indexjs);
+  var map = new _map_js__WEBPACK_IMPORTED_MODULE_0__["YMap"](); // map.init([55.156552, 61.370844])
 })();
+
+function site() {
+  if (window) {
+    var hideOnScrollDown = function hideOnScrollDown(target, hideClass) {
+      // Hide Header on on scroll down
+      var didScroll;
+      var lastScrollTop = 0;
+      var delta = 5;
+      var targetHeight = target.clientHeight;
+      $(window).scroll(function (event) {
+        hasScrolled();
+      });
+
+      function hasScrolled() {
+        var st = $(window).scrollTop();
+        if (Math.abs(lastScrollTop - st) <= delta) return;
+
+        if (st > lastScrollTop && st > targetHeight) {
+          // Scroll Down
+          // $('header').removeClass(hideClass).addClass('nav-up');
+          target.classList.add(hideClass);
+        } else {
+          // Scroll Up
+          if (st + $(window).height() < $(document).height()) {
+            // $('header').removeClass('nav-up').addClass(hideClass);
+            target.classList.remove(hideClass);
+          }
+        }
+
+        lastScrollTop = st;
+      }
+
+      target.onmouseover = mainMenuOver; // target.onmouseout = mainMenuOut;
+
+      function mainMenuOver(e) {
+        target.classList.remove(hideClass);
+      } // function mainMenuOut(e) {
+      //   e.target.classList.add(hideClass);
+      // }
+
+    };
+
+    var mainMenu = document.getElementById('mainMenu');
+    var socialMenu = document.getElementById('socialMenu');
+    hideOnScrollDown(mainMenu, 'header_hide');
+    hideOnScrollDown(socialMenu, 'footer_hide');
+  } else {
+    throw Error('\'window\' not found');
+  }
+}
 
 /***/ }),
 
@@ -717,14 +953,270 @@ module.exports = {
 
 /***/ }),
 
-/***/ 0:
-/*!***************************************************!*\
-  !*** multi ./src/css/main.scss ./src/js/index.js ***!
-  \***************************************************/
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! exports provided: addScript */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "addScript", function() { return addScript; });
+function addScript(src) {
+  var s = document.createElement('script');
+  s.type = 'text/javascript';
+  s.src = src;
+  document.getElementsByTagName('head')[0].appendChild(s);
+} // module.export = { addScript };
+
+/***/ }),
+
+/***/ "./src/js/webgl.js":
+/*!*************************!*\
+  !*** ./src/js/webgl.js ***!
+  \*************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! ./src/css/main.scss */"./src/css/main.scss");
+"use strict";
+
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } }
+
+function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
+
+var utils = __webpack_require__(/*! ./utils.js */ "./src/js/utils.js"); // import createWorker from '';
+// let createWorker = require('offscreen-canvas/create-worker');
+
+
+var WebGL =
+/*#__PURE__*/
+function () {
+  function WebGL() {
+    _classCallCheck(this, WebGL);
+  }
+
+  _createClass(WebGL, [{
+    key: "init",
+    value: function init() {
+      var threejsUrl = document.querySelector('[type=preload][as=script]#treejs').href;
+      var tgaUrl = document.querySelector('[type=preload][as=script]#tga').href;
+      var webglUrl = document.querySelector('[type=preload][as=script]#webgl').href;
+      utils.addScript(threejsUrl);
+      utils.addScript(tgaUrl);
+      utils.addScript(webglUrl); // console.log('webgl init');
+    }
+  }, {
+    key: "startCube",
+    value: function startCube() {
+      /*
+      This is how compressed textures are supposed to be used:
+      best for desktop:
+      BC1(DXT1) - opaque textures
+      BC3(DXT5) - transparent textures with full alpha range
+      best for iOS:
+      PVR2, PVR4 - opaque textures or alpha
+      best for Android:
+      ETC1 - opaque textures
+      ASTC_4x4, ASTC8x8 - transparent textures with full alpha range
+      */
+      var canvasElement = document.getElementById('canvasCube');
+      var canvasParent = canvasElement.parentElement; // console.log(canvasElement.clientWidth);
+
+      if (WEBGL.isWebGLAvailable() === false) {
+        document.body.appendChild(WEBGL.getWebGLErrorMessage());
+      }
+
+      var camera, scene, renderer;
+      var meshes = [];
+      init();
+      animate();
+
+      function init() {
+        camera = new THREE.PerspectiveCamera(10, window.innerWidth / window.innerHeight, 1, 2000);
+        camera.position.z = 800; // var controls = new THREE.OrbitControls( camera );
+        // renderer = new THREE.WebGLRenderer( { antialias: true } );
+
+        renderer = new THREE.WebGLRenderer({
+          canvas: canvasElement // alpha: true
+
+        });
+        renderer.setPixelRatio(window.devicePixelRatio);
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        canvasParent.appendChild(renderer.domElement);
+        var formats = {
+          s3tc: renderer.extensions.get('WEBGL_compressed_texture_s3tc'),
+          astc: renderer.extensions.get('WEBGL_compressed_texture_astc'),
+          etc1: renderer.extensions.get('WEBGL_compressed_texture_etc1'),
+          pvrtc: renderer.extensions.get('WEBGL_compressed_texture_pvrtc')
+        };
+        scene = new THREE.Scene();
+        var geometry = new THREE.BoxBufferGeometry(100, 100, 100);
+        var material1; // TODO: add cubemap support
+        // var loader = new THREE.KTXLoader();
+
+        var loader = new THREE.TGALoader();
+
+        if (formats.pvrtc) {
+          material1 = new THREE.MeshBasicMaterial({
+            map: loader.load("/static/textures/stm_logo.tga")
+          });
+          meshes.push(new THREE.Mesh(geometry, material1));
+        }
+
+        if (formats.s3tc) {
+          material1 = new THREE.MeshBasicMaterial({
+            map: loader.load("/static/textures/stm_logo.tga")
+          });
+          meshes.push(new THREE.Mesh(geometry, material1));
+        }
+
+        if (formats.etc1) {
+          material1 = new THREE.MeshBasicMaterial({
+            map: loader.load("/static/textures/stm_logo.tga")
+          });
+          meshes.push(new THREE.Mesh(geometry, material1));
+        }
+
+        if (formats.astc) {
+          material1 = new THREE.MeshBasicMaterial({
+            map: loader.load("/static/textures/stm_logo.tga")
+          });
+          meshes.push(new THREE.Mesh(geometry, material1));
+        }
+
+        var x = -meshes.length / 2;
+
+        for (var i = 0; i < meshes.length; ++i, x += 300) {
+          var mesh = meshes[i];
+          mesh.position.x = x;
+          mesh.position.y = 0;
+          scene.add(mesh);
+        }
+
+        window.addEventListener('resize', onWindowResize, false);
+      }
+
+      function onWindowResize() {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+      }
+
+      function animate() {
+        requestAnimationFrame(animate);
+        var time = Date.now() * 0.0003;
+
+        for (var i = 0; i < meshes.length; i++) {
+          var mesh = meshes[i];
+          mesh.rotation.x = time;
+          mesh.rotation.y = time;
+        }
+
+        renderer.render(scene, camera);
+      } // if ( WEBGL.isWebGLAvailable() === false ) {
+      //   document.body.appendChild( WEBGL.getWebGLErrorMessage() );
+      // }
+      // var camera, scene, renderer;
+      // var mesh1;
+      // // var camera, scene, renderer, stats;
+      // init();
+      // animate();
+      // function init() {
+      //   var container = document.createElement( 'div' );
+      //   document.body.appendChild( container );
+      //   camera = new THREE.PerspectiveCamera( 45, window.innerWidth / window.innerHeight, 0.1, 2000 );
+      //   camera.position.set( 0, 50, 250 );
+      //   scene = new THREE.Scene();
+      //   //
+      //   var loader = new THREE.TGALoader();
+      //   var geometry = new THREE.BoxBufferGeometry( 50, 50, 50 );
+      //   // add box 1 - grey8 texture
+      //   var texture1 = loader.load("{% static 'textures/stm_logo.tga' %}");
+      //   var material1 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture1 } );
+      //   mesh1 = new THREE.Mesh( geometry, material1 );
+      //   mesh1.position.x = - 50;
+      //   scene.add( mesh1 );
+      //   // // add box 2 - tga texture
+      //   // var texture2 = loader.load("{% static 'textures/stm_logo.tga' %}");
+      //   // var material2 = new THREE.MeshPhongMaterial( { color: 0xffffff, map: texture2 } );
+      //   // var mesh2 = new THREE.Mesh( geometry, material2 );
+      //   // mesh2.position.x = 50;
+      //   // scene.add( mesh2 );
+      //   //
+      //   var ambientLight = new THREE.AmbientLight( 0xffffff, 0.4 );
+      //   scene.add( ambientLight );
+      //   var light = new THREE.DirectionalLight( 0xffffff, 1 );
+      //   light.position.set( 1, 1, 1 );
+      //   scene.add( light );
+      //   //
+      //   // var controls = new THREE.OrbitControls( camera );
+      //   //
+      //   renderer = new THREE.WebGLRenderer( { antialias: true } );
+      //   renderer.setPixelRatio( window.devicePixelRatio );
+      //   renderer.setSize( window.innerWidth, window.innerHeight );
+      //   container.appendChild( renderer.domElement );
+      //   //
+      //   // stats = new Stats();
+      //   // container.appendChild( stats.dom );
+      //   //
+      //   window.addEventListener( 'resize', onWindowResize, false );
+      // }
+      // function onWindowResize() {
+      //   camera.aspect = window.innerWidth / window.innerHeight;
+      //   camera.updateProjectionMatrix();
+      //   renderer.setSize( window.innerWidth, window.innerHeight );
+      // }
+      // function animate() {
+      //   requestAnimationFrame( animate );
+      //   var time = Date.now() * 0.0005;
+      //   // for ( var i = 0; i < meshes.length; i ++ ) {
+      //     // var mesh = meshes[ i ];
+      //     mesh1.rotation.x = time;
+      //     mesh1.rotation.y = time;
+      //   // }
+      //   render();
+      //   // stats.update();
+      // }
+      // function render() {
+      //   renderer.render( scene, camera );
+      // }
+
+    } // startEarth() {
+    //   const workerUrl = document.querySelector('[type=preload][as=script]').href;
+    //   const canvas = document.querySelector('#canvasEarth');
+    //   const worker = createWorker(canvas, workerUrl);
+    //   window.addEventListener('resize', () => {
+    //     worker.post({
+    //       type: 'resize',
+    //       width: canvas.clientWidth,
+    //       height: canvas.clientHeight
+    //     });
+    //   });
+    // }
+
+  }]);
+
+  return WebGL;
+}();
+
+module.exports = {
+  WebGL: WebGL
+};
+
+/***/ }),
+
+/***/ 0:
+/*!****************************************************!*\
+  !*** multi ./src/css/style.scss ./src/js/index.js ***!
+  \****************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+__webpack_require__(/*! ./src/css/style.scss */"./src/css/style.scss");
 module.exports = __webpack_require__(/*! ./src/js/index.js */"./src/js/index.js");
 
 

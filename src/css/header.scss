@@ -1,9 +1,30 @@
 .header {
-    background-color: #000;
 
-    &__top {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
+    &_scroll {
+    	padding-top: 50px;
+    }
+
+    &__fixed {
+		display: flex;
+		justify-content: center;
+    	align-items: center;
+
+	    position: fixed;
+	    height: 50px;
+	    top: 0;
+	    width: 100%;
+	    background-color: black;
+        border-bottom: 1px solid white;
+
+	    transition: all 0.2s ease-in-out;
+    }
+
+    &_hide {
+        background-color: $color-black;
+        top: -45px;
+    }
+
+    &__logo {
+		margin-right: 20px;
     }
 }

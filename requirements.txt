@@ -1,12 +1,17 @@
-awesome-slugify 
-
-django-content-gallery (ошибки в utils)
-
-django-filebrowser-no-grappelli
-django-admin-jqueryui112
-django-js-asset
-django-mptt
-
-django-mptt-menu (pip install git+git://github.com/lauxley/django_mptt_menu.git)
-
-django-tinymce4-lite
+autopep8==1.4.4
+awesome-slugify==1.6.5
+Django==2.2
+django-admin==1.3.2
+django-content-gallery==1.0.0b1
+django-filebrowser-no-grappelli==3.7.8
+django-js-asset==1.2.2
+django-sitetree==1.12.0
+django-tinymce4-lite==1.7.4
+jsmin==2.2.2
+Pillow==6.0.0
+pycodestyle==2.5.0
+python-magic==0.4.15
+pytz==2019.1
+regex==2019.4.14
+sqlparse==0.3.0
+Unidecode==0.4.21

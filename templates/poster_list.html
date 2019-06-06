@@ -1,0 +1,25 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% load cache %}
+{% load thumbnail %}
+{% block title %}Афиша{% endblock %}
+
+{% block content %}
+<h1 class="h1">Афиша</h1>
+{% for poster in poster_list %}
+	<h2 class="h2">{{ poster.name }}</h2>
+	<div>{{ poster.description }}</div>
+	<div>{{ poster.event }}</div>
+	<div>{{ poster.event_date }}</div>
+	<div class="poster__image">
+		{% thumbnail poster.photo "100x100" crop="center" as im %}
+			<img class="poster__image-img" src="{{ im.url }}" alt="{{ poster }}" width="{{ im.width }}" height="{{ im.height }}">
+		{% empty %}
+			<p>No image</p>
+		{% endthumbnail %}
+	</div>
+{% empty %}
+	<p>Сезон закрыт, товарищи!</p>
+{% endfor %}
+{% endblock %}

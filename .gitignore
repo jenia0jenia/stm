@@ -1,7 +1,13 @@
 *.pyc
+*.log
 *__pycache__*
 *.back_*
 *.sublime-*
+*.sqlite3
 migrations/
+media_cdn/
+static_cdn/
+static/dist
 node_modules/
 access.py
+tmp/

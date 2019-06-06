@@ -3,7 +3,7 @@
 class YMap {
     constructor() {}
 
-    init(center = [55.76, 37.64]) {
+    init(center=[55.76, 37.64]) {
         this.center = center;
         if (ymaps) {
             ymaps.ready(() => {

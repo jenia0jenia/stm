@@ -1,0 +1,15 @@
+{% load thumbnail %}
+
+<div class="entry-card__container performance__container">
+	<div class="h2 entry-card__title performance__title">{{ performance.name }}</div>
+	<a class="entry-card performance" href="{% url 'theatre:performance_detail' performance.slug %}">
+		<div class="entry-card__image performance__image">
+			{% thumbnail performance.photo "100x100" crop="center" as im %}
+      	<img class="entry-card__image-img performance__image-img" src="{{ im.url }}" alt="{{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
+      {% empty %}
+  			<p>No image</p>
+      {% endthumbnail %}
+		</div>
+	</a>
+	<div class="entry-card__desc performance__desc">{{ performance.description|safe }}</div>
+</div>

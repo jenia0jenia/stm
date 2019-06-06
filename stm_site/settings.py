@@ -11,6 +11,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 """
 
 import os
+import access
+
 from django.utils.translation import gettext_lazy as _
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
@@ -22,13 +24,13 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'u&pm*-lku%qs#pdq!!#)*#u0(io$-th_bj!=4$43459-t5ltt3'
+SECRET_KEY = access.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '31.31.196.247', 'studiomaneken.com']
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1', '192.168.43.38', 'studiomaneken.com']
 
 
 # Application definition
@@ -40,16 +42,19 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mptt',
+    'django.contrib.sites',
+    'django.contrib.flatpages',
+
+    'sorl.thumbnail',
+    'sitetree',
     'tinymce',
     'filebrowser',
     'content_gallery',
-    'admin_jqueryui',
 
     # apps
-    'menu.apps.MenuConfig',
-    'polls.apps.PollsConfig',
-    'theatre.apps.TheatreConfig',
+    'stm_site',
+    'polls',
+    'theatre',
 ]
 
 MIDDLEWARE = [
@@ -60,7 +65,6 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
     'django.middleware.locale.LocaleMiddleware',
 ]
 
@@ -79,12 +83,37 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
+            # 'loaders': [
+            #     ('django.template.loaders.cached.Loader', [
+            #         'django.template.loaders.filesystem.Loader',
+            #         'django.template.loaders.theatre.Loader',
+            #     ]),
+            # ],
         },
     },
 ]
 
 WSGI_APPLICATION = 'stm_site.wsgi.application'
 
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(BASE_DIR, 'tmp') +  '/debug.log',
+        },
+    },
+    'loggers': {
+        'logfile': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -95,6 +124,7 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.mysql',
@@ -130,7 +160,6 @@ AUTH_PASSWORD_VALIDATORS = [
 # A list of directories where Django looks for translation files
 LOCALE_PATHS = [
     os.path.join(BASE_DIR, 'locale'),
-    # '/var/local/translations/locale',
 ]
 
 # LANGUAGE_CODE = 'en-us'
@@ -152,7 +181,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
@@ -169,14 +197,25 @@ STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
 ]
 
-STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn")
-MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "media_cdn")
+SITE_ID = 2
 
-# FILEBROWSER_DIRECTORY = ''
+# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+# MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
+
+# FILEBROWSER_DIRECTORY = 'uploads/'
+# FILEBROWSER_EXTENSIONS = {
+#     'Image': ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff'],
+#     'Document': ['.pdf', '.doc', '.rtf', '.txt', '.xls', '.csv'],
+#     'Video': ['.mov', '.wmv', '.mpeg', '.mpg', '.avi', '.rm'],
+#     'Audio': ['.mp3', '.mp4', '.wav', '.aiff', '.midi', '.m4p']
+# }
+
 # DIRECTORY = ''
 
 # TINYMCE DEFAULT CONFIG
-
 TINYMCE_DEFAULT_CONFIG = {
     'height': 360,
     'width': 960,
@@ -208,3 +247,16 @@ TINYMCE_DEFAULT_CONFIG = {
 
 CONTENT_GALLERY = {
 }
+
+
+# Deploy 
+
+# SECURE_CONTENT_TYPE_NOSNIFF = True
+# SECURE_HSTS_PRELOAD = True
+# SECURE_HSTS_SECONDS = 1
+# SECURE_BROWSER_XSS_FILTER = True
+# SECURE_SSL_REDIRECT = True
+# SESSION_COOKIE_SECURE = True
+# X_FRAME_OPTIONS = 'DENY'
+# SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+# CSRF_COOKIE_SECURE = True

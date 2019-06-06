@@ -1,0 +1,26 @@
+.footer {
+
+	&_scroll {
+    	padding-bottom: 50px;
+	}
+
+	&__fixed {
+		display: flex;
+		justify-content: center;
+    	align-items: center;
+	    
+	    position: fixed;
+	    height: 50px;
+	    bottom: 0;
+	    width: 100%;
+	    background-color: black;
+	    border-top: 1px solid white;
+
+	    transition: all 0.2s ease-in-out;
+    }
+
+    &_hide {
+        background-color: $color-black;
+        bottom: -45px;
+    }
+}
