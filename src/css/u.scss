@@ -1,5 +1,22 @@
 .u {
 	&__title {
+	    text-align: center;
+	    font-size: 49px;
+	    color: #ff7600;
+	}
+
+	&__date {
+	    text-align: center;
+	    font-size: 49px;
+	}
+
+	&__request {
+		margin: 0 auto;
 		text-align: center;
+		margin: 20px 0 40px;
+
+		&-link {
+			display: inline-block;
+		}
 	}
 }

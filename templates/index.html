@@ -2,17 +2,44 @@
 
 {% load static %}
 {% load cache %}
+{% load thumbnail %}
+
 {% block title %}Официальный сайт{% endblock %}
+
 {#% load compress %#}
 
 {% block content %}
-    {% if artist_list %}
-        <ul>
-        {% for artist in artist_list %}
-            <li><a href="{% url 'theatre:artist_detail' artist.id %}">{{ artist.last_name }}</a></li>
-        {% endfor %}
-        </ul>
-    {% else %}
-        <p>No artists are available.</p>
-    {% endif %}
+
+  <h1 class="h1">Спектакли</h1>
+  {% for performance in performance_list %}
+    {% include "include/performance_card.html" with preformance=preformance %}
+  {% empty%}
+    <p>No performances are available.</p>
+  {% endfor %}
+
+
+  <h1 class="h1">Люди театра</h1>
+  {% for artist in artist_list %}
+  	{% include "include/artist_card.html" with artist=artist %}
+  {% empty %}
+    <p>No artists are available.</p>
+  {% endfor %}
+
+	<h1 class="h1">Афиша</h1>
+	{% for poster in poster_list %}
+		<h2 class="h2">{{ poster.name }}</h2>
+		<div>{{ poster.description }}</div>
+		<div>{{ poster.event }}</div>
+		<div>{{ poster.event_date }}</div>
+		<div class="poster__image">
+			{% thumbnail poster.photo "100x100" crop="center" as im %}
+				<img class="poster__image-img" src="{{ im.url }}" alt="{{ poster }}" width="{{ im.width }}" height="{{ im.height }}">
+			{% empty %}
+				<p>No image</p>
+			{% endthumbnail %}
+		</div>
+	{% empty %}
+		<p>Сезон закрыт, товарищи!</p>
+	{% endfor %}
+
 {% endblock %}

@@ -10,6 +10,7 @@
 @import "header.scss";
 @import "main.scss";
 @import "logo.scss";
+@import "button.scss";
 @import "menu.scss";
 @import "container.scss";
 @import "content.scss";
@@ -32,8 +33,12 @@ body {
 a {
 }
 
+.h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
 .h2 {
-	font-weight: bold;
 	font-size: 24px;
 }
 

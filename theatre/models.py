@@ -197,3 +197,9 @@ class Unifest(TheatreBase):
     date_begin = models.DateTimeField(_('Event begin'), blank=True, null=True, default=timezone.now)
     date_end = models.DateTimeField(_('Event end'), blank=True, null=True, default=timezone.now)
     description = HTMLField(_('Description'), blank=True)
+
+class URequest(models.Model):
+    name = models.CharField(_('Name'), max_length=100)
+    phone = models.CharField(_('Phone'), max_length=20)
+    email = models.EmailField(_('E-mail'), max_length=50)
+    message = models.TextField(_('Message'), max_length=1000)

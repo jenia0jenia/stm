@@ -30,7 +30,7 @@ SECRET_KEY = access.SECRET_KEY
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1', '192.168.43.38', 'studiomaneken.com']
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1', '192.168.43.38', 'studiomaneken.com', '92.53.97.160', 'maneken.studio']
 
 
 # Application definition
@@ -96,24 +96,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'stm_site.wsgi.application'
 
 
-LOGGING = {
-    'version': 1,
-    'disable_existing_loggers': False,
-    'handlers': {
-        'file': {
-            'level': 'DEBUG',
-            'class': 'logging.FileHandler',
-            'filename': os.path.join(BASE_DIR, 'tmp') +  '/debug.log',
-        },
-    },
-    'loggers': {
-        'logfile': {
-            'handlers': ['file'],
-            'level': 'DEBUG',
-            'propagate': True,
-        },
-    },
-}
+# LOGGING = {
+#     'version': 1,
+#     'disable_existing_loggers': False,
+#     'handlers': {
+#         'file': {
+#             'level': 'DEBUG',
+#             'class': 'logging.FileHandler',
+#             'filename': os.path.join(BASE_DIR, 'tmp') +  '/debug.log',
+#         },
+#     },
+#     'loggers': {
+#         'logfile': {
+#             'handlers': ['file'],
+#             'level': 'DEBUG',
+#             'propagate': True,
+#         },
+#     },
+# }
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -202,7 +202,7 @@ SITE_ID = 2
 # STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
 # MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 
-STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
+STATIC_ROOT = os.path.join(BASE_DIR, "media")
 MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 
 # FILEBROWSER_DIRECTORY = 'uploads/'
