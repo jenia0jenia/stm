@@ -1,13 +1,26 @@
+
+import os
+
 import logging
 # import sys
 # import traceback
 
 # from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
-from django.views.generic import TemplateView, DetailView, ListView
 
+from django.views.generic import TemplateView, DetailView, ListView
+from django.views.generic.edit import FormView
+from django.conf import settings
+from collections.abc import Iterable
+
+# from django.core.files import File
+from django.core.files.storage import FileSystemStorage
 
 from .models import Artist, Performance, Poster
+from .forms import URequestForm
+from .utils import send_email, get_request_param
+
+from django.utils.translation import gettext as _
 
 # logger = logging.getLogger('logfile')
 
@@ -134,5 +147,27 @@ class PerformanceList(ListView):
         return performance_list
 
 
-class Unifest(TemplateView):
+class Unifest(FormView):
     template_name = 'unifest.html'
+    form_class = URequestForm
+    success_url = '#'
+
+    def post(self, request, *args, **kwargs):
+        form_class = self.get_form_class()
+        form = self.get_form(form_class)
+        file = request.FILES['file']
+        if form.is_valid():
+            fs = FileSystemStorage()
+            out_dir = os.path.join(settings.MEDIA_ROOT, 'u/request/')
+            filename = fs.save(out_dir + file.name, file)
+            message = get_request_param(request, 'message')
+
+            send_email(settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER], message, filename, _('New request'))
+            return self.form_valid(form)
+        else:
+            return self.form_invalid(form)
+
+    def form_valid(self, form):
+        # This method is called when valid form data has been POSTed.
+        # It should return an HttpResponse.
+        return super().form_valid(form)

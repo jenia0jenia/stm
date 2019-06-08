@@ -11,5 +11,5 @@
       {% endthumbnail %}
 		</div>
 	</a>
-	<div class="entry-card__desc performance__desc">{{ performance.description|safe }}</div>
+	<div class="entry-card__desc performance__desc">{{ performance.description|safe|truncatewords:50 }}</div>
 </div>

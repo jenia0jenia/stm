@@ -1,6 +1,7 @@
 .entry-card {
 	&__container {
-		font-family: Roboto;
+		font-size: 16px !important;
+		font-family: inherit !important;
 	}
 
 	&__title {

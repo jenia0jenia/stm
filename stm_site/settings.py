@@ -15,9 +15,9 @@ import access
 
 from django.utils.translation import gettext_lazy as _
 
-# Build paths inside the project like this: os.path.join(BASE_DIR, ...)
-BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-# BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+# Build paths inside the project like this: os.path.join(SITE_ROOT, ...)
+SITE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+# SITE_ROOT = os.path.dirname(os.path.abspath(__file__))
 
 
 # Quick-start development settings - unsuitable for production
@@ -53,7 +53,7 @@ INSTALLED_APPS = [
 
     # apps
     'stm_site',
-    'polls',
+    # 'polls',
     'theatre',
 ]
 
@@ -73,7 +73,7 @@ ROOT_URLCONF = 'stm_site.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [os.path.join(BASE_DIR, 'templates')],
+        'DIRS': [os.path.join(SITE_ROOT, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -103,7 +103,7 @@ WSGI_APPLICATION = 'stm_site.wsgi.application'
 #         'file': {
 #             'level': 'DEBUG',
 #             'class': 'logging.FileHandler',
-#             'filename': os.path.join(BASE_DIR, 'tmp') +  '/debug.log',
+#             'filename': os.path.join(SITE_ROOT, 'tmp') +  '/debug.log',
 #         },
 #     },
 #     'loggers': {
@@ -121,7 +121,7 @@ WSGI_APPLICATION = 'stm_site.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+        'NAME': os.path.join(SITE_ROOT, 'db.sqlite3'),
     }
 }
 
@@ -159,7 +159,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 # A list of directories where Django looks for translation files
 LOCALE_PATHS = [
-    os.path.join(BASE_DIR, 'locale'),
+    os.path.join(SITE_ROOT, 'locale'),
 ]
 
 # LANGUAGE_CODE = 'en-us'
@@ -184,26 +184,24 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.1/howto/static-files/
 
-STATIC_URL = '/static/'
-
-MEDIA_URL = '/media/'
+SITE_ID = 2
 
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR , "static")
+    os.path.join(SITE_ROOT, "static"),
+    os.path.join(SITE_ROOT, "media")
 ]
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(SITE_ROOT, "media")
 
 STATICFILES_FINDERS = [
     'django.contrib.staticfiles.finders.FileSystemFinder',
     'django.contrib.staticfiles.finders.AppDirectoriesFinder',
+    # other
+    # 'compressor.finders.CompressorFinder',
 ]
-
-SITE_ID = 2
-
-# STATIC_ROOT = os.path.join(BASE_DIR, "static_cdn")
-# MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
-
-STATIC_ROOT = os.path.join(BASE_DIR, "media")
-MEDIA_ROOT = os.path.join(BASE_DIR, "media_cdn")
 
 # FILEBROWSER_DIRECTORY = 'uploads/'
 # FILEBROWSER_EXTENSIONS = {
@@ -231,8 +229,7 @@ TINYMCE_DEFAULT_CONFIG = {
             anchor pagebreak
             ''',
     'toolbar1': '''
-            fullscreen preview bold italic underline | fontselect,
-            fontsizeselect  | forecolor backcolor | alignleft alignright |
+            fullscreen preview bold italic underline | forecolor backcolor | alignleft alignright |
             aligncenter alignjustify | indent outdent | bullist numlist table |
             | link image media | codesample |
             ''',
@@ -248,6 +245,12 @@ TINYMCE_DEFAULT_CONFIG = {
 CONTENT_GALLERY = {
 }
 
+# EMAIL
+EMAIL_HOST = 'smtp.yandex.ru'
+EMAIL_HOST_USER = 'unifest@maneken.studio'
+EMAIL_HOST_PASSWORD = access.EMAIL_HOST_PASSWORD
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
 
 # Deploy 
 

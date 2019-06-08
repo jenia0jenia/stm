@@ -7,22 +7,50 @@
 
 {% block content %}
     <h1 class="h1 u__title">Unifest</h1>
+
     <div class="u__date">
     	<div class="u__day">13 - 17 сентября</div>
     	<div class="u__month"></div>
     	<div class="u__year">2019 года</div>
     </div>
-    <!-- <div class="u__request">
-        <a href="#u-request" class="button u__request-link">Подать заявку</a>
-    </div> -->
-    <div id="u-request" class="u__request-container">
-    	<form action="/unifest/request/" class="u__request-form"></form>
+
+
+    <div class="u__request">
+        {# <div class=""> #}
+        <a href="/media/uploads/zayavka.docx" target="_blank" class="u__link u__request-file">Заявка</a>
+        {# </div> #}
+        <a href="#u-form" class="button u__request-link">Подать заявку</a>
+        <a href="/media/uploads/polozhenie_unifest.docx" target="_blank" class="u__link u__request-file">Положение</a>
     </div>
+
     <div class="h1">Организаторы</div>
     <div class="h2">Мы, Студия-театр Манекен</div>
     <hr>
+
     <div class="h1">Контакты</div>
-    <div class="h2">Тел.: +7 (351) 267-94-77</div>
+    <div class="h2"><a href="tel:+73512679477" class="u__link u__phone">Тел.: +7 (351) 267-94-77</a></div>
+    <div class="h2"><a href="mailto:unifest@maneken.studio" class="u__link u__email">unifest@maneken.studio</a></div>
+    <hr>
+
+    <div class="h1">Подать заявку</div>
+    <div class="h2">Заявка придёт к нам на почту и мы с вами свяжемся!</div>
+    <div id="u-form" class="u__form-container">
+        <form action="/unifest/" class="u__form" method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {# {{ form }} #}
+            {% for field in form %}
+                <div class="u__form-field">
+                    {% comment %}
+                    {% if field.label %}
+                        <label for="{{ field.name }}">{{ field.label }}:</label>
+                    {% endif %}
+                    {% endcomment %}
+                    {{ field }}
+                </div>
+            {% endfor %}
+            <input class="button u__form-submit" type="submit" value="Отправить">
+        </form>
+    </div>
     <hr>
 
 {% endblock %}
