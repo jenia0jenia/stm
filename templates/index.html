@@ -19,11 +19,13 @@
 
 
   <h1 class="h1">Люди театра</h1>
-  {% for artist in artist_list %}
-  	{% include "include/artist_card.html" with artist=artist %}
-  {% empty %}
-    <p>No artists are available.</p>
-  {% endfor %}
+  <div class="entry-list">
+  	{% for artist in artist_list %}
+  		{% include "include/artist_card.html" with artist=artist %}
+  	{% empty %}
+  	  <p>No artists are available.</p>
+  	{% endfor %}
+  </div>
 
 	<h1 class="h1">Афиша</h1>
 	{% for poster in poster_list %}

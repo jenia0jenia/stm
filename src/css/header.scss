@@ -17,6 +17,8 @@
         border-bottom: 1px solid white;
 
 	    transition: all 0.2s ease-in-out;
+
+        z-index: 100;
     }
 
     &_hide {

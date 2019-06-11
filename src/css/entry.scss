@@ -1,0 +1,64 @@
+.entry {
+
+	&-list {
+		display: flex;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&-card {
+		display: flex;
+		position: relative;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+
+		&__wrap {
+			padding: 10px;
+		}
+
+		&:hover {
+			.entry-card__title {
+				color: $color-white;
+
+			}
+
+			.entry-card__hover {
+				background-color: rgba(0,0,0,.7);
+			}
+		}
+
+		&__hover {
+			position: absolute;
+			height: 100%;
+			width: 100%;
+			transition: all .2s ease-out;
+			background-color: transparent;
+			z-index: 1;
+		}
+
+
+		&__title {
+			font-size: 27px;
+			position: absolute;
+			color: transparent;
+			transition: all .2s ease-out;
+			z-index: 10;
+		}
+
+		&__desc {
+			font-size: 18px;
+			position: absolute;
+			color: transparent;
+			transition: all .2s ease-out;
+			z-index: 10;
+		}
+
+		&__image {
+			display: flex;
+		}
+	}
+
+
+
+}

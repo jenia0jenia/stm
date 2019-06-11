@@ -50,6 +50,7 @@ INSTALLED_APPS = [
     'tinymce',
     'filebrowser',
     'content_gallery',
+    'debug_toolbar',
 
     # apps
     'stm_site',
@@ -66,6 +67,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'stm_site.urls'

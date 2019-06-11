@@ -1,7 +1,46 @@
 .performance {
+	position: relative;
+
 	&__container {
 	}
 
 	&__title {
+	}
+
+	&-card {
+		&__hover {
+			display: flex;
+			justify-content: space-between;
+
+			&-inner {
+			    display: flex;
+			    align-items: center;
+			    justify-content: center;
+				width: 33.33%;
+				height: 100%;
+				color: transparent;
+			}
+
+			&:hover {
+				.performance-card__hover-inner {
+					color: $color-white;
+				}
+			}
+		}
+
+		&__title {
+
+			padding: 30px 20px;
+			font-size: 27px;
+			text-align: center;
+
+		}
+
+		&__desc {
+
+			padding: 30px 20px;
+			font-size: 19px;
+
+		}
 	}
 }

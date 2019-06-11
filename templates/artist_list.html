@@ -8,9 +8,12 @@
 
 {% block content %}
 	{# <h1 class="h1">Люди</h1> #}
-  {% for artist in artist_list %}
-  	{% include "include/artist_card.html" with artist=artist %}
-  {% empty %}
-    <p>No artists are available.</p>
-  {% endfor %}
+	
+  <div class="entry-list">
+  	{% for artist in artist_list %}
+  		{% include "include/artist_card.html" with artist=artist %}
+  	{% empty %}
+  	  <p>No artists are available.</p>
+  	{% endfor %}
+  </div>
 {% endblock %}

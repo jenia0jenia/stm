@@ -38,13 +38,13 @@ class HomePage(TemplateView):
         return context
 
     def get_artist_list(self, **kwargs):
-        return Artist.objects.order_by('last_name').filter(publication=True)[:5]
+        return Artist.objects.order_by('last_name').filter(publication=True)[:10]
 
     def get_performance_list(self, **kwargs):
-        return Performance.objects.order_by('name').filter(publication=True)[:5]
+        return Performance.objects.order_by('name').filter(publication=True)[:10]
 
     def get_poster_list(self, **kwargs):
-        return Poster.objects.filter(publication=True)[:5]
+        return Poster.objects.filter(publication=True)[:10]
 
     def get_news(self, **kwargs):
         return 5

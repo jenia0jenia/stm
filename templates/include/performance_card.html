@@ -1,15 +1,21 @@
 {% load thumbnail %}
 
-<div class="entry-card__container performance__container">
-	<div class="h2 entry-card__title performance__title">{{ performance.name }}</div>
+<div class="entry-card__wrap">
 	<a class="entry-card performance" href="{% url 'theatre:performance_detail' performance.slug %}">
-		<div class="entry-card__image performance__image">
-			{% thumbnail performance.photo "100x100" crop="center" as im %}
-      	<img class="entry-card__image-img performance__image-img" src="{{ im.url }}" alt="{{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
-      {% empty %}
-  			<p>No image</p>
-      {% endthumbnail %}
+		<div class="entry-card__image performance-card__image">
+			{% thumbnail performance.photo "300x300" crop="center" as im %}
+		  		<img class="entry-card__image-img performance-card__image-img" src="{{ im.url }}" alt="{{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
+		  {% empty %}
+				<p>No image</p>
+		  {% endthumbnail %}
+		</div>
+		<div class="entry-card__hover performance-card__hover">
+			<div class="performance-card__hover-inner">
+				<div class="performance-card__title">{{ performance }}</div>
+			</div>
+			<div class="performance-card__hover-inner">
+				<div class="performance-card__desc">{{ performance.description|safe|truncatewords:14 }}</div>
+			</div>
 		</div>
 	</a>
-	<div class="entry-card__desc performance__desc">{{ performance.description|safe|truncatewords:50 }}</div>
 </div>
