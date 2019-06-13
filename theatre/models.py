@@ -85,15 +85,6 @@ class Artist(ContentGalleryMixin, TheatreBase):
 
 class Genre(TheatreBase):
     name = models.CharField(_('Genre'), max_length=100)
-    description = HTMLField(_('Description'), max_length=400, blank=True)
-    photo = FileBrowseField(
-        _('Genre\'s photo'),
-        max_length=200,
-        directory=upload_path('genre/'),
-        extensions=upload_photo_ext,
-        blank=True,
-        null=True
-        )
 
     class Meta:
         verbose_name = _('Genre')
@@ -106,6 +97,16 @@ class Genre(TheatreBase):
 
 class Performance(ContentGalleryMixin, TheatreBase):
     name = models.CharField(_('Name'), max_length=200)
+    director = models.ForeignKey(
+        Artist,
+        on_delete=models.SET_DEFAULT,
+        verbose_name=_('Director'),
+        related_name='director_name',
+        null=True,
+        blank=True,
+        default=None
+    )
+
     slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
     description = HTMLField(_('Description'), blank=True)
     genre = models.ForeignKey(
@@ -116,6 +117,7 @@ class Performance(ContentGalleryMixin, TheatreBase):
         blank=True,
         default=None
     )
+    duration = models.CharField(_('Duration'), max_length=100, blank=True, null=True)
     photo = FileBrowseField(
         _('Performance\'s photo'),
         max_length=200,
@@ -124,47 +126,19 @@ class Performance(ContentGalleryMixin, TheatreBase):
         blank=True,
         null=True
     )
+
+    artists = models.ManyToManyField('Artist', verbose_name=_('Artists'), blank=True)
+
     votes_yes = models.IntegerField(_('Votes "yes!"'), blank=True, default=0)
     votes_no = models.IntegerField(_('Votes "No!"'), blank=True, default=0)
 
-    premiere_date = models.DateField(_('Premiere date'), blank=True, default=timezone.now)
-    close_date = models.DateField(_('Closing date'), blank=True, default=date.min)
+    is_archive = models.BooleanField(_('In archive?'), default=False)
 
-    artists = models.ManyToManyField('Artist', verbose_name=_('Artists'), blank=True)
 
     class Meta:
         verbose_name = _('Performance')
         verbose_name_plural = _('Performances')
         ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
-
-class Role(ContentGalleryMixin, TheatreBase):
-    name = models.CharField(_('Name'), max_length=200, null=True)
-    description = HTMLField(_('About role'), blank=True)
-    artists = models.ManyToManyField(Artist, verbose_name=_('Artists'), blank=True)
-    performance = models.ForeignKey(
-        Performance,
-        verbose_name=_('Performance'),
-        on_delete=models.CASCADE,
-        null=True
-    )
-    
-    photo = FileBrowseField(
-        _('Role\'s photo'),
-        max_length=200,
-        directory=upload_path('people/'),
-        extensions=upload_photo_ext,
-        blank=True,
-        null=True
-    )
-
-    class Meta:
-        verbose_name = _('Role')
-        verbose_name_plural = _('Roles')
-        ordering = ['performance']
 
     def __str__(self):
         return self.name

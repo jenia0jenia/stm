@@ -4,7 +4,7 @@ from django.utils.translation import gettext as _
 from django.conf.locale.en import formats as en_formats
 from filebrowser.base import FileObject
 from filebrowser.settings import ADMIN_THUMBNAIL
-from .models import Genre, Performance, Artist, Role, Poster
+from .models import Genre, Performance, Artist, Poster
 
 from content_gallery.admin import ImageAdminInline
 
@@ -60,7 +60,7 @@ class ArtistAdmin(TheatreBaseAdmin):
 class GenreAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
-            'fields': ['name', 'description', 'photo']
+            'fields': ['name',]
         })
     ] + TheatreBaseAdmin.base_fieldsets
     list_display = ('name', 'publication')
@@ -68,33 +68,19 @@ class GenreAdmin(TheatreBaseAdmin):
     list_display_links = ('name',)
 
 
-class RoleAdmin(TheatreBaseAdmin):
-    def get_performance(self, obj):
-        return obj.performance.name
-
-    get_performance.admin_order_field = 'performance'
-    get_performance.short_description = _('Performance Name')
-    fieldsets = [
-        (None, {
-            'fields': ['name', 'description', 'artists', 'performance', 'photo']
-        })
-    ] + TheatreBaseAdmin.base_fieldsets
-    list_display = ('name', 'get_performance', 'publication')
-    list_editable = () + TheatreBaseAdmin.base_list_editable
-    list_display_links = ('name',)
-    inlines = [
-        ImageAdminInline,
-    ]
-
-
 class PerformanceAdmin(TheatreBaseAdmin):
     fieldsets = [
         (None, {
-            'fields': ['name', 'slug', 'description', 'genre', 'photo']
-        }),
-        (_('Opening / Closing performance'), {
-            'fields': ['premiere_date', 'close_date'],
-            'classes': ['collapse']
+            'fields': [
+                'name',
+                'slug',
+                'director',
+                'duration',
+                'description',
+                'genre',
+                'photo',
+                'is_archive'
+            ]
         }),
         (_('Rating'), {
             'fields': ['votes_yes', 'votes_no'],
@@ -102,7 +88,7 @@ class PerformanceAdmin(TheatreBaseAdmin):
         })
     ] + TheatreBaseAdmin.base_fieldsets
 
-    list_display = ('name', 'genre', 'premiere_date', 'close_date', 'publication')
+    list_display = ('name', 'genre', 'publication', 'is_archive', )
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('name',)
 
@@ -127,7 +113,6 @@ class PosterAdmin(TheatreBaseAdmin):
     ]
 
 
-admin.site.register(Role, RoleAdmin)
 admin.site.register(Genre, GenreAdmin)
 admin.site.register(Performance, PerformanceAdmin)
 admin.site.register(Artist, ArtistAdmin)

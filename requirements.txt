@@ -3,6 +3,8 @@ awesome-slugify==1.6.5
 Django==2.2
 django-admin==1.3.2
 django-content-gallery==1.0.0b1
+django-crispy-forms==1.7.2
+django-debug-toolbar==1.11
 django-filebrowser-no-grappelli==3.7.8
 django-js-asset==1.2.2
 django-sitetree==1.12.0

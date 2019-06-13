@@ -9,15 +9,23 @@
 
 {% block content %}
 	<h1 class="h1">
-		{{ object.last_name }} {{ object.first_name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}
+		{{ object.last_name }} {% if object.first_name %} {{ object.first_name }}{% endif %}{% if object.middle_name %} {{ object.middle_name }}{% endif %}
 	</h1>
+
 	{# <div>{{ object.views }}</div> #}
-	<div>{{ object.description|safe }}</div>
-	<div>В студии с {{ object.year }}</div>
+
+	{% if object.description %}
+		<div>{{ object.description|safe }}</div>
+	{% endif %}
+
+	{% if object.year %}
+		<div>В студии с {{ object.year }}</div>
+	{% endif %}
+
 	{% thumbnail object.photo "100x100" crop="center" as im %}
     <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ object.name }}">
-  {% empty %}
+	{% empty %}
 		<p>No image</p>
 	{% endthumbnail %}
-{% endblock %}
 
+{% endblock %}
