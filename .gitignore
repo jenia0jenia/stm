@@ -5,6 +5,9 @@
 *.sublime-*
 *.sqlite3
 migrations/
+collectedstatic/
+media/cache/
+media/_versions/
 static/dist
 node_modules/
 access.py
