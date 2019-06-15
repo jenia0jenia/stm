@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2018-10-10 15:56+0500\n"
+"POT-Creation-Date: 2019-06-16 04:07+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <jenia0jenia@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -21,11 +21,28 @@ msgstr ""
 "%10<=4 && (n%100<12 || n%100>14) ? 1 : n%10==0 || (n%10>=5 && n%10<=9) || (n"
 "%100>=11 && n%100<=14)? 2 : 3);\n"
 
-#: stm_site/settings.py:127
+#: stm_site/models.py:6 theatre/forms.py:8 theatre/models.py:50
+#: theatre/models.py:104 theatre/models.py:186
+msgid "Name"
+msgstr "Имя"
+
+#: stm_site/models.py:7
+msgid "Value"
+msgstr ""
+
+#: stm_site/models.py:10
+msgid "Properie"
+msgstr ""
+
+#: stm_site/models.py:11
+msgid "Properies"
+msgstr ""
+
+#: stm_site/settings.py:170
 msgid "English"
 msgstr "Ангийский"
 
-#: stm_site/settings.py:128
+#: stm_site/settings.py:171
 msgid "Russian"
 msgstr "Русский"
 
@@ -61,19 +78,19 @@ msgstr ""
 msgid "Django administration"
 msgstr "Администрирование Django"
 
-#: theatre/admin.py:28
-msgid "Full name"
-msgstr "Полное мия"
+#: theatre/admin.py:23
+msgid "-empty-"
+msgstr ""
 
-#: theatre/admin.py:52
+#: theatre/admin.py:38
 msgid "Photo"
 msgstr "Фото"
 
-#: theatre/admin.py:85
-msgid "Opening / Closing performance"
-msgstr "Открытие / Закрытие спектакля"
+#: theatre/admin.py:46
+msgid "Full name"
+msgstr "Полное мия"
 
-#: theatre/admin.py:89
+#: theatre/admin.py:74
 msgid "Rating"
 msgstr "Рейтинг"
 
@@ -81,122 +98,172 @@ msgstr "Рейтинг"
 msgid "Theatre"
 msgstr "Театр"
 
-#: theatre/models.py:18
+#: theatre/forms.py:9 theatre/models.py:187
+msgid "Phone"
+msgstr ""
+
+#: theatre/forms.py:10 theatre/models.py:188
+msgid "E-mail"
+msgstr ""
+
+#: theatre/forms.py:12 theatre/models.py:190
+msgid "Message"
+msgstr ""
+
+#: theatre/models.py:23
 msgid "Publication"
 msgstr "Публиковать?"
 
-#: theatre/models.py:40 theatre/models.py:45 theatre/models.py:56
-msgid "Genre"
-msgstr "Жанр"
+#: theatre/models.py:24
+msgid "Order"
+msgstr ""
 
-#: theatre/models.py:41 theatre/models.py:55 theatre/models.py:116
-msgid "Description"
-msgstr "Описание"
-
-#: theatre/models.py:42
-msgid "Genre's photo"
-msgstr "Фото жанра"
-
-#: theatre/models.py:46
-msgid "Genres"
-msgstr "Жанры"
-
-#: theatre/models.py:54 theatre/models.py:98
-msgid "Name"
-msgstr "Имя"
-
-#: theatre/models.py:57
-msgid "Performance's photo"
-msgstr "Фото спектакля"
-
-#: theatre/models.py:59
-msgid "Votes \"yes!\""
-msgstr "Голосов \"Да!\""
-
-#: theatre/models.py:60
-msgid "Votes \"No!\""
-msgstr "Голосов \"Нет!\""
-
-#: theatre/models.py:62
-msgid "Premiere date"
-msgstr "Дата премьеры"
-
-#: theatre/models.py:63
-msgid "Closing date"
-msgstr "Дата закрытия"
-
-#: theatre/models.py:65
-msgid "Is premiere"
-msgstr "Премьера?"
-
-#: theatre/models.py:66 theatre/models.py:90 theatre/models.py:100
-msgid "Artists"
-msgstr "Артисты"
-
-#: theatre/models.py:69 theatre/models.py:101
-msgid "Performance"
-msgstr "Спектакль"
-
-#: theatre/models.py:70
-msgid "Performances"
-msgstr "Спектакли"
-
-#: theatre/models.py:78
+#: theatre/models.py:51
 msgid "Last name"
-msgstr "Имя"
-
-#: theatre/models.py:79
-msgid "First name"
 msgstr "Фамилия"
 
-#: theatre/models.py:80
+#: theatre/models.py:52
 msgid "Middle name"
 msgstr "Отчество"
 
-#: theatre/models.py:82
+#: theatre/models.py:54 theatre/models.py:115
+msgid "Slug"
+msgstr ""
+
+#: theatre/models.py:56
+#, fuzzy
+#| msgid "View site"
+msgid "Views"
+msgstr "Перейти на сайт"
+
+#: theatre/models.py:58 theatre/models.py:59
 msgid "About artis"
 msgstr "Об артисте"
 
-#: theatre/models.py:84
+#: theatre/models.py:62
 msgid "Artist's photo"
 msgstr "Фото артиста"
 
-#: theatre/models.py:86
+#: theatre/models.py:71
 msgid "In theatre from year..."
 msgstr "В театре с года..."
 
-#: theatre/models.py:89
+#: theatre/models.py:80
 msgid "Artist"
 msgstr "Артист"
 
-#: theatre/models.py:99
-msgid "About role"
-msgstr "О роли"
+#: theatre/models.py:81 theatre/models.py:136
+msgid "Artists"
+msgstr "Артисты"
 
-#: theatre/models.py:102
-msgid "Role's photo"
-msgstr "Фото роли"
+#: theatre/models.py:116 theatre/models.py:117 theatre/models.py:157
+#: theatre/models.py:158 theatre/models.py:180 theatre/models.py:181
+msgid "Description"
+msgstr "Описание"
 
-#: theatre/models.py:105
-msgid "Role"
-msgstr "Роль"
+#: theatre/models.py:126
+#, fuzzy
+#| msgid "Documentation"
+msgid "Duration"
+msgstr "Документация"
 
-#: theatre/models.py:106
-msgid "Roles"
-msgstr "Роли"
+#: theatre/models.py:128
+msgid "Performance's photo"
+msgstr "Фото спектакля"
 
-#: theatre/models.py:114
+#: theatre/models.py:138
+msgid "Votes \"yes!\""
+msgstr "Голосов \"Да!\""
+
+#: theatre/models.py:139
+msgid "Votes \"No!\""
+msgstr "Голосов \"Нет!\""
+
+#: theatre/models.py:141
+msgid "In archive?"
+msgstr "В архиве?"
+
+#: theatre/models.py:145
+msgid "Performance"
+msgstr "Спектакль"
+
+#: theatre/models.py:146
+msgid "Performances"
+msgstr "Спектакли"
+
+#: theatre/models.py:154
 msgid "Event date"
 msgstr "Дата события"
 
-#: theatre/models.py:115 theatre/models.py:120
+#: theatre/models.py:155 theatre/models.py:170
 msgid "Event"
 msgstr "Событие"
 
-#: theatre/models.py:117
+#: theatre/models.py:156
+msgid "Is premiere"
+msgstr "Премьера?"
+
+#: theatre/models.py:161
 msgid "Poster's photo"
 msgstr "Фото афиши"
 
-#: theatre/models.py:121
+#: theatre/models.py:171
 msgid "Poster"
 msgstr "Афиша"
+
+#: theatre/models.py:178
+#, fuzzy
+#| msgid "Event date"
+msgid "Event begin"
+msgstr "Дата события"
+
+#: theatre/models.py:179
+#, fuzzy
+#| msgid "Event date"
+msgid "Event end"
+msgstr "Дата события"
+
+#: theatre/models.py:189
+msgid "File"
+msgstr "Файл"
+
+#: theatre/utils.py:19
+msgid "New letter fron maneken.studio"
+msgstr "Новое письмо с сайта maneken.studio"
+
+#: theatre/views.py:166
+msgid "New request"
+msgstr "Новый запрос"
+
+#~ msgid "Opening / Closing performance"
+#~ msgstr "Открытие / Закрытие спектакля"
+
+#~ msgid "Genre"
+#~ msgstr "Жанр"
+
+#~ msgid "Genre's photo"
+#~ msgstr "Фото жанра"
+
+#~ msgid "Genres"
+#~ msgstr "Жанры"
+
+#~ msgid "Premiere date"
+#~ msgstr "Дата премьеры"
+
+#~ msgid "Closing date"
+#~ msgstr "Дата закрытия"
+
+#~ msgid "First name"
+#~ msgstr "Имя"
+
+#~ msgid "About role"
+#~ msgstr "О роли"
+
+#~ msgid "Role's photo"
+#~ msgstr "Фото роли"
+
+#~ msgid "Role"
+#~ msgstr "Роль"
+
+#~ msgid "Roles"
+#~ msgstr "Роли"

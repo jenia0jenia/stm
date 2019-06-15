@@ -21,29 +21,34 @@ def upload_path(path):
 
 class TheatreBase(models.Model):
     publication = models.BooleanField(_('Publication'), default=True)
+    order = models.PositiveIntegerField(_('Order'), default=100)
 
     class Meta:
         abstract = True
+        ordering = ['order']
 
     # def save(self, *args, **kwargs):
-    #     """
-    #     Re-order all items from 10 upwards, at intervals of 10.
-    #     This makes it easy to insert new items in the middle of
-    #     existing items without having to manually shuffle
-    #     them all around.
-    #     """
-    #     super().save(*args, **kwargs)
+        """
+        Re-order all items from 10 upwards, at intervals of 10.
+        This makes it easy to insert new items in the middle of
+        existing items without having to manually shuffle
+        them all around.
+        """
 
-    #     current = 10
-    #     for item in MenuItem.objects.filter(menu=self).order_by('order'):
-    #         item.order = current
-    #         item.save()
-    #         current += 10
+        # if self.description:
+
+        # super().save(*args, **kwargs)
+
+        # current = 10
+        # for item in MenuItem.objects.filter(menu=self).order_by('order'):
+        #     item.order = current
+        #     item.save()
+        #     current += 10
 
 
 class Artist(ContentGalleryMixin, TheatreBase):
-    last_name = models.CharField(_('Last name'), max_length=100, null=True)
-    first_name = models.CharField(_('First name'), max_length=100, blank=True, null=True)
+    name = models.CharField(_('Name'), max_length=100, null=True)
+    last_name = models.CharField(_('Last name'), max_length=100, blank=True, null=True)
     middle_name = models.CharField(_('Middle name'), max_length=100, blank=True, null=True)
 
     slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
@@ -51,6 +56,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
     views = models.PositiveIntegerField(_('Views'), default=0)
 
     description = HTMLField(_('About artis'), blank=True)
+    desc = models.CharField(_('About artis'), max_length=1000, blank=True)
 
     photo = FileBrowseField(
         _('Artist\'s photo'),
@@ -71,7 +77,6 @@ class Artist(ContentGalleryMixin, TheatreBase):
     )
 
     class Meta:
-        ordering = ['last_name']
         verbose_name = _('Artist')
         verbose_name_plural = _('Artists')
 
@@ -83,40 +88,41 @@ class Artist(ContentGalleryMixin, TheatreBase):
         self.save(update_fields=['views'])
 
 
-class Genre(TheatreBase):
-    name = models.CharField(_('Genre'), max_length=100)
+# class Genre(TheatreBase):
+#     name = models.CharField(_('Genre'), max_length=100)
 
-    class Meta:
-        verbose_name = _('Genre')
-        verbose_name_plural = _('Genres')
-        ordering = ['name']
+#     class Meta:
+#         verbose_name = _('Genre')
+#         verbose_name_plural = _('Genres')
+#         ordering = ['name']
 
-    def __str__(self):
-        return self.name
+#     def __str__(self):
+#         return self.name
 
 
 class Performance(ContentGalleryMixin, TheatreBase):
     name = models.CharField(_('Name'), max_length=200)
-    director = models.ForeignKey(
-        Artist,
-        on_delete=models.SET_DEFAULT,
-        verbose_name=_('Director'),
-        related_name='director_name',
-        null=True,
-        blank=True,
-        default=None
-    )
+    # director = models.ForeignKey(
+    #     Artist,
+    #     on_delete=models.SET_DEFAULT,
+    #     verbose_name=_('Director'),
+    #     related_name='director_name',
+    #     null=True,
+    #     blank=True,
+    #     default=None
+    # )
 
     slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
     description = HTMLField(_('Description'), blank=True)
-    genre = models.ForeignKey(
-        Genre,
-        on_delete=models.SET_DEFAULT,
-        verbose_name=_('Genre'),
-        null=True,
-        blank=True,
-        default=None
-    )
+    desc = models.CharField(_('Description'), max_length=1000, blank=True)
+    # genre = models.ForeignKey(
+    #     Genre,
+    #     on_delete=models.SET_DEFAULT,
+    #     verbose_name=_('Genre'),
+    #     null=True,
+    #     blank=True,
+    #     default=None
+    # )
     duration = models.CharField(_('Duration'), max_length=100, blank=True, null=True)
     photo = FileBrowseField(
         _('Performance\'s photo'),
@@ -138,7 +144,7 @@ class Performance(ContentGalleryMixin, TheatreBase):
     class Meta:
         verbose_name = _('Performance')
         verbose_name_plural = _('Performances')
-        ordering = ['name']
+        # ordering = ['name']
 
     def __str__(self):
         return self.name
@@ -149,6 +155,7 @@ class Poster(ContentGalleryMixin, TheatreBase):
     event = models.ForeignKey(Performance, verbose_name=_('Event'), on_delete=models.CASCADE)
     is_premiere = models.BooleanField(_('Is premiere'), blank=True, default=False)
     description = HTMLField(_('Description'), blank=True)
+    desc = models.CharField(_('Description'), max_length=1000, blank=True)
 
     photo = FileBrowseField(
         _('Poster\'s photo'),
@@ -171,7 +178,8 @@ class Unifest(TheatreBase):
     date_begin = models.DateTimeField(_('Event begin'), blank=True, null=True, default=timezone.now)
     date_end = models.DateTimeField(_('Event end'), blank=True, null=True, default=timezone.now)
     description = HTMLField(_('Description'), blank=True)
-    request_file = HTMLField(_('Description'), blank=True)
+    desc = models.CharField(_('Description'), max_length=1000, blank=True)
+    # request_file = HTMLField(_('Description'), blank=True)
 
 
 class URequest(models.Model):

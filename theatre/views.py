@@ -38,10 +38,10 @@ class HomePage(TemplateView):
         return context
 
     def get_artist_list(self, **kwargs):
-        return Artist.objects.order_by('last_name').filter(publication=True)[:10]
+        return Artist.objects.order_by('order').filter(publication=True)[:7]
 
     def get_performance_list(self, **kwargs):
-        return Performance.objects.order_by('name').filter(publication=True)[:10]
+        return Performance.objects.order_by('order').filter(publication=True)[:4]
 
     def get_poster_list(self, **kwargs):
         return Poster.objects.filter(publication=True)[:10]
@@ -89,7 +89,7 @@ class ArtistList(ListView):
         return context
 
     def get_artist_list(self, **kwargs):
-        artist_list = Artist.objects.order_by('last_name').filter(publication=True)
+        artist_list = Artist.objects.order_by('order').filter(publication=True)
         return artist_list
 
 
@@ -104,7 +104,7 @@ class PosterList(ListView):
         return context
 
     def get_poster_list(self, **kwargs):
-        poster_list = Poster.objects.filter(publication=True)
+        poster_list = Poster.objects.order_by('order').filter(publication=True)
         return poster_list
 
 
@@ -127,6 +127,7 @@ class PerformanceDetail(DetailView):
         return context
 
     def get_performance_list(self, **kwargs):
+        # exclude myself
         slug = self.kwargs['slug']
         performance_list = Performance.objects.exclude(slug=slug).order_by('?')[:5] # random
         return performance_list
@@ -143,7 +144,7 @@ class PerformanceList(ListView):
         return context
 
     def get_performance_list(self, **kwargs):
-        performance_list = Performance.objects.order_by('name')
+        performance_list = Performance.objects.order_by('order').all()
         return performance_list
 
 

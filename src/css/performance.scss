@@ -9,15 +9,7 @@
 
 	&-card {
 		&__hover {
-			display: flex;
-			justify-content: space-between;
-
 			&-inner {
-			    display: flex;
-			    align-items: center;
-			    justify-content: center;
-				width: 33.33%;
-				height: 100%;
 				color: transparent;
 			}
 
@@ -33,6 +25,7 @@
 			padding: 30px 20px;
 			font-size: 27px;
 			text-align: center;
+			font-weight: bold;
 
 		}
 
@@ -41,6 +34,15 @@
 			padding: 30px 20px;
 			font-size: 19px;
 
+		}
+
+		&__image {
+			width: 100%;
+
+			&-img {
+				width: 100%;
+				object-fit: cover;
+			}
 		}
 	}
 }

@@ -4,7 +4,7 @@ from django.utils.translation import gettext as _
 from django.conf.locale.en import formats as en_formats
 from filebrowser.base import FileObject
 from filebrowser.settings import ADMIN_THUMBNAIL
-from .models import Genre, Performance, Artist, Poster
+from .models import Performance, Artist, Poster
 
 from content_gallery.admin import ImageAdminInline
 
@@ -12,34 +12,15 @@ en_formats.DATETIME_FORMAT = "d b Y H:i"
 
 
 class TheatreBaseAdmin(admin.ModelAdmin):
-    base_list_editable = ('publication',)
     base_fieldsets = [
         (None, {
-            'fields': ['publication'], 'classes': ['']
+            'fields': ['order', 'publication'], 'classes': ['']
         })
     ]
-    empty_value_display = _('-empty-')
+    base_list_editable = ('order', 'publication',)
+    base_list_display = ('order', 'publication',)
 
-    class Meta:
-        abstract = True
-
-
-class ArtistAdmin(TheatreBaseAdmin):
-    fieldsets = [
-        (_('Full name'), {
-            'fields': ['last_name', 'first_name', 'middle_name', 'slug', ],
-            'classes': ['collapse']
-        }),
-        (None, {
-            'fields': ['description', 'photo', 'year']
-        })
-    ] + TheatreBaseAdmin.base_fieldsets
-
-    prepopulated_fields = {'slug': ('last_name', 'first_name', 'middle_name', )}
-
-    list_display = ('last_name', 'photo_thumbnail', 'publication')
-    list_editable = () + TheatreBaseAdmin.base_list_editable
-    list_display_links = ('last_name',)
+    empty_value_display = _('_empty_')
 
     inlines = [
         ImageAdminInline,
@@ -56,15 +37,31 @@ class ArtistAdmin(TheatreBaseAdmin):
     photo_thumbnail.allow_tags = True
     photo_thumbnail.short_description = _('Photo')
 
+    class Meta:
+        abstract = True
 
-class GenreAdmin(TheatreBaseAdmin):
+
+class ArtistAdmin(TheatreBaseAdmin):
     fieldsets = [
+        (_('Full name'), {
+            'fields': ['name', 'last_name', 'middle_name', 'slug', ],
+            'classes': ['']
+        }),
         (None, {
-            'fields': ['name',]
+            'fields': ['description', 'photo', 'year']
         })
     ] + TheatreBaseAdmin.base_fieldsets
-    list_display = ('name', 'publication')
-    list_editable = () + TheatreBaseAdmin.base_list_editable
+
+    prepopulated_fields = {'slug': ('name', 'last_name', 'middle_name', )}
+
+    list_display = (
+        'name',
+        'last_name',
+        'middle_name',
+        'photo_thumbnail',
+    ) + TheatreBaseAdmin.base_list_display
+
+    list_editable = ('middle_name',) + TheatreBaseAdmin.base_list_editable
     list_display_links = ('name',)
 
 
@@ -74,10 +71,8 @@ class PerformanceAdmin(TheatreBaseAdmin):
             'fields': [
                 'name',
                 'slug',
-                'director',
                 'duration',
                 'description',
-                'genre',
                 'photo',
                 'is_archive'
             ]
@@ -88,15 +83,16 @@ class PerformanceAdmin(TheatreBaseAdmin):
         })
     ] + TheatreBaseAdmin.base_fieldsets
 
-    list_display = ('name', 'genre', 'publication', 'is_archive', )
-    list_editable = () + TheatreBaseAdmin.base_list_editable
+    list_display = (
+        'name',
+        'photo_thumbnail',
+        'is_archive',
+    ) + TheatreBaseAdmin.base_list_display
+
+    list_editable = ('is_archive', ) + TheatreBaseAdmin.base_list_editable
     list_display_links = ('name',)
 
     prepopulated_fields = {'slug': ('name',)}
-
-    inlines = [
-        ImageAdminInline,
-    ]
 
 
 class PosterAdmin(TheatreBaseAdmin):
@@ -105,7 +101,14 @@ class PosterAdmin(TheatreBaseAdmin):
             'fields': ['event', 'description', 'date', 'photo', 'is_premiere']
         })
     ] + TheatreBaseAdmin.base_fieldsets
-    list_display = ('event', 'date', 'is_premiere', 'publication')
+
+    list_display = (
+        'event',
+        'photo_thumbnail',
+        'date',
+        'is_premiere',
+    ) + TheatreBaseAdmin.base_list_display
+
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('event',)
     inlines = [
@@ -113,7 +116,7 @@ class PosterAdmin(TheatreBaseAdmin):
     ]
 
 
-admin.site.register(Genre, GenreAdmin)
+# admin.site.register(Genre, GenreAdmin)
 admin.site.register(Performance, PerformanceAdmin)
 admin.site.register(Artist, ArtistAdmin)
 admin.site.register(Poster, PosterAdmin)

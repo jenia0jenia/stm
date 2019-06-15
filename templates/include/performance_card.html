@@ -3,7 +3,7 @@
 <div class="entry-card__wrap">
 	<a class="entry-card performance" href="{% url 'theatre:performance_detail' performance.slug %}">
 		<div class="entry-card__image performance-card__image">
-			{% thumbnail performance.photo "300x300" crop="center" as im %}
+			{% thumbnail performance.photo "920x300" crop="center" as im %}
 		  		<img class="entry-card__image-img performance-card__image-img" src="{{ im.url }}" alt="{{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
 		  {% empty %}
 				<p>No image</p>

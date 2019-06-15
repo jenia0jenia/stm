@@ -16,7 +16,7 @@ class IntegerRangeField(models.IntegerField):
         return super(IntegerRangeField, self).formfield(**defaults)
 
 
-def send_email(from_mail, to_mail, msg='', file=False, theme=_("New letter fron maneken.studio")):
+def send_email(from_mail, to_mail, msg='', file=False, theme=_("New letter from maneken.studio")):
     email = EmailMessage(
         theme,
         msg,

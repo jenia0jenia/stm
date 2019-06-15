@@ -21,7 +21,7 @@
   <h1 class="h1">Люди театра</h1>
   <div class="entry-list">
   	{% for artist in artist_list %}
-  		{% include "include/artist_card.html" with artist=artist %}
+			{% include "include/artist_card.html" with artist=artist %}
   	{% empty %}
   	  <p>No artists are available.</p>
   	{% endfor %}

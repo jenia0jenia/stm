@@ -21,4 +21,5 @@ urlpatterns = [
     path('poster/', PosterList.as_view(), name='poster_list'),
     path('p/', include('django.contrib.flatpages.urls')),
     path('unifest/', Unifest.as_view(), name='unifest'),
+    path('contacts/', Contacts.as_view(), name='contacts'),
 ]
