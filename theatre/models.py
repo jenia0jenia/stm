@@ -151,8 +151,8 @@ class Performance(ContentGalleryMixin, TheatreBase):
 
 
 class Poster(ContentGalleryMixin, TheatreBase):
-    date = models.DateTimeField(_('Event date'), blank=True, null=True, default=timezone.now)
     event = models.ForeignKey(Performance, verbose_name=_('Event'), on_delete=models.CASCADE)
+    date = models.DateTimeField(_('Event date'), blank=True, null=True, default=timezone.now)
     is_premiere = models.BooleanField(_('Is premiere'), blank=True, default=False)
     description = HTMLField(_('Description'), blank=True)
     desc = models.CharField(_('Description'), max_length=1000, blank=True)

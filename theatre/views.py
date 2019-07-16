@@ -17,7 +17,7 @@ from collections.abc import Iterable
 from django.core.files.storage import FileSystemStorage
 
 from .models import Artist, Performance, Poster
-from .forms import URequestForm
+from .forms import URequestForm, UMemberForm
 from .utils import send_email, get_request_param
 
 from django.utils.translation import gettext as _
@@ -38,10 +38,10 @@ class HomePage(TemplateView):
         return context
 
     def get_artist_list(self, **kwargs):
-        return Artist.objects.order_by('order').filter(publication=True)[:7]
+        return Artist.objects.filter(publication=True).order_by('?')[:7]
 
     def get_performance_list(self, **kwargs):
-        return Performance.objects.order_by('order').filter(publication=True)[:4]
+        return Performance.objects.filter(publication=True, is_archive=False).order_by('?')[:4]
 
     def get_poster_list(self, **kwargs):
         return Poster.objects.filter(publication=True)[:10]
@@ -129,7 +129,7 @@ class PerformanceDetail(DetailView):
     def get_performance_list(self, **kwargs):
         # exclude myself
         slug = self.kwargs['slug']
-        performance_list = Performance.objects.exclude(slug=slug).order_by('?')[:5] # random
+        performance_list = Performance.objects.exclude(slug=slug).filter(is_archive=False).order_by('?')[:5] # random
         return performance_list
 
 
@@ -144,26 +144,31 @@ class PerformanceList(ListView):
         return context
 
     def get_performance_list(self, **kwargs):
-        performance_list = Performance.objects.order_by('order').all()
+        performance_list = Performance.objects.filter(is_archive=False).order_by('order')
         return performance_list
 
 
 class Unifest(FormView):
     template_name = 'unifest.html'
-    form_class = URequestForm
+    # form_class = URequestForm
+    form_class = UMemberForm
     success_url = '#'
 
     def post(self, request, *args, **kwargs):
         form_class = self.get_form_class()
         form = self.get_form(form_class)
-        file = request.FILES['file']
+        # file = request.FILES['file']
         if form.is_valid():
-            fs = FileSystemStorage()
-            out_dir = os.path.join(settings.MEDIA_ROOT, 'u/request/')
-            filename = fs.save(out_dir + file.name, file)
-            message = get_request_param(request, 'message')
+            # fs = FileSystemStorage()
+            # out_dir = os.path.join(settings.MEDIA_ROOT, 'u/request/')
+            # filename = fs.save(out_dir + file.name, file)
+            # message = get_request_param(request, 'message')
 
-            send_email(settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER], message, filename, _('New request'))
+            message = get_request_param(request, 'name')
+            message += '\n' + get_request_param(request, 'phone')
+            message += '\n' + get_request_param(request, 'email')
+
+            send_email(settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER], message, False, _('New member'))
             return self.form_valid(form)
         else:
             return self.form_invalid(form)

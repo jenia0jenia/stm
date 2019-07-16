@@ -13,12 +13,22 @@
 		{# <span>Спектакль: </span> #}
 		{# <span>{{ object.name }}</span> #}
 	{# </div> #}
+	<div class="entry-card">
+		<div class="entry-card__image">
+			{% if object.photo %}
+    			<img class="entry-card__image-img performance-card__image-img" src="/media/{{ object.photo }}" width="{{ object.photo.width }}" height="{{ object.photo.height }}" alt="{{ object.name }}">
+			{% endif %}
+		</div>
+	</div>
+
 	<div>
+		{% comment %}
 		{% thumbnail object.photo "100x100" crop="center" as im %}
 		    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ object.name }}">
 	    {% empty %}
     		<p>No image</p>
 		{% endthumbnail %}
+		{% endcomment %}
 	</div>
 
 	<div>

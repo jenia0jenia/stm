@@ -1,15 +1,60 @@
 .u {
+
+	&__section {
+		margin: 10% 0;
+
+		.h1 {
+    		padding: 10px;
+		    animation: gradient 1s;
+		}
+
+		hr {
+			border: none;
+			color: $color-orange;
+			background-color: $color-orange;
+			height: 2px;
+		}
+	}
+
 	&__title {
 	    text-align: center;
-	    color: $color-orange-light;
-	    letter-spacing: 10px;
+	    color: $color-red;
+	    letter-spacing: 40px;
+	    margin-right: -40px;
 	    text-transform: uppercase;
 	    font-size: 4em;
+	    font-weight: 400;
+
+		&-mini {
+			position: relative;
+			top: 2px;
+			width: 100px;
+			height: 20px;
+		}
+	}
+
+	&__day {
+		/*color: $color-orange-light;*/
+	}
+
+	&__year {
+		/*color: $color-black;*/
+	    font-weight: bold;
 	}
 
 	&__date {
 	    text-align: center;
 	    font-size: 49px;
+	}
+
+	&__desc {
+		text-align: center;
+		margin: 20px 0;
+
+	    /* height: 100%;
+	    display: flex;
+	    justify-content: center;
+	    align-items: center; */
 	}
 
 	&__request {
@@ -31,11 +76,11 @@
 
 	&__link {
 		text-decoration: none;
-		color: $color-orange-dark;
+		color: $color-orange;
 		transition: all 0.2s ease-in-out;
 
 		&:hover {
-			color: $color-orange-light;
+			color: $color-orange-dark;
 		}
 	}
 

@@ -9,13 +9,13 @@
 
 	&-card {
 		&__hover {
+			color: transparent;
 			&-inner {
-				color: transparent;
 			}
 
 			&:hover {
+				color: $color-white;
 				.performance-card__hover-inner {
-					color: $color-white;
 				}
 			}
 		}
@@ -34,6 +34,10 @@
 			padding: 30px 20px;
 			font-size: 19px;
 
+			p {
+				margin: 0;
+			}
+
 		}
 
 		&__image {
@@ -41,6 +45,7 @@
 
 			&-img {
 				width: 100%;
+    			max-height: 400px;
 				object-fit: cover;
 			}
 		}

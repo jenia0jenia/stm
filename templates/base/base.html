@@ -11,6 +11,8 @@
   <meta property="og:title" content="{{ sitename }}">
   <meta name="twitter:title" content="{{ sitename }}">
 
+  {% include "include/favicon.html" %}
+
   {% block meta %}
     <title>{% block title %}{{ sitename }}{% endblock %}</title>
   {% endblock meta %}

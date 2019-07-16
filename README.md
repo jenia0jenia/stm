@@ -17,3 +17,6 @@
 
 # issues
 	https://github.com/froala/django-froala-editor/issues/55
+
+	# clear media cache
+	python manage.py thumbnail cleanup

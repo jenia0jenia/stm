@@ -845,6 +845,17 @@ __webpack_require__.r(__webpack_exports__);
 
   document.addEventListener("DOMContentLoaded", indexjs);
   var map = new _map_js__WEBPACK_IMPORTED_MODULE_0__["YMap"](); // map.init([55.156552, 61.370844])
+
+  document.addEventListener('DOMContentLoaded', function () {
+    document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+  });
 })();
 
 function site() {

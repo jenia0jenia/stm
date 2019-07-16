@@ -33,6 +33,17 @@ import { Earth } from '../../src/earth/earth.js';
   let map = new YMap();
   // map.init([55.156552, 61.370844])
 
+  document.addEventListener('DOMContentLoaded', () => {
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+  });
+
 
 })();
 
@@ -88,7 +99,6 @@ function site() {
       // function mainMenuOut(e) {
       //   e.target.classList.add(hideClass);
       // }
-
     }
 
   } else {

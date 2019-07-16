@@ -11,12 +11,14 @@
 @import "main.scss";
 @import "logo.scss";
 @import "button.scss";
+@import "banner.scss";
 @import "menu.scss";
 @import "container.scss";
 @import "content.scss";
 @import "footer.scss";
 @import "poster.scss";
 @import "performance.scss";
+@import "artist.scss";
 @import "page.scss";
 @import "tickets.scss";
 @import "sticky.scss";
@@ -44,4 +46,12 @@ a {
 
 .singular-section {
 	padding: 40px 0;
+}
+
+.text_orange {
+	color: $color-orange;
+}
+
+.text_red {
+	color: $color-red;
 }
