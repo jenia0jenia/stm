@@ -7,6 +7,7 @@
 
 {% block content %}
 <h1 class="h1">Афиша</h1>
+{% comment %}
 {% for poster in poster_list %}
 	<h2 class="h2">{{ poster.name }}</h2>
 	<div>{{ poster.description }}</div>
@@ -22,4 +23,7 @@
 {% empty %}
 	<p>Сезон закрыт, товарищи!</p>
 {% endfor %}
+{% endcomment %}
+
+<script type="text/javascript" async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
 {% endblock %}
