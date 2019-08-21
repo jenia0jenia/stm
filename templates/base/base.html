@@ -14,13 +14,17 @@
   {% include "include/favicon.html" %}
 
   {% block meta %}
-    <title>{% block title %}{{ sitename }}{% endblock %}</title>
+    <title>{% block title %}Студия-театр «Манекен» - {{ sitename }}{% endblock %}</title>
   {% endblock meta %}
 
   <script
     src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
     crossorigin="anonymous"></script>
+
+  {% block head %}
+    
+  {% endblock head %}
 
   <!-- 
 

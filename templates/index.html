@@ -4,7 +4,11 @@
 {% load cache %}
 {% load thumbnail %}
 
-{% block title %}{{ block.super }} - Главная{% endblock %}
+{% block title %}{{ block.super }}Официальный сайт{% endblock %}
+
+{% block head %}
+	<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>	
+{% endblock head %}
 
 {#% load compress %#}
 
@@ -54,6 +58,10 @@
   </div>
 
 	<div class="h1">Афиша</div>
+
+	<script type="text/javascript" async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
+
+	{% comment %}
 	{% for poster in poster_list %}
 		<h2 class="h2">{{ poster.name }}</h2>
 		<div>{{ poster.description }}</div>
@@ -69,5 +77,15 @@
 	{% empty %}
 		<p>Сезон закрыт, товарищи!</p>
 	{% endfor %}
+	{% endcomment %}
+	
+	<div class="h1">Мы ВКонтакте!</div>
+
+	<!-- VK Widget --> 
+	<div id="vk_groups"></div> 
+
+	<script type="text/javascript"> 
+		VK.Widgets.Group("vk_groups", {mode: 4, height: "400", width: "960"}, 678386); 
+	</script>
 
 {% endblock %}

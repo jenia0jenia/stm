@@ -4,12 +4,12 @@
 {% load cache %}
 {% load thumbnail %}
 
-{# {% block title %}Официальный сайт{% endblock %} #}
+{% block title %}{{ block.super }}{{ object.last_name }} {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}{% endblock %}
 {#% load compress %#}
 
 {% block content %}
 	<h1 class="h1">
-		{{ object.last_name }} {% if object.first_name %} {{ object.first_name }}{% endif %}{% if object.middle_name %} {{ object.middle_name }}{% endif %}
+		{{ object.last_name }} {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}
 	</h1>
 
 	{# <div>{{ object.views }}</div> #}

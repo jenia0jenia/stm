@@ -5,7 +5,7 @@
 {% load thumbnail %}
 {#% load compress %#}
 
-{% block title %}{{ block.super }} Официальный сайт{% endblock %}
+{% block title %}{{ block.super }}{{ object.name }}{% endblock %}
 
 {% block content %}
 	<h1 class="h1">{{ object.name }}</h1>
@@ -22,25 +22,20 @@
 	</div>
 
 	<div>
-		{% comment %}
-		{% thumbnail object.photo "100x100" crop="center" as im %}
-		    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ object.name }}">
-	    {% empty %}
-    		<p>No image</p>
-		{% endthumbnail %}
-		{% endcomment %}
-	</div>
-
-	<div>
 		{{ object.description|safe }}
 	</div>
 
-	<div>
-		<span>Жанр: </span><span>{{ object.genre }}</span>
-	</div>
-	<div>
-		<span>Премьера: </span>{{ object.premiere_date }}
-	</div>
+	{% if object.genre %}
+		<div>
+			<span>Жанр: </span><span>{{ object.genre }}</span>
+		</div>
+	{% endif %}
+
+	{% if object.premiere_date %}
+		<div>
+			<span>Премьера: </span>{{ object.premiere_date }}
+		</div>
+	{% endif %}
 
 	<div>
 		<h2 class="h2">Другие спектакли</h2>
@@ -48,17 +43,5 @@
 			{% include "include/performance_card.html" with preformance=preformance %}
 		{% endfor %}
 	</div>
-
-	{# <div>{{ object.votes_yes }}</div> #}
-	{# <div>{{ object.votes_no }}</div> #}
-	<!-- <div>
-		{% for artist in object.artists.items %}
-			<div>
-				{{ artist }}
-			</div>
-		{% empty %}
-	    		<p>No artists</p>
-		{% endfor %}
-	</div> -->
 {% endblock %}
 

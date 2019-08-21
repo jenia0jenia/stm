@@ -3,18 +3,14 @@
 {% load static %}
 {% load cache %}
 
-{% block title %}{{ block.super }} Официальный сайт{% endblock %}
+{% block title %}{{ block.super }}Спектакли{% endblock %}
 {#% load compress %#}
 
 {% block content %}
-<!-- <div class="container">
-  <div class="singular-section"> -->
     <h1 class="h1">Спектакли</h1>
     {% for performance in performance_list %}
       {% include "include/performance_card.html" with preformance=preformance %}
     {% empty%}
       <p>No performances are available.</p>
     {% endfor %}
-<!--   </div>
-</div> -->
 {% endblock %}
