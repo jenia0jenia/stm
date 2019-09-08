@@ -1,6 +1,17 @@
 .artist {
 	&-card {
-		height: 220px;
-		width: 220px;
+		/*height: 220px;
+		width: 220px;*/
+
+		&__more {
+	        width: 220px;
+    		height: 220px;
+		}
+	}
+}
+
+@media screen and (max-width: 767px) {
+	.artist {
+
 	}
 }

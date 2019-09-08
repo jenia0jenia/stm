@@ -10,11 +10,11 @@ class WebGL {
 
   init() {
 
-    const threejsUrl = document.querySelector('[type=preload][as=script]#treejs').href;
+    // const threejsUrl = document.querySelector('[type=preload][as=script]#treejs').href;
     const tgaUrl = document.querySelector('[type=preload][as=script]#tga').href;
     const webglUrl = document.querySelector('[type=preload][as=script]#webgl').href;
 
-    utils.addScript(threejsUrl);
+    // utils.addScript(threejsUrl);
     utils.addScript(tgaUrl);
     utils.addScript(webglUrl);
 

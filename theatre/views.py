@@ -41,7 +41,7 @@ class HomePage(TemplateView):
         return Artist.objects.filter(publication=True).order_by('?')[:7]
 
     def get_performance_list(self, **kwargs):
-        return Performance.objects.filter(publication=True, is_archive=False).order_by('?')[:4]
+        return Performance.objects.filter(publication=True, is_archive=False).order_by('order')[:4]
 
     def get_poster_list(self, **kwargs):
         return Poster.objects.filter(publication=True)[:10]
@@ -50,11 +50,11 @@ class HomePage(TemplateView):
         return 5
 
 
-class Contacts(TemplateView):
-    template_name = 'contacts.html'
+# class Contacts(TemplateView):
+#     template_name = 'contacts.html'
 
-    def get_context_data(self, **kwargs):
-        context = super(Contacts, self).get_context_data(**kwargs)
+#     def get_context_data(self, **kwargs):
+#         context = super(Contacts, self).get_context_data(**kwargs)
 
 
 class ArtistDetail(DetailView):

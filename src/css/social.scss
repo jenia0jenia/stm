@@ -1,13 +1,9 @@
 .social {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-
-    display: flex;
+/*    list-style: none;
     align-items: center;
     justify-content: flex-start;
     padding: 4px 0;
-    margin: 0;
+    margin: 0;*/
 
     &__item {
     }
@@ -26,3 +22,11 @@
         }
     }
 }
+/*
+@media only screen and (max-width: 768px) {
+    .social {
+        &__item {
+            display: inline-block;
+        }
+    }
+}*/

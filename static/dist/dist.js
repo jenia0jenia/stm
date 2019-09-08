@@ -863,11 +863,18 @@ function site() {
     var hideOnScrollDown = function hideOnScrollDown(target, hideClass) {
       // Hide Header on on scroll down
       var didScroll;
+      var setScrollFunction = false;
       var lastScrollTop = 0;
       var delta = 5;
       var targetHeight = target.clientHeight;
-      $(window).scroll(function (event) {
-        hasScrolled();
+      $(window).on('resize', function () {
+        if ($(window).innerWidth() >= 768 && !setScrollFunction) {
+          $(window).on('scroll', hasScrolled);
+          setScrollFunction = true;
+        } else if ($(window).innerWidth() < 768) {
+          $(window).off('scroll', hasScrolled);
+          setScrollFunction = false;
+        }
       });
 
       function hasScrolled() {
@@ -876,12 +883,10 @@ function site() {
 
         if (st > lastScrollTop && st > targetHeight) {
           // Scroll Down
-          // $('header').removeClass(hideClass).addClass('nav-up');
           target.classList.add(hideClass);
         } else {
           // Scroll Up
           if (st + $(window).height() < $(document).height()) {
-            // $('header').removeClass('nav-up').addClass(hideClass);
             target.classList.remove(hideClass);
           }
         }
@@ -1013,10 +1018,10 @@ function () {
   _createClass(WebGL, [{
     key: "init",
     value: function init() {
-      var threejsUrl = document.querySelector('[type=preload][as=script]#treejs').href;
+      // const threejsUrl = document.querySelector('[type=preload][as=script]#treejs').href;
       var tgaUrl = document.querySelector('[type=preload][as=script]#tga').href;
-      var webglUrl = document.querySelector('[type=preload][as=script]#webgl').href;
-      utils.addScript(threejsUrl);
+      var webglUrl = document.querySelector('[type=preload][as=script]#webgl').href; // utils.addScript(threejsUrl);
+
       utils.addScript(tgaUrl);
       utils.addScript(webglUrl); // console.log('webgl init');
     }

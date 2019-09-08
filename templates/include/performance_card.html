@@ -3,14 +3,14 @@
 	<a class="entry-card performance" href="{% url 'theatre:performance_detail' performance.slug %}">
 		<div class="entry-card__image performance-card__image">
 			{% thumbnail performance.photo "920x300" crop="center" as im %}
-		  		<img class="entry-card__image-img performance-card__image-img" src="{{ im.url }}" alt="{{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
+		  		<img class="entry-card__image-img performance-card__image-img" src="{{ im.url }}" alt="Спектакль {{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
 		  {% empty %}
 				<p>No image</p>
 		  {% endthumbnail %}
 		</div>
 		<div class="entry-card__hover performance-card__hover">
-			<div class="performance-card__hover-inner">
 				<div class="performance-card__title">{{ performance }}</div>
+			<div class="performance-card__hover-inner">
 			</div>
 			<div class="performance-card__hover-inner">
 				<div class="performance-card__desc">{{ performance.description|safe|truncatewords:24 }}</div>

@@ -59,12 +59,20 @@ function site() {
     function hideOnScrollDown(target, hideClass) {
       // Hide Header on on scroll down
       let didScroll;
+      let setScrollFunction = false;
       let lastScrollTop = 0;
       let delta = 5;
       let targetHeight = target.clientHeight;
 
-      $(window).scroll(function(event){
-          hasScrolled();
+
+      $(window).on('resize', function() {
+        if ($(window).innerWidth() >= 768 && !setScrollFunction) {
+          $(window).on('scroll', hasScrolled);
+          setScrollFunction = true;
+        } else if($(window).innerWidth() < 768) {
+          $(window).off('scroll', hasScrolled);
+          setScrollFunction = false;
+        }
       });
 
       function hasScrolled() {
@@ -75,19 +83,16 @@ function site() {
           
           if (st > lastScrollTop && st > targetHeight){
               // Scroll Down
-              // $('header').removeClass(hideClass).addClass('nav-up');
               target.classList.add(hideClass);
           } else {
               // Scroll Up
               if(st + $(window).height() < $(document).height()) {
-                  // $('header').removeClass('nav-up').addClass(hideClass);
                   target.classList.remove(hideClass);
               }
           }
           
           lastScrollTop = st;
       }
-
 
       target.onmouseover = mainMenuOver;
       // target.onmouseout = mainMenuOut;

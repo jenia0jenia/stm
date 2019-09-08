@@ -5,20 +5,17 @@
 	}
 
 	&__fixed {
-		display: flex;
+		/* display: flex;
 		justify-content: center;
-    	align-items: center;
-	    
-	    position: fixed;
-	    height: 50px;
-	    bottom: 0;
-	    width: 100%;
-	    background-color: rgba($color-red, .8);
-	    border-top: 1px solid white;
-
-	    transition: all 0.2s ease-in-out;
-
-	    z-index: 100;
+		    	align-items: center;
+			    
+			    position: fixed;
+			    height: 50px;
+			    width: 100%;
+		
+			    transition: all 0.2s ease-in-out;
+		
+			    z-index: 100; */
     }
 
     &_hide {

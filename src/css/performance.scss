@@ -9,24 +9,38 @@
 
 	&-card {
 		&__hover {
-			color: transparent;
 			&-inner {
+				color: transparent;
+			    transition: all .2s ease-out;
 			}
 
 			&:hover {
-				color: $color-white;
 				.performance-card__hover-inner {
+					color: $color-white;
+				}
+
+				.performance-card__title {
 				}
 			}
 		}
 
 		&__title {
-
 			padding: 30px 20px;
 			font-size: 27px;
 			text-align: center;
 			font-weight: bold;
+		    color: rgba(#fff, .87);
+			letter-spacing: 8px;
+			text-transform: uppercase;
+		    background: linear-gradient(to bottom, black, rgba(0,0,0,0.5) 40%, transparent 80%);
+		}
 
+		&__more {
+			padding: 30px 20px;
+			font-size: 27px;
+			text-align: center;
+			font-weight: bold;
+		    color: $color-black;
 		}
 
 		&__desc {

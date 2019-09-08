@@ -2,13 +2,13 @@ from django.urls import include, path, re_path
 from django.views.generic import TemplateView
 
 from .views import (
-        HomePage,
-        ArtistDetail, ArtistList,
-        PosterList,
-        Contacts,
-        PerformanceDetail, PerformanceList,
-        Unifest,
-    )
+    HomePage,
+    ArtistDetail, ArtistList,
+    PosterList,
+    # Contacts,
+    PerformanceDetail, PerformanceList,
+    Unifest,
+)
 
 app_name = 'theatre'
 
@@ -21,5 +21,5 @@ urlpatterns = [
     path('poster/', PosterList.as_view(), name='poster_list'),
     path('p/', include('django.contrib.flatpages.urls')),
     path('unifest/', Unifest.as_view(), name='unifest'),
-    path('contacts/', Contacts.as_view(), name='contacts'),
+    # path('contacts/', Contacts.as_view(), name='contacts'),
 ]
