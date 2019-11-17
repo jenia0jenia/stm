@@ -8,15 +8,8 @@
 	}
 
 	&-card {
-		display: flex;
-		position: relative;
-		align-items: center;
-		justify-content: center;
-		text-decoration: none;
-		margin-bottom: 20px;
 
 		&__wrap {
-			flex: 0 1 19%;
 		}
 
 		&:hover {
@@ -76,12 +69,31 @@
 @media screen and (max-width: 768px) {
 	.entry {
 		&-card {
+
 			&__wrap {
+				width: 50%;
 			}
 		}
 
 		&-list {
 			justify-content: center;
+		}		
+	}
+}
+
+@media screen and (max-width: 640px) {
+	.entry {
+		&-card {
+
+			&__wrap {
+				width: 100%;
+			}
+
+			&__desc {
+			}
+		}
+
+		&-list {
 		}		
 	}
 }

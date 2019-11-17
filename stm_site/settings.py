@@ -30,7 +30,7 @@ SECRET_KEY = access.SECRET_KEY
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1', '192.168.43.38', 'studiomaneken.com', '92.53.97.160', 'maneken.studio']
+ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1', '192.168.43.38', 'studiomaneken.com', '*', 'maneken.studio']
 
 
 # Application definition

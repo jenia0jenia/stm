@@ -828,6 +828,7 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // console.log(utils)
+// var YAcounter = 55144651;
 
 (function Main() {
   var indexjs = function indexjs() {
@@ -854,7 +855,29 @@ __webpack_require__.r(__webpack_exports__);
           behavior: 'smooth'
         });
       });
-    });
+    }); // MutationObserver = window.MutationObserver || window.WebKitMutationObserver;
+    // var observer = new MutationObserver(function(mutations, observer) {
+    //     var buy_form = document.getElementById('eventreg_submit');
+    //       console.log(buy_form);
+    //     if (buy_form) {
+    //       goalParams = {
+    //         utm_campaign: findGetParameter('utm_campaign')
+    //       };
+    //       buy_form.addEventListener("click", function(){
+    //         console.log(goalParams);
+    //         console.log(ym(YAcounter, 'reachGoal', 'test', goalParams));
+    //         // ym(YAcounter, 'reachGoal', 'BUY_TICKET', goalParams);
+    //         return true;
+    //       });
+    //     }
+    // });
+    // // define what element should be observed by the observer
+    // // and what types of mutations trigger the callback
+    // observer.observe(document.getElementById('timepad'), {
+    //   subtree: true,
+    //   attributes: true
+    //   //...
+    // });
   });
 })();
 
@@ -911,6 +934,16 @@ function site() {
   } else {
     throw Error('\'window\' not found');
   }
+}
+
+function findGetParameter(parameterName) {
+  var result = null,
+      tmp = [];
+  location.search.substr(1).split("&").forEach(function (item) {
+    tmp = item.split("=");
+    if (tmp[0] === parameterName) result = decodeURIComponent(tmp[1]);
+  });
+  return result;
 }
 
 /***/ }),
@@ -984,7 +1017,10 @@ function addScript(src) {
   s.type = 'text/javascript';
   s.src = src;
   document.getElementsByTagName('head')[0].appendChild(s);
-} // module.export = { addScript };
+} // export function getWindowWidth() {
+// 	return 
+// }
+// module.export = { addScript };
 
 /***/ }),
 

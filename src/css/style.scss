@@ -27,6 +27,7 @@
 @import "earth.scss";
 @import "cube.scss";
 @import "u.scss";
+@import "scroller.scss";
 
 body {
     font-family: 'Montserrat', Roboto, Arial;
@@ -54,4 +55,11 @@ a {
 
 .text_red {
 	color: $color-red;
+}
+
+
+@media screen and (max-width: 768px) {
+	.singular-section {
+		padding: 20px 0;
+	}
 }

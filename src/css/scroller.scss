@@ -1,0 +1,39 @@
+.scroller {
+  	overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+}
+
+.scroller__wrapper {
+    display: inline-block;
+    min-width: 100%;
+}
+
+.scroller__menu {
+    display: inline-block;
+    min-width: 100%;
+}
+
+.scroller__menu-item:first-child {
+    margin-left: 22px;
+    padding-left: 13px;
+}
+
+.scroller__menu-item {
+	display: inline-block;
+    margin: 5px 5px 5px;
+    padding: 7px 13px;
+    vertical-align: top;
+}
+
+.scroller__menu-item:last-child {
+    margin-right: 22px;
+    padding-right: 13px;
+}
+
+
+.scroller::-webkit-scrollbar {
+    display: none;
+}

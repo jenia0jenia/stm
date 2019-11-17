@@ -4,9 +4,10 @@
 {% load cache %}
 {% load thumbnail %}
 
-{% block title %}{{ block.super }}Официальный сайт{% endblock %}
+{% block title %}{{ block.super }} Студия-Театр Манекен{% endblock %}
 
 {% block head %}
+	{{ block.super }}
 	<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>	
 {% endblock head %}
 
@@ -14,10 +15,10 @@
 
 {% block content %}
 
-	<div class="banner">
-		<a href="/unifest/">
-			<img src="{% static 'unifest/banner.png' %}" alt="unifest">
-		</a>
+	<div class="h1">Афиша</div>
+
+	<div id="timepad">
+		<script type="text/javascript" async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
 	</div>
 
   <div class="h1">Спектакли</div>
@@ -26,9 +27,9 @@
 	    {% include "include/performance_card.html" with preformance=preformance %}
 	  {% endfor %}
 
-		<div class="entry-card__wrap">
-			<a class="entry-card" href="/performance/">
-				<div class="entry-card__more button">
+		<div class="performance-card__wrap">
+			<a class="performance-card" href="/performance/">
+				<div class="performance-card__more button">
 					<div class="performance-card__more">Ещё</div>
 				</div>
 			</a>
@@ -39,27 +40,23 @@
 
 
   <div class="h1">Люди театра</div>
-  <div class="entry-list">
+  <div class="artist-list">
     {% if artist_list %}
     	{% for artist in artist_list %}
   		  {% include "include/artist_card.html" with artist=artist %}
     	{% endfor %}
-      <div class="entry-card__wrap artist-card">
-        <a class="entry-card__more button artist-card__more" href="/artist/">
-          Ещё
-          <div class="">
-            <div class="artist-card__title"></div>
-          </div>
-        </a>
+      <div class="artist-card__wrap">
+        <div class="artist-card">
+        	<a class="artist-card__more button" href="/artist/">
+    	    	<div class="artist-card__title">Ещё</div>
+        	</a>
+        </div>
       </div>
   	{% else %}
   	  <p>No artists are available.</p>
     {% endif %}
   </div>
 
-	<div class="h1">Афиша</div>
-
-	<script type="text/javascript" async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
 
 	{% comment %}
 	{% for poster in poster_list %}
@@ -85,7 +82,7 @@
 	<div id="vk_groups"></div> 
 
 	<script type="text/javascript"> 
-		VK.Widgets.Group("vk_groups", {mode: 4, height: "400", width: "960"}, 678386); 
+		VK.Widgets.Group("vk_groups", {mode: 4, height: "400", width: window.innerWidth > 960 ? 940 : window.innerWidth - 40}, 678386); 
 	</script>
 
 {% endblock %}

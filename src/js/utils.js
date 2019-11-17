@@ -5,4 +5,7 @@ export function addScript(src) {
   document.getElementsByTagName('head')[0].appendChild( s );
 }
 
+// export function getWindowWidth() {
+// 	return 
+// }
 // module.export = { addScript };

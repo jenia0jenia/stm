@@ -7,11 +7,12 @@
 <html lang="ru">
 <head>
   <meta charset="UTF-8">
-  {# <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> #}
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146877365-1"></script>
-  <script>
+
+  <script async>
     window.dataLayer = window.dataLayer || [];
     function gtag(){dataLayer.push(arguments);}
     gtag('js', new Date());
@@ -44,16 +45,16 @@
 
   {% block meta %}
     <title>{% block title %}Студия-театр «Манекен» - {% endblock %}</title>
+    <meta name="theme-color" content="#000000">
   {% endblock meta %}
+
+  {% block head %}
+  {% endblock head %}
 
   <script
     src="https://code.jquery.com/jquery-3.4.1.slim.min.js"
     integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8="
     crossorigin="anonymous"></script>
-
-  {% block head %}
-    
-  {% endblock head %}
 
   <!-- 
 
@@ -73,19 +74,37 @@
   {# ## preload #}
 
   {# SLIDER #}
-  {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/css/swiper.min.css"> #}
-  {# <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.0/js/swiper.min.js"></script> #}
- 
+  {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css"> #}
+  {# <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> #}
+
+  {# PACKERY #}
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/packery/2.1.2/packery.pkgd.min.js"></script>
 
   <script>
     // window.onload = function () {
     //   var mySwiper = new Swiper('.swiper-container', {
     //     direction: 'horizontal',
-    //     grabCursor: true,
-    //     slidesPerView: 'auto',
-    //     spaceBetween: 30,
-    //     centeredSlides: true,
-    //     loop: true
+    //     freeMode: true,
+    //     breakpoints: {
+    //       // when window width is >= 320px
+    //       320: {
+    //         noSwiping: false,
+    //         slidesPerView: 2,
+    //         spaceBetween: 10
+    //       },
+    //       // when window width is >= 480px
+    //       480: {
+    //         noSwiping: false,
+    //         slidesPerView: 3,
+    //         spaceBetween: 20
+    //       },
+    //       // when window width is >= 640px
+    //       640: {
+    //         noSwiping: false,
+    //         slidesPerView: 6,
+    //         spaceBetween: 30
+    //       }
+    //     }
     //   });
     // };
     </script>
@@ -107,16 +126,22 @@
             <img class="logo__image" src="{% static 'i/stm_logo.png' %}" alt="">
           </a>
         </div>
-        {# <div class="container swiper-container"> #}
-          {% sitetree_menu from "menu_main" include "trunk,topmenu" %}        
-        {# </div> #}
+        <div class="scroller">
+          <div class="scroller__wrapper">
+            {% sitetree_menu from "menu_main" include "trunk,topmenu" %}
+          </div>
+        </div>
       </div>
 
       {% block header %}
         
       {% endblock header %}
       <div class="header__fixed header__fixed_bottom" id="socialMenu">
-        {% sitetree_menu from "menu_social" include "trunk,topmenu" template "sitetree/menu_social.html" %}
+        <div class="scroller">
+          <div class="scroller__wrapper">
+            {% sitetree_menu from "menu_social" include "trunk,topmenu" template "sitetree/menu_social.html" %}
+          </div>
+        </div>
       </div>
     {# </div> #}
   </header>
@@ -136,7 +161,6 @@
 
   <footer class="footer footer_scroll">
     {% block footer %}
-      
     {% endblock footer %}
   </footer>
 

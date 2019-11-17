@@ -1,12 +1,12 @@
 {% load thumbnail %}
 
-<div class="entry-card__wrap">
-	<a class="entry-card artist-card" href="{% url 'theatre:artist_detail' artist.slug %}">
-		<div class="entry-card__title artist-card__title">{{ artist.name }}</div>
-		<div class="entry-card__hover"></div>
-		<div class="entry-card__image artist-card__image">
+<div class="artist-card__wrap">
+	<a class="artist-card" href="{% url 'theatre:artist_detail' artist.slug %}">
+		<div class="artist-card__title">{{ artist.name }}</div>
+		<div class="artist-card__hover"></div>
+		<div class="artist-card__image">
 		{% thumbnail artist.photo "220x220" crop="center" as im %}
-	  		<img class="entry-card__image-img artist-card__image-img" src="{{ im.url }}" alt="{{ artist.name }} {{ artist.last_name }}" width="{{ im.width }}" height="{{ im.height }}">
+	  		<img class="artist-card__image-img" src="{{ im.url }}" alt="{{ artist.name }} {{ artist.last_name }}" width="{{ im.width }}" height="{{ im.height }}">
 		  {% empty %}
 				<p>No image</p>
 	  	{% endthumbnail %}

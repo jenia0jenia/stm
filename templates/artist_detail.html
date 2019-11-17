@@ -12,8 +12,6 @@
 		{{ object.last_name }} {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}
 	</h1>
 
-	{# <div>{{ object.views }}</div> #}
-
 	{% if object.description %}
 		<div>{{ object.description|safe }}</div>
 	{% endif %}
@@ -23,7 +21,7 @@
 	{% endif %}
 
 	{% thumbnail object.photo "100x100" crop="center" as im %}
-    <img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ object.name }}">
+    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" alt="{{ object.name }}">
 	{% empty %}
 		<p>No image</p>
 	{% endthumbnail %}
