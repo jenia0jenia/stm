@@ -10,15 +10,17 @@ class WebGL {
 
   init() {
 
-    // const threejsUrl = document.querySelector('[type=preload][as=script]#treejs').href;
-    const tgaUrl = document.querySelector('[type=preload][as=script]#tga').href;
-    const webglUrl = document.querySelector('[type=preload][as=script]#webgl').href;
+    // const threejsUrl = document.querySelector('[rel=preload][as=script]#treejs').href;
+    const tgaUrl = document.querySelector('[rel=preload][as=script]#tga').href;
+    const webglUrl = document.querySelector('[rel=preload][as=script]#webgl').href;
 
     // utils.addScript(threejsUrl);
     utils.addScript(tgaUrl);
     utils.addScript(webglUrl);
 
-    // console.log('webgl init');
+    console.log('webgl init');
+    console.log(webglUrl);
+    console.log(tgaUrl);
 
   }
   
@@ -205,7 +207,7 @@ class WebGL {
   }
 
   // startEarth() {
-  //   const workerUrl = document.querySelector('[type=preload][as=script]').href;
+  //   const workerUrl = document.querySelector('[rel=preload][as=script]').href;
   //   const canvas = document.querySelector('#canvasEarth');
 
   //   const worker = createWorker(canvas, workerUrl);

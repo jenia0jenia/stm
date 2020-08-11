@@ -4,7 +4,7 @@
 {% load cache %}
 {% load thumbnail %}
 
-{% block title %}{{ block.super }}{{ object.last_name }} {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}{% endblock %}
+{% block title %}{{ block.super }}Артист Студии-Театра Манекен - {{ object.last_name }} {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}{% endblock %}
 {#% load compress %#}
 
 {% block content %}
@@ -17,7 +17,7 @@
 	{% endif %}
 
 	{% if object.year %}
-		<div>В студии с {{ object.year }}</div>
+		<div>В студии с {{ object.year }} года.</div>
 	{% endif %}
 
 	{% thumbnail object.photo "100x100" crop="center" as im %}

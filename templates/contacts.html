@@ -3,8 +3,35 @@
 {% load static %}
 {% load cache %}
 
-{% block title %}{{ block.super }}Контакты{% endblock %}
+{% block title %}{{ block.super }}Контакты Студии-Театра Манекен{% endblock %}
 
 {% block content %}
-    
+    <h1 class="h1">Наши контакты</h1>
+    <p>Телефон студии +7 (351) 267-94-77</p>
+
+    <p>По разным вопросам Илья - 8-909-073-83-34, ilyavtyurin@gmail.com</p>
+
+    {# <p>Написать письмо художественному руководителю - Филонов Владимир Фёдорович - </p> #}
+
+    Мы в соцсетях 
+
+    <ul class="">
+      <li class="menu__item social__item scroller__menu-item">
+            <a class="" target="_blank" href="https://www.instagram.com/studio_maneken/">Inst</a>
+      </li>
+      <li class="menu__item social__item scroller__menu-item">
+            <a class="" target="_blank" href="https://vk.com/studiom">Vk</a>
+      </li>
+      <li class="menu__item social__item scroller__menu-item">
+            <a class="" target="_blank" href="https://www.twitter.com/manekenstudio">Twitter</a>
+      </li>
+      <li class="menu__item social__item scroller__menu-item">
+            <a class="" target="_blank" href="https://www.facebook.com/studiomaneken">Facebook</a>
+      </li>
+      <li class="menu__item social__item scroller__menu-item">
+            <a class="" href="/contacts/">Контакты</a>
+      </li>
+    </ul>
+
+    <script type="text/javascript" charset="utf-8" async src="https://api-maps.yandex.ru/services/constructor/1.0/js/?um=constructor%3A36d15149420c22d5d585930914017b9ca3672768d424fa0c67adc1f77927aa02&amp;width=100%&amp;height=400&amp;lang=ru_RU&amp;scroll=true"></script>
 {% endblock %}

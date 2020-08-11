@@ -1,8 +1,17 @@
 .logo {
     height: 93%;
+
+    &__text {
+        color: #fff;
+        vertical-align: middle;
+        text-decoration: none;
+        padding-right: 10px;
+        font-weight: 600px;
+    }
     
     &__link {
-		display: block;
+		display: flex;
+        align-items: center;
 		height: 100%;
     }
 
@@ -16,3 +25,11 @@
     	height: 50px;
     }
 }*/
+
+@media screen and (max-width: 1000px) {
+    .logo {
+        &__text {
+            display: none;
+        }
+    }
+}

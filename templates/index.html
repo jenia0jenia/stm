@@ -4,21 +4,21 @@
 {% load cache %}
 {% load thumbnail %}
 
-{% block title %}{{ block.super }} Студия-Театр Манекен{% endblock %}
+{% block title %}{{ block.super }}Челябинск Студия-Театра Манекен{% endblock %}
 
 {% block head %}
 	{{ block.super }}
-	<script type="text/javascript" src="https://vk.com/js/api/openapi.js?162"></script>	
+	<script src="https://vk.com/js/api/openapi.js?162"></script>	
 {% endblock head %}
 
 {#% load compress %#}
 
 {% block content %}
-
+  <h1 style="font-size: 0;visibility: hidden;">Челябинск Студия-Театра Манекен</h1>
 	<div class="h1">Афиша</div>
 
 	<div id="timepad">
-		<script type="text/javascript" async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
+		<script async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
 	</div>
 
   <div class="h1">Спектакли</div>
@@ -80,9 +80,20 @@
 
 	<!-- VK Widget --> 
 	<div id="vk_groups"></div> 
+	<script onload="showvk()" data-aload="https://vk.com/js/api/openapi.js?162"></script>
 
-	<script type="text/javascript"> 
-		VK.Widgets.Group("vk_groups", {mode: 4, height: "400", width: window.innerWidth > 960 ? 940 : window.innerWidth - 40}, 678386); 
+	<script>
+		function showvk() {
+			VK.Widgets.Group("vk_groups", {
+				mode: 4,
+				height: "400",
+				width: window.innerWidth > 960 ? 940 : window.innerWidth - 40
+			}, 678386);
+		}
+
+		window.onload = function () {
+			aload();
+		};
 	</script>
 
 {% endblock %}

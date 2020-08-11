@@ -15,6 +15,7 @@ Including another URLconf
 """
 
 from django.contrib import admin
+from django.contrib.sitemaps.views import sitemap
 from django.urls import re_path, path, include
 from django.views.generic import TemplateView
 
@@ -22,17 +23,27 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 from filebrowser.sites import site
+from .sitemaps import ArtistSitemap, PerformanceSitemap, StaticViewSitemap, StaticViewSitemapReverse, FlatPageSitemap
 
 app_name = 'stm_site'
+
+
+sitemaps = {
+    'static': StaticViewSitemap,
+    'artist': ArtistSitemap,
+    'performance': PerformanceSitemap,
+    'flatpages': FlatPageSitemap,
+}
 
 urlpatterns = [
     re_path(r'^robots.txt$', TemplateView.as_view(template_name="base/robots.txt", content_type='text/plain')),
     path('admin/', admin.site.urls),
-    path('', include('theatre.urls')),
+    path('', include('theatre.urls'), name='theatre'),
     # path('polls/', include('polls.urls')),
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('content_gallery/', include('content_gallery.urls')),
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
 ]
 
 if settings.DEBUG:

@@ -30,7 +30,7 @@ SECRET_KEY = access.SECRET_KEY
 DEBUG = True
 # DEBUG = False
 
-ALLOWED_HOSTS = ['localhost', '0.0.0.0', '127.0.0.1', '192.168.43.38', 'studiomaneken.com', '*', 'maneken.studio']
+ALLOWED_HOSTS = ['localhost', 'maneken.studio']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.sites',
     'django.contrib.flatpages',
+    'django.contrib.sitemaps',
 
     'sorl.thumbnail',
     'sitetree',
@@ -98,24 +99,24 @@ TEMPLATES = [
 WSGI_APPLICATION = 'stm_site.wsgi.application'
 
 
-# LOGGING = {
-#     'version': 1,
-#     'disable_existing_loggers': False,
-#     'handlers': {
-#         'file': {
-#             'level': 'DEBUG',
-#             'class': 'logging.FileHandler',
-#             'filename': os.path.join(SITE_ROOT, 'tmp') +  '/debug.log',
-#         },
-#     },
-#     'loggers': {
-#         'logfile': {
-#             'handlers': ['file'],
-#             'level': 'DEBUG',
-#             'propagate': True,
-#         },
-#     },
-# }
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': os.path.join(SITE_ROOT, 'tmp') +  '/debug.log',
+        },
+    },
+    'loggers': {
+        'logfile': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
@@ -126,16 +127,6 @@ DATABASES = {
         'NAME': os.path.join(SITE_ROOT, 'db.sqlite3'),
     }
 }
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'u0630501_default',
-#         'USER': 'u0630501_default',
-#         'PASSWORD': '1E0h0H5j',
-#         'HOST': 'localhost',
-#     }
-# }
 
 # Password validation
 # https://docs.djangoproject.com/en/2.1/ref/settings/#auth-password-validators
@@ -178,9 +169,7 @@ LANGUAGE_COOKIE_PATH = '/'
 TIME_ZONE = 'Asia/Yekaterinburg'
 
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
@@ -192,8 +181,8 @@ STATICFILES_DIRS = [
     os.path.join(SITE_ROOT, "static"),
     os.path.join(SITE_ROOT, "media")
 ]
-STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
+STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(SITE_ROOT, "media")

@@ -5,7 +5,7 @@
 {% load thumbnail %}
 {#% load compress %#}
 
-{% block title %}{{ block.super }}{{ object.name }}{% endblock %}
+{% block title %}{{ block.super }}Спектакль Студии-Театра Манекен - {{ object.name }}{% endblock %}
 
 {% block content %}
 	<h1 class="h1">{{ object.name }}</h1>
@@ -13,16 +13,16 @@
 		{# <span>Спектакль: </span> #}
 		{# <span>{{ object.name }}</span> #}
 	{# </div> #}
-	<div class="entry-card">
-		<div class="entry-card__image">
+	<div class="performance-detail">
+		<div>
+			{{ object.description|safe }}
+		</div>
+
+		<div class="performance-detail__image">
 			{% if object.photo %}
     			<img class="entry-card__image-img performance-card__image-img" src="/media/{{ object.photo }}" width="{{ object.photo.width }}" height="{{ object.photo.height }}" alt="{{ object.name }}">
 			{% endif %}
 		</div>
-	</div>
-
-	<div>
-		{{ object.description|safe }}
 	</div>
 
 	{% if object.genre %}

@@ -15,8 +15,21 @@
 	source ~/.bashrc
 	mkvirtualenv stm
 
+# webpack
+	sudo apt install npm node webpack
+
 # issues
 	https://github.com/froala/django-froala-editor/issues/55
 
 	# clear media cache
 	python manage.py thumbnail cleanup
+
+# runing
+	npm run-script dev
+	npm run-script build
+	npm run-script watch
+
+	and in another terminal
+
+	workon stm
+	python manage.py runserver
