@@ -1,0 +1,14 @@
+@keyframes unifest-link {
+  from {
+    color: $color-fade;
+  }
+
+  to {
+    color: $color-fade;
+  }
+
+  50% {
+    background-color: $color-orange;
+    color: $color-black;
+  }
+}

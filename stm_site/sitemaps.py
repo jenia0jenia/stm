@@ -34,7 +34,7 @@ class StaticViewSitemapReverse(Sitemap):
         return ['performance', 'artist', 'poster', 'unifest', 'contacts', ]
 
     def location(self, item):
-        return reverse(f'theatre:{item}')
+        return reverse('theatre:{}'.format(item))
 
 
 class StaticViewSitemap(Sitemap):
@@ -55,7 +55,7 @@ class FlatPageSitemap(Sitemap):
         return current_site.flatpage_set.filter(registration_required=False)
 
     def location(self, item):
-        return f'/p{item.url}'
+        return '/p{}'.format(item.url)
 
 # class PosterSitemap(Sitemap):
 #     changefreq = 'monthly'

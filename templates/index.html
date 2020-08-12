@@ -76,24 +76,24 @@
 	{% endfor %}
 	{% endcomment %}
 	
-	<div class="h1">Мы ВКонтакте!</div>
+	{# <div class="h1">Мы ВКонтакте!</div> #}
 
 	<!-- VK Widget --> 
-	<div id="vk_groups"></div> 
-	<script onload="showvk()" data-aload="https://vk.com/js/api/openapi.js?162"></script>
+	{# <div id="vk_groups"></div>  #}
+	{# <script onload="showvk()" data-aload="https://vk.com/js/api/openapi.js?162"></script> #}
 
 	<script>
-		function showvk() {
-			VK.Widgets.Group("vk_groups", {
-				mode: 4,
-				height: "400",
-				width: window.innerWidth > 960 ? 940 : window.innerWidth - 40
-			}, 678386);
-		}
+		// function showvk() {
+		// 	VK.Widgets.Group("vk_groups", {
+		// 		mode: 4,
+		// 		height: "400",
+		// 		width: window.innerWidth > 960 ? 940 : window.innerWidth - 40
+		// 	}, 678386);
+		// }
 
-		window.onload = function () {
-			aload();
-		};
+		// window.onload = function () {
+		// 	aload();
+		// };
 	</script>
 
 {% endblock %}

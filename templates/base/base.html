@@ -25,33 +25,7 @@
   <meta property="og:image:height" content="600" />
 
   <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146877365-1"></script>
-
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-146877365-1');
-  </script>
-
-  <!-- Yandex.Metrika counter -->
-  <script>
-     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
-
-     ym(55144651, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true,
-          webvisor:true
-     });
-  </script>
-  <noscript><img src="https://mc.yandex.ru/watch/55144651" style="position:absolute; left:-9999px;" alt="" /></noscript>
-  <!-- /Yandex.Metrika counter -->
-
-
+  {# <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146877365-1"></script> #}
 
   {# <meta property="og:title" content="{{ sitename }}"> #}
   {# <meta name="twitter:title" content="{{ sitename }}"> #}
@@ -63,19 +37,39 @@
   <script src="{% static 'js/libs/aload.min.js' %}"></script>
   <script src="{% static 'js/libs/jquery-3.4.1.slim.min.js' %}"></script>
 
-
-  <!-- 
-
-  -->
+  <!--
   <script defer src="{% static 'js/webgl/three.js' %}"></script>
   <script defer src="{% static 'js/webgl/TGALoader.js' %}"></script>
   <script defer src="{% static 'js/webgl/WebGL.js' %}"></script>
   <script defer src="{% static 'js/webgl/OrbitControls.js' %}"></script>
+  -->
   {# preload #}
   {# <link rel="preload" as="script" href="{% static 'dist/webgl-worker.js' %}"> #}
+  <link rel="preload" as="script" href="{% static 'js/webgl/three.js' %}" id="threejs">
   <link rel="preload" as="script" href="{% static 'js/webgl/TGALoader.js' %}" id="tga">
   <link rel="preload" as="script" href="{% static 'js/webgl/WebGL.js' %}" id="webgl">
-  {# <link rel="preload" as="script" href="{% static 'js/webgl/tree.js' %}" id="treejs"> #}
+
+  <script>
+    // window.dataLayer = window.dataLayer || [];
+    // function gtag(){dataLayer.push(arguments);}
+    // gtag('js', new Date());
+    // gtag('config', 'UA-146877365-1');
+
+    if( window.innerWidth > 600 ) {
+      function addScript(src) {
+        let s = document.createElement('script');
+        s.src = src;
+        document.getElementsByTagName('head')[0].appendChild( s );
+      }
+
+      const treejsUrl = document.querySelector('[rel=preload][as=script]#threejs').href;
+      const tgaUrl = document.querySelector('[rel=preload][as=script]#tga').href;
+      const webglUrl = document.querySelector('[rel=preload][as=script]#webgl').href;
+      addScript(treejsUrl);
+      addScript(tgaUrl);
+      addScript(webglUrl);
+    }
+  </script>
 
   {# <link rel="preload" as="image" href="{% static 'textures/earth/map.png' %}"> #}
   {# <link rel="preload" as="image" href="{% static 'textures/earth/here.png' %}"> #}
@@ -86,9 +80,9 @@
   {# <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> #}
 
   <script src="{% static 'dist/dist.js' %}?v=7"></script>
-  <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=6">
+  <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=7">
 
-  <script src="http://localhost:35729/livereload.js"></script>
+  {# <script src="http://localhost:35729/livereload.js"></script> #}
 
 </head>
 
@@ -154,5 +148,24 @@
       </div>
     </div>
   {% endcomment %}
+
+  <!-- Yandex.Metrika counter -->
+  <!--
+  <script>
+     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+     ym(55144651, "init", {
+          clickmap:true,
+          trackLinks:true,
+          accurateTrackBounce:true,
+          webvisor:true
+     });
+  </script>
+  <noscript><img src="https://mc.yandex.ru/watch/55144651" style="position:absolute; left:-9999px;" alt="" /></noscript>
+  -->
+  <!-- /Yandex.Metrika counter -->
+
 </body>
 </html>

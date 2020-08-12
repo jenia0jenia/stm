@@ -98,7 +98,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'stm_site.wsgi.application'
 
-
 LOGGING = {
     'version': 1,
     'disable_existing_loggers': False,
@@ -177,12 +176,12 @@ USE_TZ = True
 
 SITE_ID = 2
 
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
 STATICFILES_DIRS = [
     os.path.join(SITE_ROOT, "static"),
     os.path.join(SITE_ROOT, "media")
 ]
-STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
-STATIC_URL = '/static/'
 
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(SITE_ROOT, "media")
@@ -193,6 +192,8 @@ STATICFILES_FINDERS = [
     # other
     # 'compressor.finders.CompressorFinder',
 ]
+
+CSRF_COOKIE_HTTPONLY = True
 
 # FILEBROWSER_DIRECTORY = 'uploads/'
 # FILEBROWSER_EXTENSIONS = {
