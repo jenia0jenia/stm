@@ -1,7 +1,7 @@
 'use strict';
 
 /* index.js */
-// let utils = require('./utils.js');
+let utils = require('./utils.js');
 
 import { WebGL } from './webgl_process.js';
 
@@ -14,8 +14,22 @@ import { WebGL } from './webgl_process.js';
 
 		if( window && window.innerWidth > 600 ) {
 
-      let webgl = new WebGL;
-      webgl.startCube();
+      let MyWebGL = new WebGL;
+
+      const treejsUrl = document.querySelector('[rel=preload][as=script]#threejs').href;
+      const tgaUrl = document.querySelector('[rel=preload][as=script]#tga').href;
+      const webglUrl = document.querySelector('[rel=preload][as=script]#webgl').href;
+
+      utils.loadScript(treejsUrl)
+        .then(function(script) {
+          return utils.loadScript(tgaUrl);
+        })
+        .then(function(script) {
+          return utils.loadScript(webglUrl);
+        })
+        .then(function(script) {
+          MyWebGL.startCube();
+        });
 		}
 
     site();

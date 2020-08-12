@@ -179,6 +179,7 @@ SITE_ID = 2
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
 STATICFILES_DIRS = [
+    os.path.join(SITE_ROOT, "src"),
     os.path.join(SITE_ROOT, "static"),
     os.path.join(SITE_ROOT, "media")
 ]

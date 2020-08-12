@@ -55,20 +55,13 @@
     // gtag('js', new Date());
     // gtag('config', 'UA-146877365-1');
 
-    if( window.innerWidth > 600 ) {
-      function addScript(src) {
-        let s = document.createElement('script');
-        s.src = src;
-        document.getElementsByTagName('head')[0].appendChild( s );
-      }
-
-      const treejsUrl = document.querySelector('[rel=preload][as=script]#threejs').href;
-      const tgaUrl = document.querySelector('[rel=preload][as=script]#tga').href;
-      const webglUrl = document.querySelector('[rel=preload][as=script]#webgl').href;
-      addScript(treejsUrl);
-      addScript(tgaUrl);
-      addScript(webglUrl);
-    }
+    // if( window.innerWidth > 600 ) {
+    //   function addScript(src) {
+    //     let s = document.createElement('script');
+    //     s.src = src;
+    //     document.getElementsByTagName('head')[0].appendChild( s );
+    //   }
+    // }
   </script>
 
   {# <link rel="preload" as="image" href="{% static 'textures/earth/map.png' %}"> #}
@@ -82,7 +75,7 @@
   <script src="{% static 'dist/dist.js' %}?v=7"></script>
   <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=7">
 
-  {# <script src="http://localhost:35729/livereload.js"></script> #}
+  <script src="http://localhost:35729/livereload.js"></script>
 
 </head>
 
