@@ -3,7 +3,7 @@
 	<a class="performance-card" href="{% url 'theatre:performance_detail' performance.slug %}">
 		<div class="performance-card__image">
 			{% thumbnail performance.photo "920x300" crop="center" as im %}
-		  		<img class="performance-card__image-img" src="{{ im.url }}" alt="Спектакль {{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
+		  		<img class="performance-card__image-img" src="{{ im.url }}" title="Студия-Театр «Манекен» Челябинск STM {{ performance }}" alt="Спектакль {{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
 		  {% empty %}
 				<p>No image</p>
 		  {% endthumbnail %}
