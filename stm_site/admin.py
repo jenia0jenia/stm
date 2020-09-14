@@ -6,7 +6,7 @@ from django.contrib.flatpages.admin import FlatPageAdmin
 from django.contrib.flatpages.models import FlatPage
 from tinymce.widgets import TinyMCE
 
-from .models import Properies
+from .models import Properties
 
 class SiteAdmin(admin.ModelAdmin):
     fields = ('id', 'name', 'domain')
@@ -22,7 +22,7 @@ class FlatPageCustom(FlatPageAdmin):
     }
 
 
-class ProperiesAdmin(admin.ModelAdmin):
+class PropertiesAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {
             'fields': ['name', 'value',]
@@ -32,7 +32,7 @@ class ProperiesAdmin(admin.ModelAdmin):
     list_editable = ('value',)
     list_display_links = ('name',)
 
-admin.site.register(Properies, ProperiesAdmin)
+admin.site.register(Properties, PropertiesAdmin)
 
 admin.site.unregister(Site)
 admin.site.register(Site, SiteAdmin)

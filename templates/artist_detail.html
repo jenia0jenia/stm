@@ -12,18 +12,45 @@
 		{{ object.last_name }} {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}
 	</h1>
 
-	{% if object.description %}
-		<div>{{ object.description|safe }}</div>
+	<div class="flex-block-row">
+		{% if object.description %}
+			<div class="artist-detail__description">
+				{{ object.description|safe }}
+		
+				{% if object.year %}
+					<div>В студии с {{ object.year }} года.</div>
+				{% endif %}
+			</div>
+		
+		{% endif %}
+		
+		{% thumbnail object.photo "100x100" crop="center" as im %}
+		  	<div class="artist-detail__image">
+		  		<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" title="Студия-Театр «Манекен» STM Челябинск. {{ object.name }}" alt="{{ object.name }}">
+		  	</div>
+		{# {% empty %} #}
+			{# <p>No image</p> #}
+		{% endthumbnail %}
+	</div>
+
+	{% if as_director or as_light or as_sound or as_painter or as_artist_list %}
+		<div>Можно увидеть на спектаклях:</div>
 	{% endif %}
 
-	{% if object.year %}
-		<div>В студии с {{ object.year }} года.</div>
-	{% endif %}
-
-	{% thumbnail object.photo "100x100" crop="center" as im %}
-    	<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" title="Студия-Театр «Манекен» STM Челябинск. {{ object.name }}" alt="{{ object.name }}">
-	{% empty %}
-		<p>No image</p>
-	{% endthumbnail %}
+	{% with name="director"%}  
+		{% include "include/artist_performance_list.html" with performance_list=as_director artist=artist name=name %}
+	{% endwith %}
+	{% with name="light"%}  
+		{% include "include/artist_performance_list.html" with performance_list=as_light artist=artist name=name %}
+	{% endwith %}
+	{% with name="sound"%}  
+		{% include "include/artist_performance_list.html" with performance_list=as_sound artist=artist name=name %}
+	{% endwith %}
+	{% with name="painter"%}  
+		{% include "include/artist_performance_list.html" with performance_list=as_painter artist=artist name=name %}
+	{% endwith %}
+	{% with name="artists"%}  
+		{% include "include/artist_performance_list.html" with performance_list=as_artist_list artist=artist name=name %}
+	{% endwith %}
 
 {% endblock %}

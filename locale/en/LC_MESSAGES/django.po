@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2019-06-16 04:07+0500\n"
+"POT-Creation-Date: 2020-09-11 12:51+0500\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <jenia0jenia@mail.ru>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -18,8 +18,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: stm_site/models.py:6 theatre/forms.py:8 theatre/models.py:50
-#: theatre/models.py:104 theatre/models.py:186
+#: stm_site/models.py:6 theatre/forms.py:8 theatre/forms.py:19
+#: theatre/models.py:50 theatre/models.py:104 theatre/models.py:224
 msgid "Name"
 msgstr ""
 
@@ -28,18 +28,18 @@ msgid "Value"
 msgstr ""
 
 #: stm_site/models.py:10
-msgid "Properie"
+msgid "Propertie"
 msgstr ""
 
 #: stm_site/models.py:11
-msgid "Properies"
+msgid "Properties"
 msgstr ""
 
-#: stm_site/settings.py:170
+#: stm_site/settings.py:160
 msgid "English"
 msgstr ""
 
-#: stm_site/settings.py:171
+#: stm_site/settings.py:161
 msgid "Russian"
 msgstr ""
 
@@ -76,7 +76,7 @@ msgid "Django administration"
 msgstr ""
 
 #: theatre/admin.py:23
-msgid "-empty-"
+msgid "_empty_"
 msgstr ""
 
 #: theatre/admin.py:38
@@ -87,7 +87,11 @@ msgstr ""
 msgid "Full name"
 msgstr ""
 
-#: theatre/admin.py:74
+#: theatre/admin.py:70
+msgid "Troupe"
+msgstr ""
+
+#: theatre/admin.py:84
 msgid "Rating"
 msgstr ""
 
@@ -95,15 +99,15 @@ msgstr ""
 msgid "Theatre"
 msgstr ""
 
-#: theatre/forms.py:9 theatre/models.py:187
+#: theatre/forms.py:9 theatre/forms.py:20 theatre/models.py:225
 msgid "Phone"
 msgstr ""
 
-#: theatre/forms.py:10 theatre/models.py:188
+#: theatre/forms.py:10 theatre/forms.py:21 theatre/models.py:226
 msgid "E-mail"
 msgstr ""
 
-#: theatre/forms.py:12 theatre/models.py:190
+#: theatre/forms.py:12 theatre/models.py:228
 msgid "Message"
 msgstr ""
 
@@ -123,7 +127,7 @@ msgstr ""
 msgid "Middle name"
 msgstr ""
 
-#: theatre/models.py:54 theatre/models.py:115
+#: theatre/models.py:54 theatre/models.py:106
 msgid "Slug"
 msgstr ""
 
@@ -147,79 +151,99 @@ msgstr ""
 msgid "Artist"
 msgstr ""
 
-#: theatre/models.py:81 theatre/models.py:136
+#: theatre/models.py:81
 msgid "Artists"
 msgstr ""
 
-#: theatre/models.py:116 theatre/models.py:117 theatre/models.py:157
-#: theatre/models.py:158 theatre/models.py:180 theatre/models.py:181
+#: theatre/models.py:107 theatre/models.py:108 theatre/models.py:195
+#: theatre/models.py:196 theatre/models.py:218 theatre/models.py:219
 msgid "Description"
 msgstr ""
 
-#: theatre/models.py:126
+#: theatre/models.py:119
 msgid "Duration"
 msgstr ""
 
-#: theatre/models.py:128
+#: theatre/models.py:121
 msgid "Performance's photo"
 msgstr ""
 
-#: theatre/models.py:138
-msgid "Votes \"yes!\""
+#: theatre/models.py:133
+msgid "Director"
 msgstr ""
 
-#: theatre/models.py:139
-msgid "Votes \"No!\""
+#: theatre/models.py:143
+msgid "Lighting designer"
 msgstr ""
 
-#: theatre/models.py:141
-msgid "In archive?"
+#: theatre/models.py:153
+msgid "Sound engineer"
 msgstr ""
 
-#: theatre/models.py:145
-msgid "Performance"
-msgstr ""
-
-#: theatre/models.py:146
-msgid "Performances"
-msgstr ""
-
-#: theatre/models.py:154
-msgid "Event date"
-msgstr ""
-
-#: theatre/models.py:155 theatre/models.py:170
-msgid "Event"
-msgstr ""
-
-#: theatre/models.py:156
-msgid "Is premiere"
-msgstr ""
-
-#: theatre/models.py:161
-msgid "Poster's photo"
+#: theatre/models.py:163
+msgid "Painter"
 msgstr ""
 
 #: theatre/models.py:171
-msgid "Poster"
+msgid "Actor"
+msgstr ""
+
+#: theatre/models.py:177
+msgid "Votes \"yes!\""
 msgstr ""
 
 #: theatre/models.py:178
+msgid "Votes \"No!\""
+msgstr ""
+
+#: theatre/models.py:180
+msgid "In archive?"
+msgstr ""
+
+#: theatre/models.py:183
+msgid "Performance"
+msgstr ""
+
+#: theatre/models.py:184
+msgid "Performances"
+msgstr ""
+
+#: theatre/models.py:192 theatre/models.py:208
+msgid "Event"
+msgstr ""
+
+#: theatre/models.py:193
+msgid "Event date"
+msgstr ""
+
+#: theatre/models.py:194
+msgid "Is premiere"
+msgstr ""
+
+#: theatre/models.py:199
+msgid "Poster's photo"
+msgstr ""
+
+#: theatre/models.py:209
+msgid "Poster"
+msgstr ""
+
+#: theatre/models.py:216
 msgid "Event begin"
 msgstr ""
 
-#: theatre/models.py:179
+#: theatre/models.py:217
 msgid "Event end"
 msgstr ""
 
-#: theatre/models.py:189
+#: theatre/models.py:227
 msgid "File"
 msgstr ""
 
 #: theatre/utils.py:19
-msgid "New letter fron maneken.studio"
+msgid "New letter from maneken.studio"
 msgstr ""
 
-#: theatre/views.py:166
-msgid "New request"
+#: theatre/views.py:184
+msgid "New member"
 msgstr ""

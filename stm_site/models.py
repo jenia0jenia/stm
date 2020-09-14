@@ -2,13 +2,13 @@ from django.db import models
 from django.utils.translation import gettext as _
 
 
-class Properies(models.Model):
+class Properties(models.Model):
     name = models.CharField(_('Name'), max_length=100)
     value = models.CharField(_('Value'), max_length=250)
 
     class Meta:
-        verbose_name = _('Properie')
-        verbose_name_plural = _('Properies')
+        verbose_name = _('Propertie')
+        verbose_name_plural = _('Properties')
 
     def __str__(self):
         return self.name

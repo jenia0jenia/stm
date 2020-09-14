@@ -11,6 +11,7 @@ from django.http import HttpResponseRedirect, HttpResponse
 from django.views.generic import TemplateView, DetailView, ListView
 from django.views.generic.edit import FormView
 from django.conf import settings
+from django.db.models import Q
 from collections.abc import Iterable
 
 # from django.core.files import File
@@ -38,10 +39,14 @@ class HomePage(TemplateView):
         return context
 
     def get_artist_list(self, **kwargs):
-        return Artist.objects.filter(publication=True).order_by('?')[:7]
+        return Artist.objects\
+            .filter(publication=True)\
+            .order_by('?')[:7]
 
     def get_performance_list(self, **kwargs):
-        return Performance.objects.filter(publication=True, is_archive=False).order_by('order')[:4]
+        return Performance.objects\
+            .filter(publication=True, is_archive=False)\
+            .order_by('order')[:4]
 
     def get_poster_list(self, **kwargs):
         return Poster.objects.filter(publication=True)[:10]
@@ -71,10 +76,23 @@ class ArtistDetail(DetailView):
     def get_context_data(self, **kwargs):
         context = super(ArtistDetail, self).get_context_data(**kwargs)
         context['artists'] = self.get_artist_list()
+        slug = self.kwargs['slug']
+        perf = Performance.objects\
+            .filter(Q(publication=True))\
+            .order_by('order')
+
+        context['as_director'] = perf.filter(Q(director__slug=slug))
+        context['as_light'] = perf.filter(Q(light__slug=slug))
+        context['as_sound'] = perf.filter(Q(sound__slug=slug))
+        context['as_painter'] = perf.filter(Q(painter__slug=slug))
+        context['as_artist_list'] = perf.filter(Q(artists__slug=slug))
+
         return context
 
     def get_artist_list(self, **kwargs):
-        artist_list = Artist.objects.order_by('?')[:5]
+        artist_list = Artist.objects\
+            .filter(publication=True)\
+            .order_by('?')[:5]
         return artist_list
 
 
@@ -89,7 +107,9 @@ class ArtistList(ListView):
         return context
 
     def get_artist_list(self, **kwargs):
-        artist_list = Artist.objects.order_by('order').filter(publication=True)
+        artist_list = Artist.objects\
+            .filter(publication=True)\
+            .order_by('order')
         return artist_list
 
 
@@ -104,7 +124,9 @@ class PosterList(ListView):
         return context
 
     def get_poster_list(self, **kwargs):
-        poster_list = Poster.objects.order_by('order').filter(publication=True)
+        poster_list = Poster.objects\
+            .filter(publication=True)\
+            .order_by('order')
         return poster_list
 
 
@@ -123,14 +145,20 @@ class PerformanceDetail(DetailView):
 
     def get_context_data(self, **kwargs):
         context = super(PerformanceDetail, self).get_context_data(**kwargs)
-        context['performance_list'] = self.get_performance_list()
-        return context
-
-    def get_performance_list(self, **kwargs):
-        # exclude myself
         slug = self.kwargs['slug']
-        performance_list = Performance.objects.exclude(slug=slug).filter(is_archive=False).order_by('?')[:5] # random
-        return performance_list
+        performance = Performance.objects.get(slug=slug)
+
+        context['performance'] = performance
+        context['director'] = performance.director.all()
+        context['light'] = performance.light.all()
+        context['sound'] = performance.sound.all()
+        context['painter'] = performance.painter.all()
+        context['artist_list'] = performance.artists.all()
+        context['performance_list'] = Performance.objects\
+            .exclude(slug=slug)\
+            .filter(Q(is_archive=False) & Q(publication=True))\
+            .order_by('?')[:5] # random 5
+        return context
 
 
 class PerformanceList(ListView):
@@ -141,10 +169,19 @@ class PerformanceList(ListView):
     def get_context_data(self, **kwargs):
         context = super(PerformanceList, self).get_context_data(**kwargs)
         context['performance_list'] = self.get_performance_list()
+        context['performance_list_archive'] = self.get_performance_list_archive()
         return context
 
     def get_performance_list(self, **kwargs):
-        performance_list = Performance.objects.filter(is_archive=False).order_by('order')
+        performance_list = Performance.objects\
+            .filter(Q(is_archive=False) & Q(publication=True))\
+            .order_by('order')
+        return performance_list
+
+    def get_performance_list_archive(self, **kwargs):
+        performance_list = Performance.objects\
+            .filter(Q(is_archive=True) & Q(publication=True))\
+            .order_by('order')
         return performance_list
 
 

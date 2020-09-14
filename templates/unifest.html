@@ -40,71 +40,9 @@
 
     <div class="u__section" id="poster">
         <div class="h1">Программа фестиваля</div>
-        {# <div class="h2">Сразу, как только определимся</div> #}
         <script async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
         <hr>
     </div>
-
-
-    {% comment %}
-    <div class="u__section">
-        <div class="h1">Мастер-классы</div>
-        <div class="h2">Мастер-классы</div>
-        <hr>
-    </div>
-    {% endcomment %}
-
-    {% comment %}
-    <div class="h1">Подать заявку</div>
-    <div class="h2">Заполните <a href="/media/uploads/zayavka.docx" target="_blank" class="u__link u__request-file">ЗАЯВКУ</a> и пришлитё её нам с помощью формы ниже! Не забудьте ознакомиться с <a href="/media/uploads/polozhenie_unifest.docx" target="_blank" class="u__link u__request-file">ПОЛОЖЕНИЕМ</a>!
-        <!-- придёт к нам на почту и мы с вами свяжемся! --></div>
-
-    <div id="u-form" class="u__form-container">
-        <form action="/unifest/" class="u__form" method="post" enctype="multipart/form-data">
-            {% csrf_token %}
-            {# {{ form }} #}
-            {% for field in form %}
-                <div class="u__form-field">
-                    {{ field }}
-                </div>
-            {% endfor %}
-            <input class="button u__form-submit" type="submit" value="Отправить">
-        </form>
-    </div>
-    {% endcomment %}
-
-    {% comment %}
-        <div id="u-form" class="u__section">
-            <div class="h1">Регистрация для зрителей</div>
-            <div class="h2">Вход на открыте <img class="u__title-mini" src="{% static 'unifest/title.png' %}" alt="unifest"> только для зарегистрированных участников!</div>
-
-            <div class="u__form-container">
-                <form action="/unifest/" class="u__form" method="post">
-                    {% csrf_token %}
-                    {# {{ form }} #}
-                    {% for field in form %}
-                        <div class="u__form-field">
-                            {% if field.label %}
-                                <label for="{{ field.name }}">{{ field.label }}:</label>
-                            {% endif %}
-                            {{ field }}
-                        </div>
-                    {% endfor %}
-                    <input class="button u__form-submit" type="submit" value="Отправить">
-                </form>
-            </div>
-            <hr>
-        </div>
-    {% endcomment %}
-
-
-    {% comment %}
-    <div class="u__section">
-        <div class="h1">Наши партнёры</div>
-        <div class="h2">МинКульт Челябинской области</div>
-        <hr>
-    </div>
-    {% endcomment %}
 
     <div class="u__section" id="contacts">
         <div class="h1">Контакты</div>

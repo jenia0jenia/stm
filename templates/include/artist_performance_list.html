@@ -1,0 +1,17 @@
+{% load theatre_tags %}
+
+{% if performance_list %}
+	<div class="artist__performance-list m--{{ name }}">
+
+		{% for performance in performance_list %}
+
+			{% if forloop.first %} {% get_verbose_field_name performance name %}: {% endif %}
+
+			<div class="artist__performance-list__item">
+				<a class="artist__performance-list__item__link" href="{% url 'theatre:performance_detail' performance.slug %}">{{ performance }}</a>{% if not forloop.last %}, {% endif %}
+			</div>
+
+		{% endfor %}
+
+	</div>
+{% endif %}

@@ -64,9 +64,15 @@ class ArtistAdmin(TheatreBaseAdmin):
     list_editable = ('middle_name',) + TheatreBaseAdmin.base_list_editable
     list_display_links = ('name',)
 
+    search_fields = ['last_name']
+
 
 class PerformanceAdmin(TheatreBaseAdmin):
     fieldsets = [
+        (_('Troupe'), {
+            'fields': ['director', 'light', 'sound', 'painter', 'artists'],
+            'classes': ['collapse']
+        }),
         (None, {
             'fields': [
                 'name',
@@ -80,7 +86,7 @@ class PerformanceAdmin(TheatreBaseAdmin):
         (_('Rating'), {
             'fields': ['votes_yes', 'votes_no'],
             'classes': ['collapse']
-        })
+        }),
     ] + TheatreBaseAdmin.base_fieldsets
 
     list_display = (
@@ -93,6 +99,8 @@ class PerformanceAdmin(TheatreBaseAdmin):
     list_display_links = ('name',)
 
     prepopulated_fields = {'slug': ('name',)}
+
+    search_fields = ['name']
 
 
 class PosterAdmin(TheatreBaseAdmin):

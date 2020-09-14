@@ -8,9 +8,18 @@
 
 {% block content %}
     <h1 class="h1">Спектакли</h1>
+
     {% for performance in performance_list %}
       {% include "include/performance_card.html" with preformance=preformance %}
     {% empty%}
       <p>No performances are available.</p>
     {% endfor %}
+
+    {% if performance_list_archive %}
+      <h2 class="h1">Спектакли в архиве</h2>
+      {% for performance in performance_list_archive %}
+        {% include "include/performance_card.html" with preformance=preformance %}
+      {% endfor %}
+    {% endif %}
+
 {% endblock %}

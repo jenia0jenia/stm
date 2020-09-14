@@ -81,7 +81,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
         verbose_name_plural = _('Artists')
 
     def __str__(self):
-        return self.last_name
+        return self.name + ' ' + self.last_name
 
     def viewed(self):
         self.views += 1
@@ -102,19 +102,11 @@ class Artist(ContentGalleryMixin, TheatreBase):
 
 class Performance(ContentGalleryMixin, TheatreBase):
     name = models.CharField(_('Name'), max_length=200)
-    # director = models.ForeignKey(
-    #     Artist,
-    #     on_delete=models.SET_DEFAULT,
-    #     verbose_name=_('Director'),
-    #     related_name='director_name',
-    #     null=True,
-    #     blank=True,
-    #     default=None
-    # )
 
     slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
     description = HTMLField(_('Description'), blank=True)
     desc = models.CharField(_('Description'), max_length=1000, blank=True)
+
     # genre = models.ForeignKey(
     #     Genre,
     #     on_delete=models.SET_DEFAULT,
@@ -123,6 +115,7 @@ class Performance(ContentGalleryMixin, TheatreBase):
     #     blank=True,
     #     default=None
     # )
+
     duration = models.CharField(_('Duration'), max_length=100, blank=True, null=True)
     photo = FileBrowseField(
         _('Performance\'s photo'),
@@ -133,13 +126,58 @@ class Performance(ContentGalleryMixin, TheatreBase):
         null=True
     )
 
-    artists = models.ManyToManyField('Artist', verbose_name=_('Artists'), blank=True)
+    director = models.ManyToManyField(
+        'Artist',
+        # on_delete=models.SET_DEFAULT,
+        related_name='director_name',
+        verbose_name=_('Director'),
+        null=True,
+        blank=True,
+        default=None
+    )
+
+    light = models.ManyToManyField(
+        'Artist',
+        # on_delete=models.SET_DEFAULT,
+        related_name='light_name',
+        verbose_name=_('Lighting designer'),
+        null=True,
+        blank=True,
+        default=None
+    )
+
+    sound = models.ManyToManyField(
+        'Artist',
+        # on_delete=models.SET_DEFAULT,
+        related_name='sound_name',
+        verbose_name=_('Sound engineer'),
+        null=True,
+        blank=True,
+        default=None
+    )
+
+    painter = models.ManyToManyField(
+        'Artist',
+        # on_delete=models.SET_DEFAULT,
+        related_name='painter_name',
+        verbose_name=_('Painter'),
+        null=True,
+        blank=True,
+        default=None
+    )
+
+    artists = models.ManyToManyField(
+        'Artist',
+        verbose_name=_('Actor'),
+        null=True,
+        blank=True,
+        default=None
+    )
 
     votes_yes = models.IntegerField(_('Votes "yes!"'), blank=True, default=0)
     votes_no = models.IntegerField(_('Votes "No!"'), blank=True, default=0)
 
     is_archive = models.BooleanField(_('In archive?'), default=False)
-
 
     class Meta:
         verbose_name = _('Performance')

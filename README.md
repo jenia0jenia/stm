@@ -33,3 +33,7 @@
 
 	workon stm
 	python manage.py runserver
+
+# translateions
+	django-admin makemessages -a
+	django-admin compilemessages
