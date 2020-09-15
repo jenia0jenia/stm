@@ -55,8 +55,8 @@ class Artist(ContentGalleryMixin, TheatreBase):
 
     views = models.PositiveIntegerField(_('Views'), default=0)
 
-    description = HTMLField(_('About artis'), blank=True)
-    desc = models.CharField(_('About artis'), max_length=1000, blank=True)
+    description = HTMLField(_('About artist'), blank=True)
+    desc = models.CharField(_('About artist'), max_length=1000, blank=True)
 
     photo = FileBrowseField(
         _('Artist\'s photo'),
@@ -71,7 +71,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
         _('In theatre from year...'),
         min_value=1994,
         max_value=date.today().year,
-        default=2018,
+        default=2020,
         blank=True,
         null=True
     )
@@ -79,6 +79,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
     class Meta:
         verbose_name = _('Artist')
         verbose_name_plural = _('Artists')
+        ordering = ['name']
 
     def __str__(self):
         return self.name + ' ' + self.last_name
@@ -168,6 +169,7 @@ class Performance(ContentGalleryMixin, TheatreBase):
 
     artists = models.ManyToManyField(
         'Artist',
+        related_name='artist_name',
         verbose_name=_('Actor'),
         null=True,
         blank=True,
@@ -211,6 +213,7 @@ class Poster(ContentGalleryMixin, TheatreBase):
 
     def __str__(self):
         return self.event.name
+
 
 class Unifest(TheatreBase):
     date_begin = models.DateTimeField(_('Event begin'), blank=True, null=True, default=timezone.now)

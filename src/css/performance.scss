@@ -127,6 +127,7 @@
 
 		&__description {
 			margin-bottom: 20px;
+			margin-right: 20px;
 		}
 
 		&__duration {
@@ -263,9 +264,19 @@
 		}
 
 		&-detail {
+
+			flex-flow: column-reverse;
+
+
+			&__description {
+				margin-right: 0;
+			}
+
 			&__image {
 				max-width: 100%;
 			}
+
+
 		}
 	}
 }

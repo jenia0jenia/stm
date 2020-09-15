@@ -14,21 +14,18 @@
 		{# <span>{{ object.name }}</span> #}
 	{# </div> #}
 	<div class="performance-detail">
-		<div>
 
-			<div class="performance-detail__description">
+		<div class="performance-detail__description">
 
-				{{ object.description|safe }}
-				
-				<div>
-					{% if performance.duration %}
-						<div class="performance-detail__duration">
-							<img class="performance-detail__duration-icon" src="{% static 'i/clock.svg' %}" />
-							<span>Продолжительность: {{ performance.duration }}</span>
-						</div>
-					{% endif %}
-				</div>
-
+			{{ object.description|safe }}
+			
+			<div>
+				{% if performance.duration %}
+					<div class="performance-detail__duration">
+						<img class="performance-detail__duration-icon" src="{% static 'i/clock.svg' %}" />
+						<span>Продолжительность: {{ performance.duration }}</span>
+					</div>
+				{% endif %}
 			</div>
 
 			{% if director or light or sound or painter or artist_list %}
@@ -49,7 +46,6 @@
 			{% with name="artists"%}  
 				{% include "include/performance_artist_list.html" with artist_list=artist_list performance=performance name=name %}
 			{% endwith %}
-
 		</div>
 
 		<div class="performance-detail__image">
@@ -57,6 +53,7 @@
     			<img class="entry-card__image-img performance-detail__image-img" src="/media/{{ object.photo }}" width="{{ object.photo.width }}" height="{{ object.photo.height }}" title="Студия-Театр «Манекен» STM Челябинск {{ object.name }}" alt="Спектакль {{ object.name }}">
 			{% endif %}
 		</div>
+
 	</div>
 
 	{% if object.genre %}

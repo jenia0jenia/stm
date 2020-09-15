@@ -7,7 +7,6 @@
 }
 
 .scroller__wrapper {
-    display: inline-block;
     min-width: 100%;
 }
 
@@ -36,4 +35,40 @@
 
 .scroller::-webkit-scrollbar {
     display: none;
+}
+
+
+@media screen and (max-width: 640px) {
+
+    .scroller__wrapper {
+        overflow-x: scroll;
+
+        &::-webkit-scrollbar {
+            -webkit-appearance: none;
+        }
+
+        &::-webkit-scrollbar:vertical {
+            width: 12px;
+        }
+
+        &::-webkit-scrollbar:horizontal {
+            height: 4px;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background-color: rgba(255, 255, 255, .4);
+            border-radius: 10px;
+            border: 5px solid rgba(155, 155, 155, .4);
+        }
+
+        &::-webkit-scrollbar-track {
+            border-radius: 10px;  
+            background-color: rgba(100, 100, 100, 1); 
+        }
+    }
+
+    .scroller__menu-item {
+        margin: 0;
+        padding: 0px 8px;
+    }
 }

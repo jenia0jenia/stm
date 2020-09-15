@@ -75,8 +75,8 @@
   {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css"> #}
   {# <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> #}
 
-  <script src="{% static 'dist/dist.js' %}?v=7"></script>
-  <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=7">
+  <script src="{% static 'dist/dist.js' %}?v=8"></script>
+  <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=8">
 
   <script src="http://localhost:35729/livereload.js"></script>
 
@@ -98,6 +98,9 @@
             {% sitetree_menu from "menu_main" include "trunk,topmenu" %}
           </div>
         </div>
+
+        <!-- Add Scrollbar -->
+        <div class="scroller-scrollbar"></div>
       </div>
 
       {% block header %}
