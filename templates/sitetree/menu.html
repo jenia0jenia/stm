@@ -3,7 +3,7 @@
 <div class="scroller__menu">
 	<ul class="menu main-menu">
 		{% for item in sitetree_items %}
-		<li class="menu__item main-menu__item scroller__menu-item{% if item.alias == 'unifest' %} menu__item_unifest{% endif %}">
+		<li class="menu__item main-menu__item scroller__menu-item{% if item.alias == 'unifest' or item.alias == 'stfest' %} menu__item_unifest{% endif %}">
 	        <a class="menu__link main-menu__link" href="{% sitetree_url for item %}" {% if item.hint %}title="{{ item.hint }}"{% endif %} {% if item.is_current or item.in_current_branch %}class="{{ item.is_current|yesno:"current_item ," }}{{ item.in_current_branch|yesno:"current_branch," }}"{% endif %}>{{ item.title_resolved }}</a>
 			{% comment %}
 			{% if item.has_children %}

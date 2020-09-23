@@ -2,6 +2,7 @@
 
 {% load static %}
 {% load cache %}
+{% load thumbnail %}
 {% block title %}{{ block.super }}STFest - Фестиваль сторителлинга{% endblock %}
 {#% load compress %#}
 
@@ -17,11 +18,14 @@
             <div class="stfest__month"></div>
             <div class="stfest__year">2020 года</div>
         </div>
+    </div>
 
-    </div>
     <div class="stfest__section">
-        <img src="{% static 'i/stfest.jpg'%}" alt="" style="width: 100%;">
+        {% thumbnail 'i/stfest.jpg' "960" crop="center" as im %}
+            <img src="{% static 'i/stfest.jpg'%}" alt="" style="width: 100%;">
+        {% endthumbnail %}
     </div>
+
     <div class="stfest__section">
         <div class="stfest__request">
             <a href="{% static 'doc/STFEST.docx'%}" class="button stfest__request-link m--doc">Положение фестиваля</a>
