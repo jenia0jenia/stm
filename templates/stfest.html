@@ -1,0 +1,32 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% load cache %}
+{% block title %}{{ block.super }}STFest - Фестиваль сторителлинга{% endblock %}
+{#% load compress %#}
+
+{% block content %}
+
+    <div class="stfest__section">
+        <h1 class="stfest__title">
+            Фестиваль - лаборатория сторителлинг спектаклей «<span class="text-color">S</span><span class="text-color">T</span>Fest»
+        </h1>
+
+        <div class="stfest__date">
+            <div class="stfest__day">28 ноября - 1 декабря</div>
+            <div class="stfest__month"></div>
+            <div class="stfest__year">2020 года</div>
+        </div>
+
+    </div>
+    <div class="stfest__section">
+        <img src="{% static 'i/stfest.jpg'%}" alt="" style="width: 100%;">
+    </div>
+    <div class="stfest__section">
+        <div class="stfest__request">
+            <a href="{% static 'doc/STFEST.docx'%}" class="button stfest__request-link m--doc">Положение фестиваля</a>
+        </div>
+    </div>
+    
+
+{% endblock %}

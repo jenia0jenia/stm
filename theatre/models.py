@@ -20,8 +20,9 @@ def upload_path(path):
     return os.path.join('uploads', str(path))
 
 class TheatreBase(models.Model):
-    publication = models.BooleanField(_('Publication'), default=True)
     order = models.PositiveIntegerField(_('Order'), default=100)
+    publication = models.BooleanField(_('Publication'), default=True)
+    published_date = models.DateTimeField(_('Published date'), default=timezone.now)
 
     class Meta:
         abstract = True
@@ -61,7 +62,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
     photo = FileBrowseField(
         _('Artist\'s photo'),
         max_length=200,
-        directory=upload_path('people/'),
+        directory=upload_path(''),
         extensions=upload_photo_ext,
         blank=True,
         null=True
@@ -71,7 +72,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
         _('In theatre from year...'),
         min_value=1994,
         max_value=date.today().year,
-        default=2020,
+        default=date.today().year,
         blank=True,
         null=True
     )
@@ -107,6 +108,12 @@ class Performance(ContentGalleryMixin, TheatreBase):
     slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
     description = HTMLField(_('Description'), blank=True)
     desc = models.CharField(_('Description'), max_length=1000, blank=True)
+    premiere_year = models.IntegerField(
+        _('Premiere year...'),
+        default=date.today().year,
+        blank=True,
+        null=True
+    )
 
     # genre = models.ForeignKey(
     #     Genre,
@@ -121,7 +128,7 @@ class Performance(ContentGalleryMixin, TheatreBase):
     photo = FileBrowseField(
         _('Performance\'s photo'),
         max_length=200,
-        directory=upload_path('event/'),
+        directory=upload_path(''),
         extensions=upload_photo_ext,
         blank=True,
         null=True
@@ -184,7 +191,7 @@ class Performance(ContentGalleryMixin, TheatreBase):
     class Meta:
         verbose_name = _('Performance')
         verbose_name_plural = _('Performances')
-        # ordering = ['name']
+        ordering = ['name']
 
     def __str__(self):
         return self.name
@@ -200,7 +207,7 @@ class Poster(ContentGalleryMixin, TheatreBase):
     photo = FileBrowseField(
         _('Poster\'s photo'),
         max_length=200,
-        directory=upload_path('event/'),
+        directory=upload_path(''),
         extensions=['.jpg', '.png', '.gif', '.svg'],
         blank=True,
         null=True
@@ -227,5 +234,5 @@ class URequest(models.Model):
     name = models.CharField(_('Name'), max_length=100, blank=False, null=False)
     phone = models.CharField(_('Phone'), max_length=20, blank=False, null=False)
     email = models.EmailField(_('E-mail'), max_length=50, blank=False, null=False)
-    file = models.FileField(_('File'), upload_to='uploads/u/request/', blank=False, null=False)
+    file = models.FileField(_('File'), upload_to='uploads/', blank=False, null=False)
     message = models.TextField(_('Message'), max_length=1000)

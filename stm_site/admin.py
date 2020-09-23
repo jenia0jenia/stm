@@ -25,10 +25,10 @@ class FlatPageCustom(FlatPageAdmin):
 class PropertiesAdmin(admin.ModelAdmin):
     fieldsets = [
         (None, {
-            'fields': ['name', 'value',]
+            'fields': ['name', 'value', 'addition_value',]
         })
     ]
-    list_display = ('name', 'value',)
+    list_display = ('name', 'value', 'addition_value',)
     list_editable = ('value',)
     list_display_links = ('name',)
 

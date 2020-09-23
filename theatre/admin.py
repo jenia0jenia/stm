@@ -18,7 +18,7 @@ class TheatreBaseAdmin(admin.ModelAdmin):
         })
     ]
     base_list_editable = ('order', 'publication',)
-    base_list_display = ('order', 'publication',)
+    base_list_display = ('order', 'publication', 'published_date')
 
     empty_value_display = _('_empty_')
 

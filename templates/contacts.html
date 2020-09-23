@@ -2,14 +2,15 @@
 
 {% load static %}
 {% load cache %}
+{% load theatre_tags %}
 
 {% block title %}{{ block.super }}Наши Контакты{% endblock %}
 
 {% block content %}
     <h1 class="h1">Наши контакты</h1>
-    <p>Телефон студии +7 (351) 267-94-77</p>
+    <p>Телефон студии {% get_propertie 'phone' %}</p>
 
-    <p>По разным вопросам Илья - 8-909-073-83-34, ilyavtyurin@gmail.com</p>
+    <p>По разным вопросам Илья - {% get_propertie 'email' %}</p>
 
     {# <p>Написать письмо художественному руководителю - Филонов Владимир Фёдорович - </p> #}
 

@@ -9,3 +9,17 @@
 		margin: 0 auto;
 	}
 }
+
+.decoration {
+  cursor: pointer;
+  letter-spacing: -3px;
+
+  &__letter {
+    color: #b5b4b496;
+    transition: color .2s ease-out;
+
+    &:hover {
+      color: #f6763b;
+    }
+  }
+}

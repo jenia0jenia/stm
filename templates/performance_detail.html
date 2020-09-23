@@ -3,9 +3,22 @@
 {% load static %}
 {% load cache %}
 {% load thumbnail %}
+{% load theatre_tags %}
 {#% load compress %#}
 
 {% block title %}{{ block.super }}Спектакль {{ object.name }}{% endblock %}
+
+{% block head %}
+	{{ block.super }}
+	<meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ object.photo.url }}" />
+  <meta property="og:image:width" content="{{ object.photo.width }}" />
+  <meta property="og:image:height" content="{{ object.photo.height }}" />
+
+  <meta property="og:type" content="article" />
+  <meta property="og:article:published_time" content="" />
+  <meta property="og:title" content="Спектакль {{ object.name }} студии-театра «Манекен»" />
+  <meta property="og:description" content="{{ object.description|safe|truncatewords:15 }}" />
+{% endblock head %}
 
 {% block content %}
 	<h1 class="h1">{{ object.name }}</h1>
@@ -50,7 +63,7 @@
 
 		<div class="performance-detail__image">
 			{% if object.photo %}
-    			<img class="entry-card__image-img performance-detail__image-img" src="/media/{{ object.photo }}" width="{{ object.photo.width }}" height="{{ object.photo.height }}" title="Студия-Театр «Манекен» STM Челябинск {{ object.name }}" alt="Спектакль {{ object.name }}">
+    			<img class="entry-card__image-img performance-detail__image-img" src="{{ object.photo.url }}" width="{{ object.photo.width }}" height="{{ object.photo.height }}" title="{% get_propertie 'site_name' %} {{ object.name }}" alt="Спектакль {{ object.name }}">
 			{% endif %}
 		</div>
 

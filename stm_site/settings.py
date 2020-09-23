@@ -32,6 +32,13 @@ DEBUG = True
 
 ALLOWED_HOSTS = ['localhost', 'maneken.studio']
 
+INTERNAL_IPS = [
+    # ...
+    '127.0.0.1',
+    # ...
+]
+
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
 # Application definition
 
@@ -69,6 +76,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'stm_site.middleware.SiteMiddleware',
 ]
 
 ROOT_URLCONF = 'stm_site.urls'
@@ -177,7 +185,7 @@ USE_TZ = True
 SITE_ID = 2
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
+# STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
 STATICFILES_DIRS = [
     os.path.join(SITE_ROOT, "src"),
     os.path.join(SITE_ROOT, "static"),
@@ -196,13 +204,13 @@ STATICFILES_FINDERS = [
 
 CSRF_COOKIE_HTTPONLY = True
 
-# FILEBROWSER_DIRECTORY = 'uploads/'
-# FILEBROWSER_EXTENSIONS = {
-#     'Image': ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff'],
-#     'Document': ['.pdf', '.doc', '.rtf', '.txt', '.xls', '.csv'],
-#     'Video': ['.mov', '.wmv', '.mpeg', '.mpg', '.avi', '.rm'],
-#     'Audio': ['.mp3', '.mp4', '.wav', '.aiff', '.midi', '.m4p']
-# }
+FILEBROWSER_DIRECTORY = 'uploads/'
+FILEBROWSER_EXTENSIONS = {
+    'Image': ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff'],
+    'Document': ['.pdf', '.doc', '.rtf', '.txt', '.xls', '.csv'],
+    'Video': ['.mov', '.wmv', '.mpeg', '.mpg', '.avi', '.rm'],
+    'Audio': ['.mp3', '.mp4', '.wav', '.aiff', '.midi', '.m4p']
+}
 
 # DIRECTORY = ''
 

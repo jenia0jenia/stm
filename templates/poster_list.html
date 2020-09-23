@@ -3,30 +3,37 @@
 {% load static %}
 {% load cache %}
 {% load thumbnail %}
-{% block title %}{{ block.super }}Афиша{% endblock %}
+{% block title %}{{ block.super }}Афиша. Купить билеты{% endblock %}
 
 {% block content %}
 <h1 class="h1">Афиша</h1>
-{% comment %}
-{% for poster in poster_list %}
-	<h2 class="h2">{{ poster.name }}</h2>
-	<div>{{ poster.description }}</div>
-	<div>{{ poster.event }}</div>
-	<div>{{ poster.event_date }}</div>
-	<div class="poster__image">
-		{% thumbnail poster.photo "100x100" crop="center" as im %}
-			<img class="poster__image-img" src="{{ im.url }}" alt="{{ poster }}" width="{{ im.width }}" height="{{ im.height }}">
-		{% empty %}
-			<p>No image</p>
-		{% endthumbnail %}
-	</div>
-{% empty %}
-	<p>Сезон закрыт, товарищи!</p>
-{% endfor %}
-{% endcomment %}
 
 <div id="timepad">
 	<script async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
 </div>
+
+
+{% for poster in poster_list %}
+  {% include "include/performance_card.html" with performance=poster.event %}
+{% empty%}
+	<p>Сезон закрыт, товарищи!</p>
+{% endfor %}
+
+{% comment %}
+	{% for poster in poster_list %}
+		<h2 class="h2">{{ poster.name }}</h2>
+		<div>{{ poster.event.description|safe }}</div>
+		<div>{{ poster.event }}</div>
+		<div>{{ poster.event_date }}</div>
+		<div class="poster__image">
+			{% thumbnail poster.event.photo "100x100" crop="center" as im %}
+				<img class="poster__image-img" src="{{ im.url }}" alt="{{ poster.name }}" width="{{ im.width }}" height="{{ im.height }}">
+			{% empty %}
+				<p>No image</p>
+			{% endthumbnail %}
+		</div>
+	{% empty %}
+	{% endfor %}
+{% endcomment %}
 
 {% endblock %}

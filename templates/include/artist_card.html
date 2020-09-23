@@ -1,3 +1,4 @@
+{% load theatre_tags %}
 {% load thumbnail %}
 
 <div class="artist-card__wrap">
@@ -6,7 +7,7 @@
 		<div class="artist-card__hover"></div>
 		<div class="artist-card__image">
 		{% thumbnail artist.photo "220x220" crop="center" as im %}
-	  		<img class="artist-card__image-img" src="{{ im.url }}" title="Студия-Театр «Манекен» Челябинск STM {{ artist.name }} {{ artist.last_name }}" alt="{{ artist.name }} {{ artist.last_name }}" width="{{ im.width }}" height="{{ im.height }}">
+	  		<img class="artist-card__image-img" src="{{ im.url }}" title="{% get_propertie 'site_name' %} {{ artist.name }} {{ artist.last_name }}" alt="{{ artist.name }} {{ artist.last_name }}" width="{{ im.width }}" height="{{ im.height }}">
 		  {% empty %}
 				<p>No image</p>
 	  	{% endthumbnail %}

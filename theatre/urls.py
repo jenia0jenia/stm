@@ -7,7 +7,8 @@ from .views import (
     PosterList,
     Contacts,
     PerformanceDetail, PerformanceList,
-    Unifest,
+    # Unifest,
+    STFest,
 )
 
 app_name = 'theatre'
@@ -20,6 +21,7 @@ urlpatterns = [
     path('artist/<slug:slug>/', ArtistDetail.as_view(), name='artist_detail'),
     path('poster/', PosterList.as_view(), name='poster'),
     path('p/', include('django.contrib.flatpages.urls')),
-    path('unifest/', Unifest.as_view(), name='unifest'),
+    # path('unifest/', Unifest.as_view(), name='unifest'),
+    path('stfest/', STFest.as_view(), name='stfest'),
     path('contacts/', Contacts.as_view(), name='contacts'),
 ]

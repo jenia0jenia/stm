@@ -8,6 +8,7 @@ import logging
 # from django.shortcuts import render
 from django.http import HttpResponseRedirect, HttpResponse
 
+from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView, ListView
 from django.views.generic.edit import FormView
 from django.conf import settings
@@ -15,7 +16,7 @@ from django.db.models import Q
 from collections.abc import Iterable
 
 # from django.core.files import File
-from django.core.files.storage import FileSystemStorage
+# from django.core.files.storage import FileSystemStorage
 
 from .models import Artist, Performance, Poster
 from .forms import URequestForm, UMemberForm
@@ -214,3 +215,10 @@ class Unifest(FormView):
         # This method is called when valid form data has been POSTed.
         # It should return an HttpResponse.
         return super().form_valid(form)
+
+
+class STFest(TemplateView):
+    template_name = 'stfest.html'
+
+    def get(self, request, *args, **kwargs):
+        return render(request, self.template_name)
