@@ -30,6 +30,8 @@ SECRET_KEY = access.SECRET_KEY
 DEBUG = True
 # DEBUG = False
 
+THUMBNAIL_DEBUG = True
+
 ALLOWED_HOSTS = ['localhost', 'maneken.studio']
 
 INTERNAL_IPS = [
@@ -93,6 +95,7 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
+                'django.template.context_processors.static',
             ],
             # 'loaders': [
             #     ('django.template.loaders.cached.Loader', [
@@ -185,7 +188,7 @@ USE_TZ = True
 SITE_ID = 2
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
+STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
 STATICFILES_DIRS = [
     os.path.join(SITE_ROOT, "src"),
     os.path.join(SITE_ROOT, "static"),

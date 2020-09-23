@@ -1,8 +1,8 @@
 {% extends "base/base.html" %}
 
 {% load static %}
-{% load cache %}
 {% load thumbnail %}
+{% load cache %}
 {% block title %}{{ block.super }}STFest - Фестиваль сторителлинга{% endblock %}
 {#% load compress %#}
 
@@ -21,9 +21,9 @@
     </div>
 
     <div class="stfest__section">
-        {% thumbnail 'i/stfest.jpg' "960" crop="center" as im %}
-            <img src="{% static 'i/stfest.jpg'%}" alt="" style="width: 100%;">
-        {% endthumbnail %}
+        {% with request.scheme|add:'://'|add:request.META.HTTP_HOST|add:STATIC_URL|add:'i/stfest.jpg' as image_path %}
+            <img src="{% thumbnail image_path '960' %}" alt="" style="width: 100%;">            
+        {% endwith %}
     </div>
 
     <div class="stfest__section">
