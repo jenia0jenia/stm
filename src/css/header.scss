@@ -10,7 +10,7 @@
     	align-items: center;
 
 	    position: fixed;
-	    height: 50px;
+        height: 120px;
 	    width: 100%;
 
 	    transition: all 0.2s ease-in-out;
@@ -19,7 +19,7 @@
         &_top {
             border-bottom: 1px solid white;
     	    top: 0;
-    	    background-color: black;
+    	    background-color: $color-black;
         }
 
         &_bottom {
@@ -31,13 +31,54 @@
 
     &_hide {
         background-color: $color-black;
-        top: -45px;
+        /*top: -45px;*/
+        height: 45px;
+
+        .menu__item_tickets {
+
+            .menu__link {
+                line-height: 45px;
+
+                &::before {
+                    height: 0;
+                    margin: 0;
+                }
+
+            }
+        }
+
+        .menu__link {
+            line-height: 45px;
+        }
     }
 
     &__logo {
 		margin-right: 20px;
     }
 }
+
+@media screen and (max-width: 767px) {
+    .header {
+
+        &__fixed {
+            height: 80px;
+        }
+
+        
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .header {
+
+        &__fixed {
+            height: 50px;
+        }
+
+        
+    }
+}
+
 /*
 @media screen and (max-width: 767px) {
     .header {

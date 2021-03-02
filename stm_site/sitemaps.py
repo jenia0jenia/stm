@@ -31,7 +31,7 @@ class PerformanceSitemap(Sitemap):
 class StaticViewSitemapReverse(Sitemap):
 
     def items(self):
-        return ['performance', 'artist', 'poster', 'unifest', 'contacts', ]
+        return ['performance', 'artist', 'poster', 'stfest', 'contacts', ]
 
     def location(self, item):
         return reverse('theatre:{}'.format(item))

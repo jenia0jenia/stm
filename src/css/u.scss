@@ -10,8 +10,8 @@
 
 		hr {
 			border: none;
-			color: $color-orange;
-			background-color: $color-orange;
+			color: $color-base;
+			background-color: $color-base;
 			height: 2px;
 		}
 	}
@@ -76,7 +76,7 @@
 
 	&__link {
 		text-decoration: none;
-		color: $color-orange;
+		color: $color-base;
 		transition: all 0.2s ease-in-out;
 
 		&:hover {
@@ -101,7 +101,7 @@
 			& input {
 				width: 100%;
 				padding: 8px;
-				border: 1px solid $color-orange;
+				border: 1px solid $color-base;
 				background-color: rgba(255, 255, 255, .8);
 			}
 		}

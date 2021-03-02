@@ -1,5 +1,14 @@
 .container {
-    max-width: 960px;
+    width: 1400px;
     margin: 0 auto;
     padding: 0 15px;
+    box-sizing: border-box;
+}
+
+@media only screen and (max-width: 1399px) {
+  .container {
+      width: 100%;
+      margin: 0 auto;
+      padding: 0 15px;
+  }
 }

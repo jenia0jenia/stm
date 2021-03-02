@@ -37,3 +37,6 @@
 # translateions
 	django-admin makemessages -a
 	django-admin compilemessages
+
+
+# robots.txt using by nginx

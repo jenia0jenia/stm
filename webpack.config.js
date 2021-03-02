@@ -3,10 +3,11 @@
 
 const path = require('path');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const devMode = process.env.NODE_ENV !== 'production';
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const DIST = 'static/dist/';
 const LiveReloadPlugin = require('webpack-livereload-plugin');
+
+const devMode = process.env.NODE_ENV !== 'production';
+const DIST = 'static/dist/';
 
 module.exports = {
     devtool: false, //devtool: 'eval', // Enable to debug js code
@@ -56,7 +57,10 @@ module.exports = {
             },
             {
                 test: /\.s?[ac]ss$/,
-                use: ['style-loader', MiniCssExtractPlugin.loader, 'css-loader',
+                use: [
+                    'style-loader',
+                    MiniCssExtractPlugin.loader,
+                    'css-loader',
                     {
                         loader: 'sass-loader',
                         options: {

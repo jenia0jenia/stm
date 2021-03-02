@@ -23,7 +23,7 @@
 @import "tickets.scss";
 @import "sticky.scss";
 @import "y-map.scss";
-@import "social.scss";
+@import "social-menu.scss";
 @import "earth.scss";
 @import "cube.scss";
 @import "stfest.scss";
@@ -46,8 +46,23 @@ a {
 	font-size: 24px;
 }
 
+.line-title {
+	/*position: relative;*/
+
+	&::before {
+		display: none;
+		content: '';
+		width: 100%;
+		position: absolute;
+		height: 2px;
+		background-color: $color-black;
+		top: 10px;
+		left: 0;	
+	}
+}
+
 .singular-section {
-	padding: 40px 0;
+	padding: 100px 0 40px;
 }
 
 .text_orange {

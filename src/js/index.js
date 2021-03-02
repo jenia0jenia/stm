@@ -54,10 +54,10 @@ import { WebGL } from './webgl_process.js';
 
 function site() {
   let mainMenu = document.getElementById('mainMenu');
-  let socialMenu = document.getElementById('socialMenu');
+  // let socialMenu = document.getElementById('socialMenu');
 
   hideOnScrollDown(mainMenu, 'header_hide');
-  hideOnScrollDown(socialMenu, 'footer_hide');
+  // hideOnScrollDown(socialMenu, 'footer_hide');
 
   function hideOnScrollDown(target, hideClass) {
     // Hide Header on on scroll down

@@ -14,36 +14,18 @@
 {#% load compress %#}
 
 {% block content %}
-  <h1 class="h1 main__title">
-    <div class="decoration">
-      <span class="decoration__letter">С</span>
-      <span class="decoration__letter">т</span>
-      <span class="decoration__letter">у</span>
-      <span class="decoration__letter">д</span>
-      <span class="decoration__letter">и</span>
-      <span class="decoration__letter">я</span>
-      <span class="decoration__letter">-</span>
-      <span class="decoration__letter">Т</span>
-      <span class="decoration__letter">е</span>
-      <span class="decoration__letter">а</span>
-      <span class="decoration__letter">т</span>
-      <span class="decoration__letter">р&nbsp;</span>
-      <span class="decoration__letter">М</span>
-      <span class="decoration__letter">а</span>
-      <span class="decoration__letter">н</span>
-      <span class="decoration__letter">е</span>
-      <span class="decoration__letter">к</span>
-      <span class="decoration__letter">е</span>
-      <span class="decoration__letter">н</span>
-    </div>
-  </h1>
-	<div class="h1">Афиша</div>
+
+  <div class="tickets-button">
+    <a href="/poster/" class="tickets-button__link">Купить билеты</a>
+  </div>
+
+	<h1 class="h1 line-title">Афиша</h1>
 
 	<div id="timepad">
 		<script async="async" defer="defer" charset="UTF-8" src="https://timepad.ru/js/tpwf/loader/min/loader.js" data-timepad-customized="50377" data-timepad-apidomain="timepad.ru" data-timepad-widget-v2="event_list3"></script>
 	</div>
 
-  <div class="h1">Спектакли</div>
+  <div class="h1 line-title">Спектакли</div>
   {% if performance_list %}
 	  {% for performance in performance_list %}
 	    {% include "include/performance_card.html" with preformance=preformance %}
@@ -61,7 +43,7 @@
   {% endif %}
 
 
-  <div class="h1">Люди театра</div>
+  <div class="h1 line-title">Люди студии</div>
   <div class="artist-list">
     {% if artist_list %}
     	{% for artist in artist_list %}
@@ -97,12 +79,6 @@
 		<p>Сезон закрыт, товарищи!</p>
 	{% endfor %}
 	{% endcomment %}
-	
-	{# <div class="h1">Мы ВКонтакте!</div> #}
-
-	<!-- VK Widget --> 
-	{# <div id="vk_groups"></div>  #}
-	{# <script onload="showvk()" data-aload="https://vk.com/js/api/openapi.js?162"></script> #}
 
 	<script>
 		// function showvk() {

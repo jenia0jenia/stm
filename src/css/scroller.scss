@@ -1,35 +1,33 @@
 .scroller {
-  	overflow-x: scroll;
-    overflow-y: hidden;
+  	/*overflow-x: scroll;*/
+    /*overflow-y: hidden;*/
     white-space: nowrap;
     -webkit-overflow-scrolling: touch;
     scrollbar-width: none;
+    height: 100%;
 }
 
 .scroller__wrapper {
     min-width: 100%;
+    height: 100%;
 }
 
 .scroller__menu {
-    display: inline-block;
+    height: 100%;
     min-width: 100%;
-}
-
-.scroller__menu-item:first-child {
-    margin-left: 22px;
-    padding-left: 13px;
+    margin: 0 22px;
+    padding: 0 13px;
 }
 
 .scroller__menu-item {
-	display: inline-block;
-    margin: 5px 5px 5px;
-    padding: 7px 13px;
+    margin: 0;
+    padding: 0;
     vertical-align: top;
+    height: 100%;
+    box-sizing: border-box;
 }
 
 .scroller__menu-item:last-child {
-    margin-right: 22px;
-    padding-right: 13px;
 }
 
 
@@ -40,8 +38,16 @@
 
 @media screen and (max-width: 640px) {
 
+    .scroller {
+        overflow-x: scroll;
+        overflow-y: hidden;
+        padding-bottom: 10px;
+        height: 70%;
+    }
+
     .scroller__wrapper {
         overflow-x: scroll;
+        padding-bottom: 10px;
 
         &::-webkit-scrollbar {
             -webkit-appearance: none;
@@ -67,8 +73,14 @@
         }
     }
 
-    .scroller__menu-item {
+    .scroller__menu {
         margin: 0;
-        padding: 0px 8px;
+        padding: 0;
+    }
+
+    .scroller__menu-item {
+        display: inline-block;
+        margin: 0;
+        padding: 0 8px;
     }
 }

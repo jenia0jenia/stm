@@ -14,9 +14,9 @@
 
 
 {% for poster in poster_list %}
-  {% include "include/performance_card.html" with performance=poster.event %}
+  {# {% include "include/performance_card.html" with performance=poster.event %} #}
 {% empty%}
-	<p>Сезон закрыт, товарищи!</p>
+	{# <p>Сезон закрыт, товарищи!</p> #}
 {% endfor %}
 
 {% comment %}
