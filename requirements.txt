@@ -10,7 +10,7 @@ django-js-asset==1.2.2
 django-sitetree==1.12.0
 django-tinymce4-lite==1.7.4
 jsmin==2.2.2
-Pillow==6.0.0
+Pillow==8.2.0
 pycodestyle==2.5.0
 python-magic==0.4.15
 pytz==2019.1
