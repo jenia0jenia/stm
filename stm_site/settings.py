@@ -192,7 +192,8 @@ STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
 STATICFILES_DIRS = [
     os.path.join(SITE_ROOT, "src"),
     os.path.join(SITE_ROOT, "static"),
-    os.path.join(SITE_ROOT, "media")
+    os.path.join(SITE_ROOT, "media"),
+    os.path.join(SITE_ROOT, "node_modules")
 ]
 
 MEDIA_URL = '/media/'
@@ -247,6 +248,10 @@ TINYMCE_DEFAULT_CONFIG = {
 }
 
 CONTENT_GALLERY = {
+    'thumbnail_width': 200,
+    'thumbnail_height': 200,
+    "image_width": 1414,
+    "image_height": 2000,
 }
 
 # EMAIL

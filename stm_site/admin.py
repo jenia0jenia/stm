@@ -29,7 +29,7 @@ class PropertiesAdmin(admin.ModelAdmin):
         })
     ]
     list_display = ('name', 'value', 'addition_value',)
-    list_editable = ('value',)
+    list_editable = ('value', 'addition_value',)
     list_display_links = ('name',)
 
 admin.site.register(Properties, PropertiesAdmin)

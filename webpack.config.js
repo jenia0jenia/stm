@@ -8,7 +8,6 @@ const LiveReloadPlugin = require('webpack-livereload-plugin');
 
 const devMode = process.env.NODE_ENV !== 'production';
 const DIST = 'static/dist/';
-
 module.exports = {
     devtool: false, //devtool: 'eval', // Enable to debug js code
     entry: {
@@ -40,8 +39,8 @@ module.exports = {
     module: {
         rules: [
             {
-                enforce: "pre",
                 test: /\.js$/,
+                enforce: "pre",
                 exclude: /node_modules/,
                 loader: "eslint-loader", // enable eslint
                 options: {
@@ -62,13 +61,26 @@ module.exports = {
                     MiniCssExtractPlugin.loader,
                     'css-loader',
                     {
+                        loader: 'resolve-url-loader',
+                        options: {}
+                    }, 
+                    {
                         loader: 'sass-loader',
                         options: {
-                            data: '@import "vars.scss";', // I tried _variables as well
-                            includePaths: [path.resolve(__dirname, "src/css")],
-                            outputStyle: 'compressed',
-                            sourceMap: true,
-                            outFile: 'style.css'
+                            sassOptions: {
+                                includePaths: [
+                                    path.resolve(__dirname, 'node_modules'),
+                                    path.resolve(__dirname, "src/css"),
+                                ],
+                                data: '@import "vars.scss";', // I tried _variables as well
+                                additionalData: `@import "@/assets/styles/variables/index.scss";`,
+                                url: true,
+                                import: true,
+                                sourceMap: true,
+                                outFile: 'style.css',
+                                outputStyle: "compressed",
+                            },
+
                         }
                     }
                 ]
@@ -89,7 +101,7 @@ module.exports = {
                           enabled: false,
                         },
                         pngquant: {
-                          quality: '65-90',
+                          quality: [0.65, 0.90],
                           speed: 4
                         },
                         gifsicle: {
@@ -102,7 +114,33 @@ module.exports = {
                       }
                     },
                 ],
+            },
+            {
+            test: /\.(woff(2)?|ttf|eot|svg)(\?v=\d+\.\d+\.\d+)?$/,
+                use: [
+                    {
+                        loader: 'file-loader',
+                        options: {
+                            name: '[name].[ext]',
+                            outputPath: 'src/fonts'
+                        }
+                    }
+                ]
             }
         ]
-    }
+    },
+    stats: {
+        children: true,
+        errorDetails: true
+    },
+    resolve: {
+        modules: [
+            path.resolve(__dirname, 'src'),
+            path.resolve(__dirname, 'node_modules'),
+        ],
+        alias: {
+            // Utilities: path.resolve(__dirname, 'src/utilities/'),
+            // Templates: path.resolve(__dirname, 'src/templates/'),
+        },
+    },
 };

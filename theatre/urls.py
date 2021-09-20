@@ -3,15 +3,19 @@ from django.views.generic import TemplateView
 
 from .views import (
     HomePage,
+    FestivalPageView,
     ArtistDetail, ArtistList,
     PosterList,
     Contacts,
     PerformanceDetail, PerformanceList,
     # Unifest,
-    STFest,
+    # STFest,
 )
 
+from .models import FestivalPage
+
 app_name = 'theatre'
+fest_slug = FestivalPage.objects.filter(publication=True).first().slug
 
 urlpatterns = [
     path('', HomePage.as_view()),
@@ -22,6 +26,6 @@ urlpatterns = [
     path('poster/', PosterList.as_view(), name='poster'),
     path('p/', include('django.contrib.flatpages.urls')),
     # path('unifest/', Unifest.as_view(), name='unifest'),
-    path('stfest/', STFest.as_view(), name='stfest'),
+    path(f'{fest_slug}/', FestivalPageView.as_view(), name=fest_slug),
     path('contacts/', Contacts.as_view(), name='contacts'),
 ]

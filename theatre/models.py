@@ -15,9 +15,44 @@ from content_gallery.models import ContentGalleryMixin
 from .utils import IntegerRangeField
 
 upload_photo_ext = ['.jpg', '.png', '.gif', '.svg']
+upload_file_ext = ['.pdf', '.docx', '.doc', '.xls', '.xlsx']
+
 
 def upload_path(path):
     return os.path.join('uploads', str(path))
+
+
+class FestivalPage(ContentGalleryMixin, models.Model):
+    name = models.CharField(_('Name'), max_length=500)
+    slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
+    date = models.CharField(_('Date'), max_length=500, help_text='Дата проведения')
+    desc = models.CharField(_('Description'), max_length=1000, blank=True)
+    description = HTMLField(_('Fill description'), blank=True)
+    photo = FileBrowseField(
+        _('Festivals\'s photo'),
+        max_length=200,
+        directory=upload_path('fest'),
+        extensions=upload_photo_ext,
+        blank=True,
+        null=True
+    )
+    file = FileBrowseField(
+        _('Festival postition'),
+        max_length=200,
+        directory=upload_path('fest'),
+        extensions=upload_file_ext,
+        blank=True,
+        null=True
+    )
+    publication = models.BooleanField(_('Publication'), default=True, )
+
+    class Meta:
+        verbose_name = _('Festival page')
+        verbose_name_plural = _('Festival pages')
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
 
 class TheatreBase(models.Model):
     order = models.PositiveIntegerField(_('Order'), default=100)
@@ -62,7 +97,7 @@ class Artist(ContentGalleryMixin, TheatreBase):
     photo = FileBrowseField(
         _('Artist\'s photo'),
         max_length=200,
-        directory=upload_path(''),
+        directory=upload_path('artist'),
         extensions=upload_photo_ext,
         blank=True,
         null=True
@@ -128,7 +163,7 @@ class Performance(ContentGalleryMixin, TheatreBase):
     photo = FileBrowseField(
         _('Performance\'s photo'),
         max_length=200,
-        directory=upload_path(''),
+        directory=upload_path('performance'),
         extensions=upload_photo_ext,
         blank=True,
         null=True
@@ -207,7 +242,7 @@ class Poster(ContentGalleryMixin, TheatreBase):
     photo = FileBrowseField(
         _('Poster\'s photo'),
         max_length=200,
-        directory=upload_path(''),
+        directory=upload_path('poster'),
         extensions=['.jpg', '.png', '.gif', '.svg'],
         blank=True,
         null=True
@@ -222,11 +257,11 @@ class Poster(ContentGalleryMixin, TheatreBase):
         return self.event.name
 
 
-class Unifest(TheatreBase):
-    date_begin = models.DateTimeField(_('Event begin'), blank=True, null=True, default=timezone.now)
-    date_end = models.DateTimeField(_('Event end'), blank=True, null=True, default=timezone.now)
-    description = HTMLField(_('Description'), blank=True)
-    desc = models.CharField(_('Description'), max_length=1000, blank=True)
+# class Unifest(TheatreBase):
+#     date_begin = models.DateTimeField(_('Event begin'), blank=True, null=True, default=timezone.now)
+#     date_end = models.DateTimeField(_('Event end'), blank=True, null=True, default=timezone.now)
+#     description = HTMLField(_('Description'), blank=True)
+#     desc = models.CharField(_('Description'), max_length=1000, blank=True)
     # request_file = HTMLField(_('Description'), blank=True)
 
 

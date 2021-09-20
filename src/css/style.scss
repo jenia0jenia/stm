@@ -1,34 +1,34 @@
 /* style.scss */
 
-@import "normalize.scss";
-@import "vars.scss";
+@import "normalize.scss",
+		"vars.scss";
 
 /* modules */
-@import "entry.scss";
-@import "font.scss";
-@import "animation.scss";
-@import "header.scss";
-@import "main.scss";
-@import "logo.scss";
-@import "button.scss";
-@import "banner.scss";
-@import "menu.scss";
-@import "container.scss";
-@import "content.scss";
-@import "footer.scss";
-@import "poster.scss";
-@import "performance.scss";
-@import "artist.scss";
-@import "page.scss";
-@import "tickets.scss";
-@import "sticky.scss";
-@import "y-map.scss";
-@import "social-menu.scss";
-@import "earth.scss";
-@import "cube.scss";
-@import "stfest.scss";
-@import "u.scss";
-@import "scroller.scss";
+@import "entry.scss",
+	"font.scss",
+	"animation.scss",
+	"header.scss",
+	"main.scss",
+	"logo.scss",
+	"button.scss",
+	"banner.scss",
+	"menu.scss",
+	"container.scss",
+	"content.scss",
+	"footer.scss",
+	"poster.scss",
+	"performance.scss",
+	"artist.scss",
+	"page.scss",
+	"tickets.scss",
+	"sticky.scss",
+	"y-map.scss",
+	"social-menu.scss",
+	"earth.scss",
+	"cube.scss",
+	"fest.scss",
+	"u.scss",
+	"scroller.scss";
 
 body {
     font-family: 'Montserrat', Roboto, Arial;

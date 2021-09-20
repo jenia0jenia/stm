@@ -8,12 +8,21 @@
 
 {% block head %}
 	{{ block.super }}
-	{# <script src="https://vk.com/js/api/openapi.js?162"></script> #}
 {% endblock head %}
 
 {#% load compress %#}
 
 {% block content %}
+
+  {% if fest.photo %}
+		<div class="main-tizer">
+			<div class="main-tizer__images">
+	        <div class="fest__section">
+              <img src="{{ STATIC_URL|add:fest.photo.path }}" alt="" style="width: 100%;">            
+	        </div>
+			</div>
+		</div>
+  {% endif %}
 
   <div class="tickets-button">
     <a href="/poster/" class="tickets-button__link">Купить билеты</a>
@@ -79,19 +88,5 @@
 		<p>Сезон закрыт, товарищи!</p>
 	{% endfor %}
 	{% endcomment %}
-
-	<script>
-		// function showvk() {
-		// 	VK.Widgets.Group("vk_groups", {
-		// 		mode: 4,
-		// 		height: "400",
-		// 		width: window.innerWidth > 960 ? 940 : window.innerWidth - 40
-		// 	}, 678386);
-		// }
-
-		// window.onload = function () {
-		// 	aload();
-		// };
-	</script>
 
 {% endblock %}

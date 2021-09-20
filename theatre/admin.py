@@ -4,11 +4,37 @@ from django.utils.translation import gettext as _
 from django.conf.locale.en import formats as en_formats
 from filebrowser.base import FileObject
 from filebrowser.settings import ADMIN_THUMBNAIL
-from .models import Performance, Artist, Poster
+from .models import FestivalPage, Performance, Artist, Poster
 
 from content_gallery.admin import ImageAdminInline
 
 en_formats.DATETIME_FORMAT = "d b Y H:i"
+
+class FestivalPageAdmin(admin.ModelAdmin):
+    fieldsets = [
+        (None, {
+            'fields': ['name', 'slug', 'date', 'desc', 'description', 'photo', 'file', 'publication'], 'classes': ['']
+        })
+    ]
+    list_editable = ()
+    list_display = ('name', 'slug', 'date', 'desc', )
+
+    empty_value_display = _('_empty_')
+
+    inlines = [
+        ImageAdminInline,
+    ]
+
+    def photo_thumbnail(self, obj):
+        if obj.photo:
+            image = FileObject(obj.photo.path)
+            if image.filetype == "Image":
+                return format_html('<img src="{}" />', image.version_generate(ADMIN_THUMBNAIL).url)
+        else:
+            return ""
+
+    photo_thumbnail.allow_tags = True
+    photo_thumbnail.short_description = _('Photo')
 
 
 class TheatreBaseAdmin(admin.ModelAdmin):
@@ -119,12 +145,10 @@ class PosterAdmin(TheatreBaseAdmin):
 
     list_editable = () + TheatreBaseAdmin.base_list_editable
     list_display_links = ('event',)
-    inlines = [
-        ImageAdminInline,
-    ]
 
 
 # admin.site.register(Genre, GenreAdmin)
 admin.site.register(Performance, PerformanceAdmin)
 admin.site.register(Artist, ArtistAdmin)
 admin.site.register(Poster, PosterAdmin)
+admin.site.register(FestivalPage, FestivalPageAdmin)

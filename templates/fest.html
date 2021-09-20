@@ -1,0 +1,54 @@
+{% extends "base/base.html" %}
+
+{% load static %}
+{% load thumbnail %}
+{% load cache %}
+{% block title %}{{ block.super }}{{ fest.desc }}{% endblock %}
+{#% load compress %#}
+
+{% block content %}
+
+    <div class="fest__section">
+        {% if  fest.desc %}
+            <h1 class="fest__title">
+                {{ fest.desc }}
+            </h1>
+        {% endif %}
+
+        {% if  fest.date %}
+            <div class="fest__date">
+                <div class="fest__day">{{ fest.date }}</div>
+            </div>
+        {% endif %}
+    </div>
+
+    {% if fest.file %}
+        <div class="fest__section">
+            <div class="fest__request">
+                <a href="{{ STATIC_URL|add:fest.file.path }}" target="_blank" class="button fest__request-link m--doc">Положение фестиваля</a>
+            </div>
+        </div>
+    {% endif %}
+
+    {% if fest.content_gallery.all %}
+        <div class="fest__section">
+            <div class="fest__gallery">
+                {% for image in fest.content_gallery.all %}
+                    <a href="{{ image.image_url }}" data-lightbox="fest">
+                        <img alt="{{ image }}" src="{{ image.image_url }}" />
+                    </a>
+                {% endfor %}
+            </div>
+        </div>
+    {% endif %}
+
+    {% if fest.file %}
+        <div class="fest__section">
+            <div class="fest__request">
+                <a href="{{ STATIC_URL|add:fest.file.path }}" target="_blank" class="button fest__request-link m--doc">Положение фестиваля</a>
+            </div>
+        </div>
+    {% endif %}
+    
+
+{% endblock %}

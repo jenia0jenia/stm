@@ -18,7 +18,7 @@ from collections.abc import Iterable
 # from django.core.files import File
 # from django.core.files.storage import FileSystemStorage
 
-from .models import Artist, Performance, Poster
+from .models import FestivalPage, Artist, Performance, Poster
 from .forms import URequestForm, UMemberForm
 from .utils import send_email, get_request_param
 
@@ -27,6 +27,7 @@ from django.utils.translation import gettext as _
 # logger = logging.getLogger('logfile')
 
 # from django.shortcuts import get_object_or_404, render
+
 
 class HomePage(TemplateView):
     template_name = 'index.html'
@@ -37,6 +38,7 @@ class HomePage(TemplateView):
         context['performance_list'] = self.get_performance_list()
         context['poster_list'] = self.get_poster_list()
         context['news'] = self.get_news()
+        context['fest'] = FestivalPage.objects.filter(publication=True).first()
         return context
 
     def get_artist_list(self, **kwargs):
@@ -54,6 +56,15 @@ class HomePage(TemplateView):
 
     def get_news(self, **kwargs):
         return 5
+
+
+class FestivalPageView(TemplateView):
+    template_name = 'fest.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(FestivalPageView, self).get_context_data(**kwargs)
+        context['fest'] = FestivalPage.objects.filter(publication=True).first()
+        return context
 
 
 class Contacts(TemplateView):

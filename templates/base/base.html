@@ -32,6 +32,8 @@
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:url" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}" />  
 
+  <script src="http://localhost:35729/livereload.js"></script>
+
   <!-- Global site tag (gtag.js) - Google Analytics -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146877365-1"></script>
   <script>
@@ -53,6 +55,9 @@
   <script src="{% static 'js/libs/aload.min.js' %}"></script>
   <script src="{% static 'js/libs/jquery-3.4.1.slim.min.js' %}"></script>
 
+
+  <link rel="stylesheet" href="{% static 'lightbox2/dist/css/lightbox.min.css' %}">
+
   <!--
   <script defer src="{% static 'js/webgl/three.js' %}"></script>
   <script defer src="{% static 'js/webgl/TGALoader.js' %}"></script>
@@ -60,7 +65,9 @@
   <script defer src="{% static 'js/webgl/OrbitControls.js' %}"></script>
   -->
   {# preload #}
-  {# <link rel="preload" as="script" href="{% static 'dist/webgl-worker.js' %}"> #}
+  <link rel="preload" as="script" href="{% static 'js/webgl/WebGL.js' %}" id="webgl">
+
+  <link rel="preload" as="script" href="https://timepad.ru/js/tpwf/loader/min/loader.js">
   <link rel="preload" as="script" href="{% static 'js/webgl/three.js' %}" id="threejs">
   <link rel="preload" as="script" href="{% static 'js/webgl/TGALoader.js' %}" id="tga">
   <link rel="preload" as="script" href="{% static 'js/webgl/WebGL.js' %}" id="webgl">
@@ -155,8 +162,8 @@
             <div class="footer__text-red">(8 общ. ЮУрГУ) вход напротив "Белого рынка"</div>
           </div>
           <div class="footer__info-block">
-            <a href="tel:+73512679477" class="footer__tel" itemprop="telephone">+7 (351) 267-94-77</a>
-            <a href="mailto:ilyavtyurin@gmail.com" class="footer__mail" itemprop="email">ilyavtyurin@gmail.com</a>
+            <a href="tel:+73512679477" class="footer__tel" itemprop="telephone">{% get_propertie 'phone' %}</a>
+            <a href="mailto:ilyavtyurin@gmail.com" class="footer__mail" itemprop="email">{% get_propertie 'email' %}</a>
           </div>
         </div>
         <div class="footer__right">
@@ -205,6 +212,9 @@
           webvisor:true
      });
   </script>
+
+  <script src="{% static 'lightbox2/dist/js/lightbox-plus-jquery.min.js' %}"></script>
+
   <noscript><img src="https://mc.yandex.ru/watch/55144651" style="position:absolute; left:-9999px;" alt="" /></noscript>
   {# --> #}
   <!-- /Yandex.Metrika counter -->

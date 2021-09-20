@@ -1,5 +1,6 @@
 from django import template
 from stm_site.models import Properties
+from theatre.models import FestivalPage
 
 register = template.Library()
 
@@ -20,6 +21,13 @@ def get_propertie(prop_name):
     p = Properties.objects.filter(name=prop_name)
     return p.first().value if p else ''
 
+
+@register.simple_tag
+def get_festival():
+    """
+    Returns festival's slug.
+    """
+    return FestivalPage.objects.filter(publication=True).first()
 
 
 # @register.inclusion_tag('include/main_menu.html')
