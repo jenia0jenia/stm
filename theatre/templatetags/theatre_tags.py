@@ -25,7 +25,7 @@ def get_propertie(prop_name):
 @register.simple_tag
 def get_festival():
     """
-    Returns festival's slug.
+    Returns festival.
     """
     return FestivalPage.objects.filter(publication=True).first()
 
