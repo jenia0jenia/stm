@@ -1,5 +1,4 @@
 {% load sitetree %}
-{% load theatre_tags %}
 
 <div class="scroller__menu">
 	<ul class="menu">
@@ -12,17 +11,20 @@
 				{% endif %}
 			</li>
 		{% endfor %}
-
-		{% get_festival as festival %}
-
-		{% with '/'|add:festival.slug|add:'/' as url_string %}
-			<li class="menu__item scroller__menu-item{% if url_string == request.path %} is-active{% endif %} menu__item_unifest">
-				{% if url_string == request.path %}
-					<span class="menu__link">{{ festival.name }}</span>
-				{% else %}
-      				<a class="menu__link" href="{{ url_string }}">{{ festival.name }}</a>
+			{% get_festival %}
+			{% with get_festival as festival %}
+			{{ festival }}
+				{% if festival %}
+						{% with '/'|add:festival.slug|add:'/' as url_string %}
+							<li class="menu__item scroller__menu-item{% if url_string == request.path %} is-active{% endif %} menu__item_unifest">
+								{% if url_string == request.path %}
+									<span class="menu__link">{{ festival.name }}</span>
+								{% else %}
+				      				<a class="menu__link" href="{{ url_string }}">{{ festival.name }}</a>
+								{% endif %}
+							</li>
+						{% endwith %}
 				{% endif %}
-			</li>
-		{% endwith %}
+			{% endwith %}
 	</ul>
 </div>

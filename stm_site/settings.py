@@ -108,6 +108,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'stm_site.wsgi.application'
+DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
 LOGGING = {
     'version': 1,
@@ -193,7 +194,6 @@ STATICFILES_DIRS = [
     os.path.join(SITE_ROOT, "src"),
     os.path.join(SITE_ROOT, "static"),
     os.path.join(SITE_ROOT, "media"),
-    os.path.join(SITE_ROOT, "node_modules")
 ]
 
 MEDIA_URL = '/media/'

@@ -15,7 +15,7 @@ from .views import (
 from .models import FestivalPage
 
 app_name = 'theatre'
-fest_slug = FestivalPage.objects.filter(publication=True).first().slug
+fest = FestivalPage.objects.filter(publication=True).first()
 
 urlpatterns = [
     path('', HomePage.as_view()),
@@ -26,6 +26,10 @@ urlpatterns = [
     path('poster/', PosterList.as_view(), name='poster'),
     path('p/', include('django.contrib.flatpages.urls')),
     # path('unifest/', Unifest.as_view(), name='unifest'),
-    path(f'{fest_slug}/', FestivalPageView.as_view(), name=fest_slug),
     path('contacts/', Contacts.as_view(), name='contacts'),
 ]
+
+if fest:
+    urlpatterns.append(
+        path('{}/'.format(fest.slug), FestivalPageView.as_view(), name=fest.slug)
+    )

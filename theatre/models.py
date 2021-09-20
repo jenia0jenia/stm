@@ -172,50 +172,40 @@ class Performance(ContentGalleryMixin, TheatreBase):
     director = models.ManyToManyField(
         'Artist',
         # on_delete=models.SET_DEFAULT,
-        related_name='director_name',
+        related_name='performance_as_director_name',
         verbose_name=_('Director'),
-        null=True,
-        blank=True,
-        default=None
+        blank=True
     )
 
     light = models.ManyToManyField(
         'Artist',
         # on_delete=models.SET_DEFAULT,
-        related_name='light_name',
+        related_name='performance_as_light_name',
         verbose_name=_('Lighting designer'),
-        null=True,
-        blank=True,
-        default=None
+        blank=True
     )
 
     sound = models.ManyToManyField(
         'Artist',
         # on_delete=models.SET_DEFAULT,
-        related_name='sound_name',
+        related_name='performance_as_sound_name',
         verbose_name=_('Sound engineer'),
-        null=True,
-        blank=True,
-        default=None
+        blank=True
     )
 
     painter = models.ManyToManyField(
         'Artist',
         # on_delete=models.SET_DEFAULT,
-        related_name='painter_name',
+        related_name='performance_as_painter_name',
         verbose_name=_('Painter'),
-        null=True,
-        blank=True,
-        default=None
+        blank=True
     )
 
     artists = models.ManyToManyField(
         'Artist',
-        related_name='artist_name',
+        related_name='performance_as_artist_name',
         verbose_name=_('Actor'),
-        null=True,
-        blank=True,
-        default=None
+        blank=True
     )
 
     votes_yes = models.IntegerField(_('Votes "yes!"'), blank=True, default=0)
