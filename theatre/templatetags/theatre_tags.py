@@ -1,3 +1,4 @@
+import re
 from django import template
 from stm_site.models import Properties
 from theatre.models import FestivalPage
@@ -28,6 +29,13 @@ def get_festival():
     Returns festival.
     """
     return FestivalPage.objects.filter(publication=True).first()
+
+@register.simple_tag
+def phone_print(phone):
+    """
+    Returns format for a:tel (+0000000000).
+    """
+    return re.sub('[^A-Za-z0-9\+]+', '', phone)
 
 
 # @register.inclusion_tag('include/main_menu.html')

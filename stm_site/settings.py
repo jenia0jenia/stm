@@ -27,8 +27,8 @@ SITE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = access.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
-#DEBUG = False
+# DEBUG = True
+DEBUG = False
 
 THUMBNAIL_DEBUG = True
 
@@ -211,7 +211,7 @@ CSRF_COOKIE_HTTPONLY = True
 FILEBROWSER_DIRECTORY = 'uploads/'
 FILEBROWSER_EXTENSIONS = {
     'Image': ['.jpg', '.jpeg', '.gif', '.png', '.tif', '.tiff'],
-    'Document': ['.pdf', '.doc', '.rtf', '.txt', '.xls', '.csv'],
+    'Document': ['.pdf', '.doc', '.docx', '.rtf', '.txt', '.xls', '.csv'],
     'Video': ['.mov', '.wmv', '.mpeg', '.mpg', '.avi', '.rm'],
     'Audio': ['.mp3', '.mp4', '.wav', '.aiff', '.midi', '.m4p']
 }

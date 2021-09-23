@@ -8,8 +8,6 @@ from .views import (
     PosterList,
     Contacts,
     PerformanceDetail, PerformanceList,
-    # Unifest,
-    # STFest,
 )
 
 from .models import FestivalPage
@@ -25,11 +23,10 @@ urlpatterns = [
     path('artist/<slug:slug>/', ArtistDetail.as_view(), name='artist_detail'),
     path('poster/', PosterList.as_view(), name='poster'),
     path('p/', include('django.contrib.flatpages.urls')),
-    # path('unifest/', Unifest.as_view(), name='unifest'),
     path('contacts/', Contacts.as_view(), name='contacts'),
 ]
 
 if fest:
     urlpatterns.append(
-        path('{}/'.format(fest.slug), FestivalPageView.as_view(), name=fest.slug)
+        path('{}/'.format(fest.slug), FestivalPageView.as_view(), name='fest')
     )

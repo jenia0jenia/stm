@@ -3,7 +3,7 @@ from django.contrib.sitemaps import Sitemap
 from django.apps import apps as django_apps
 from django.core.exceptions import ImproperlyConfigured
 
-from theatre.models import Artist, Performance, Poster
+from theatre.models import Artist, Performance, Poster, FestivalPage
 from theatre.views import ArtistDetail, PerformanceDetail
 
 class ArtistSitemap(Sitemap):
@@ -29,9 +29,15 @@ class PerformanceSitemap(Sitemap):
 
 
 class StaticViewSitemapReverse(Sitemap):
+    changefreq = 'monthly'
 
     def items(self):
-        return ['performance', 'artist', 'poster', 'stfest', 'contacts', ]
+        root_pages = ['performance', 'artist', 'poster', 'contacts']
+
+        if FestivalPage.objects.filter(publication=True).first():
+            root_pages.append('fest')
+
+        return root_pages
 
     def location(self, item):
         return reverse('theatre:{}'.format(item))

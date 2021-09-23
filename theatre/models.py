@@ -22,42 +22,29 @@ def upload_path(path):
     return os.path.join('uploads', str(path))
 
 
-class FestivalPage(ContentGalleryMixin, models.Model):
-    name = models.CharField(_('Name'), max_length=500)
-    slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
-    date = models.CharField(_('Date'), max_length=500, help_text='Дата проведения')
-    desc = models.CharField(_('Description'), max_length=1000, blank=True)
-    description = HTMLField(_('Fill description'), blank=True)
-    photo = FileBrowseField(
-        _('Festivals\'s photo'),
-        max_length=200,
-        directory=upload_path('fest'),
-        extensions=upload_photo_ext,
-        blank=True,
-        null=True
-    )
-    file = FileBrowseField(
-        _('Festival postition'),
-        max_length=200,
-        directory=upload_path('fest'),
-        extensions=upload_file_ext,
-        blank=True,
-        null=True
-    )
-    publication = models.BooleanField(_('Publication'), default=True, )
-
-    class Meta:
-        verbose_name = _('Festival page')
-        verbose_name_plural = _('Festival pages')
-        ordering = ['name']
-
-    def __str__(self):
-        return self.name
-
 class TheatreBase(models.Model):
     order = models.PositiveIntegerField(_('Order'), default=100)
     publication = models.BooleanField(_('Publication'), default=True)
     published_date = models.DateTimeField(_('Published date'), default=timezone.now)
+
+    seo_title = models.CharField('Title', blank=True, max_length=250)
+    seo_description = models.CharField('Description', blank=True, max_length=250)
+    seo_keywords = models.CharField('Keywords', blank=True, max_length=250)
+
+    def get_seo_title(self):
+        if self.seo_title:
+            return self.seo_title
+        return ''
+
+    def get_seo_description(self):
+        if self.seo_description:
+            return self.seo_description
+        return ''
+
+    def get_seo_keywords(self):
+        if self.seo_keywords:
+            return self.seo_keywords
+        return ''
 
     class Meta:
         abstract = True
@@ -80,6 +67,38 @@ class TheatreBase(models.Model):
         #     item.order = current
         #     item.save()
         #     current += 10
+
+
+class FestivalPage(ContentGalleryMixin, TheatreBase):
+    name = models.CharField(_('Name'), max_length=500)
+    slug = models.SlugField(_('Slug'), max_length=255, unique=True,)
+    date = models.CharField(_('Date'), max_length=500, help_text='Дата проведения')
+    desc = models.CharField(_('Description'), max_length=1000, blank=True)
+    description = HTMLField(_('Fill description'), blank=True)
+    photo = FileBrowseField(
+        _('Festivals\'s photo'),
+        max_length=200,
+        directory=upload_path('fest'),
+        extensions=upload_photo_ext,
+        blank=True,
+        null=True
+    )
+    file = FileBrowseField(
+        _('Festival postition'),
+        max_length=200,
+        directory=upload_path('fest'),
+        extensions=upload_file_ext,
+        blank=True,
+        null=True
+    )
+
+    class Meta:
+        verbose_name = _('Festival page')
+        verbose_name_plural = _('Festival pages')
+        ordering = ['name']
+
+    def __str__(self):
+        return self.name
 
 
 class Artist(ContentGalleryMixin, TheatreBase):
@@ -245,14 +264,6 @@ class Poster(ContentGalleryMixin, TheatreBase):
 
     def __str__(self):
         return self.event.name
-
-
-# class Unifest(TheatreBase):
-#     date_begin = models.DateTimeField(_('Event begin'), blank=True, null=True, default=timezone.now)
-#     date_end = models.DateTimeField(_('Event end'), blank=True, null=True, default=timezone.now)
-#     description = HTMLField(_('Description'), blank=True)
-#     desc = models.CharField(_('Description'), max_length=1000, blank=True)
-    # request_file = HTMLField(_('Description'), blank=True)
 
 
 class URequest(models.Model):
