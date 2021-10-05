@@ -1,0 +1,119 @@
+{% load static %}
+{% load cache %}
+{% load sitetree %}
+{% load theatre_tags %}
+<!DOCTYPE html>
+<html lang="ru" prefix="og: https://ogp.me/ns#">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>{% block title %}{% get_propertie 'site_name' %} | {% endblock %}</title>
+  <meta name="keywords" content="Студия-Театр Манекен, ЮУрГУ, Челябинск, Спектакли, афиша, репертуар, расписание, купить билеты, сайт, studio, молодежный театр">
+  <meta name="description" content="Манекен - театральная студия Челябинска. Купить билеты на спектакли, перформансы, события, тренинги, лаборатории и фестивали.">
+
+    <title>{% get_propertie 'site_name' %} | </title>
+    {#% load compress %#}
+
+  <link rel="dns-prefetch" href="https://www.googletagmanager.com">
+  <link rel="dns-prefetch" href="https://mc.yandex.ru">
+
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146877365-1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-146877365-1');
+  </script>
+
+  {% include "include/favicon.html" %}
+
+  <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=1">
+  <script src="http://localhost:35729/livereload.js"></script>
+  
+
+</head>
+
+<body class="body">
+
+  <header class="header header_scroll">
+      <div class="header__fixed header__fixed_top" id="mainMenu">
+        <div class="header__logo logo">
+          <a href="/" class="logo__link">
+            {# <span class="logo__text">Студия-Театр «Манекен»</span> #}
+            <img class="logo__image" src="{% static 'i/stm_logo.png' %}" title="{% get_propertie 'site_name' %}" alt="Логотип">
+          </a>
+        </div>
+        <div class="scroller">
+          <div class="scroller__wrapper">
+            {% sitetree_menu from "menu_main" include "trunk,topmenu" %}
+          </div>
+        </div>
+
+        <!-- Add Scrollbar -->
+        <div class="scroller-scrollbar"></div>
+      </div>
+
+      {% block header %}
+        
+      {% endblock header %}
+      
+  </header>
+
+    <div class="max-width">
+        <div class="container-960">
+            <div class="singular-section">
+                {% sitetree_menu from "menu_multilink" include "trunk" template "sitetree/menu_multilink.html" %}
+            </div>
+        </div>
+    </div>
+
+
+    <footer class="footer footer__space">
+
+        <div class="footer__filonov">
+          Художественный руководитель: <b>Владимир Фёдорович Филонов</b>
+        </div>
+
+        <div class="footer__block" itemscope itemtype="http://schema.org/Organization">
+
+          <div class="footer__info">
+            <div class="footer__left">
+              <div class="footer__info-block">
+                <div itemprop="name" class="footer__stm">Студия-Театр «Манекен»</div>
+                <div class="footer__text-red">Южно-Уральский Государственный Университет</div>
+              </div>
+              <div class="footer__info-block" itemprop="address" itemscope itemtype="http://schema.org/PostalAddress">
+                <div class="footer__address" itemprop="streetAddress">Челябинск, Сони Кривой, 79-а</div>
+                <div class="footer__text-red">(8 общ. ЮУрГУ) вход напротив "Белого рынка"</div>
+              </div>
+              <div class="footer__info-block">
+                {% get_propertie 'phone' as phone %}
+                <a href="tel:{% phone_print phone %}" class="footer__tel" itemprop="telephone">{{ phone }}</a>
+                <a href="mailto:{% get_propertie 'email' %}" class="footer__mail" itemprop="email">{% get_propertie 'email' %}</a>
+              </div>
+            </div>
+            <div class="footer__right">
+              <div class="footer__info-block">
+                <div class="footer__tickets">Бронь и покупка билетов</div>
+                {% get_propertie 'tickets_phone' as tickets_phone %}
+                <a href="tel:{% phone_print tickets_phone %}" class="footer__maria">{{ tickets_phone }} Мария</a>
+              </div>
+              <div class="footer__info-block">
+                <a href="https://studio-maneken.timepad.ru" class="footer__timepad" target="_blank">studio-maneken.timepad.ru</a>
+              </div>
+              <div class="footer__info-block">
+                <div class="footer__text-white">Уважаемые зрители, обращаем Ваше внимание:</div>
+                <div class="footer__text-red">опоздавшие в зал не допускаются!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+    </footer>

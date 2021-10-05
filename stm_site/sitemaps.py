@@ -32,7 +32,7 @@ class StaticViewSitemapReverse(Sitemap):
     changefreq = 'monthly'
 
     def items(self):
-        root_pages = ['performance', 'artist', 'poster', 'contacts']
+        root_pages = ['performance', 'artist', 'poster', 'contacts', 'multilink']
 
         if FestivalPage.objects.filter(publication=True).first():
             root_pages.append('fest')

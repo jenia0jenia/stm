@@ -7,6 +7,7 @@ from .views import (
     ArtistDetail, ArtistList,
     PosterList,
     Contacts,
+    Multilink,
     PerformanceDetail, PerformanceList,
 )
 
@@ -18,6 +19,7 @@ fest = FestivalPage.objects.filter(publication=True).first()
 urlpatterns = [
     path('', HomePage.as_view()),
     path('performance/', PerformanceList.as_view(), name='performance'),
+    path('multilink/', Multilink.as_view(), name='multilink'),
     path('performance/<slug:slug>/', PerformanceDetail.as_view(), name='performance_detail'),
     path('artist/', ArtistList.as_view(), name='artist'),
     path('artist/<slug:slug>/', ArtistDetail.as_view(), name='artist_detail'),

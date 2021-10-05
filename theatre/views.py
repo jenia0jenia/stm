@@ -74,6 +74,13 @@ class Contacts(TemplateView):
         context = super(Contacts, self).get_context_data(**kwargs)
 
 
+class Multilink(TemplateView):
+    template_name = 'multilink.html'
+
+    def get_context_data(self, **kwargs):
+        context = super(Multilink, self).get_context_data(**kwargs)
+
+
 class ArtistDetail(DetailView):
     model = Artist
     context_object_name = "artist"

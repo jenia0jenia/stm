@@ -27,8 +27,8 @@ SITE_ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = access.SECRET_KEY
 
 # SECURITY WARNING: don't run with debug turned on in production!
-# DEBUG = True
-DEBUG = False
+DEBUG = True
+# DEBUG = False
 
 THUMBNAIL_DEBUG = True
 
@@ -193,7 +193,7 @@ STATIC_ROOT = os.path.join(SITE_ROOT, 'collectedstatic')
 STATICFILES_DIRS = [
     os.path.join(SITE_ROOT, "src"),
     os.path.join(SITE_ROOT, "static"),
-    os.path.join(SITE_ROOT, "media"),
+    # os.path.join(SITE_ROOT, "media"),
 ]
 
 MEDIA_URL = '/media/'

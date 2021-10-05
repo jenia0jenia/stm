@@ -3,15 +3,6 @@
 
 <div class="scroller__menu">
 	<ul class="menu">
-		{% for item in sitetree_items %}
-			<li class="menu__item scroller__menu-item{% if item.is_current or item.in_current_branch %} is-active{% endif %}{% if item.alias == 'unifest' or item.alias == 'stfest' %} menu__item_unifest{% endif %}{% if item.alias == 'tickets' %} menu__item_tickets{% endif %}">
-				{% if item.is_current or item.in_current_branch %}
-					<span class="menu__link" {% if item.hint %}title="{{ item.hint }}"{% endif %} {% if item.is_current or item.in_current_branch %}class="{{ item.is_current|yesno:"current_item ," }}{{ item.in_current_branch|yesno:"current_branch," }}"{% endif %}>{{ item.title_resolved }}</span>
-				{% else %}
-      				<a class="menu__link" href="{% sitetree_url for item %}" {% if item.hint %}title="{{ item.hint }}"{% endif %}>{{ item.title_resolved }}</a>
-				{% endif %}
-			</li>
-		{% endfor %}
 		{% get_festival as festival %}
 		{% if festival %}
 			{% with '/'|add:festival.slug|add:'/' as url_string %}
@@ -24,5 +15,14 @@
 				</li>
 			{% endwith %}
 		{% endif %}
+		{% for item in sitetree_items %}
+			<li class="menu__item scroller__menu-item{% if item.is_current or item.in_current_branch %} is-active{% endif %}{% if item.alias == 'tickets' %} menu__item_tickets{% endif %}">
+				{% if item.is_current or item.in_current_branch %}
+					<span class="menu__link" {% if item.hint %}title="{{ item.hint }}"{% endif %} {% if item.is_current or item.in_current_branch %}class="{{ item.is_current|yesno:"current_item ," }}{{ item.in_current_branch|yesno:"current_branch," }}"{% endif %}>{{ item.title_resolved }}</span>
+				{% else %}
+      				<a class="menu__link" href="{% sitetree_url for item %}" {% if item.hint %}title="{{ item.hint }}"{% endif %}>{{ item.title_resolved }}</a>
+				{% endif %}
+			</li>
+		{% endfor %}
 	</ul>
 </div>

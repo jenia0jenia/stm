@@ -21,3 +21,18 @@ $color-aqua: #4cd6f2;
 $color-red: #ff0042;
 
 $color-base: #ff0042;
+
+
+
+/* sietse */
+
+$slate-color: rgb(16,24,50);
+$blue-color: #00bcdd;
+$pink-color: #ff00ff;
+
+@mixin transition-all {
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}
