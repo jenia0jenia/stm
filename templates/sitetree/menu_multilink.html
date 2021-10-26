@@ -6,13 +6,13 @@
 	{% if festival %}
 		{% with '/'|add:festival.slug|add:'/' as url_string %}
 			<li class="menu-multilink__item">
-  				<a class="sietse-btn sietse-cta menu-multilink__link" target="_blank" href="{{ url_string }}">{{ festival.name }}</a>
+  				<a class="button menu-multilink__link" target="_blank" href="{{ url_string }}">{{ festival.name }}</a>
 			</li>
 		{% endwith %}
 	{% endif %}
 	{% for item in sitetree_items %}
 		<li class="menu-multilink__item">
-			<a class="sietse-btn sietse-cta menu-multilink__link" href="{% sitetree_url for item %}" target="_blank" {% if item.hint %}title="{{ item.hint }}"{% endif %}>{{ item.title_resolved }}</a>
+			<a class="button menu-multilink__link" href="{% sitetree_url for item %}" target="_blank" {% if item.hint %}title="{{ item.hint }}"{% endif %}>{{ item.title_resolved }}</a>
 		</li>
 	{% endfor %}
 </ul>
