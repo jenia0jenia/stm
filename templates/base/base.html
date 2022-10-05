@@ -10,8 +10,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
   <title>{% block title %}{% get_propertie 'site_name' %} | {% endblock %}</title>
-  <meta name="keywords" content="Студия-Театр Манекен, ЮУрГУ, Челябинск, Спектакли, афиша, репертуар, расписание, купить билеты, сайт, studio, молодежный театр">
-  <meta name="description" content="Манекен - театральная студия Челябинска. Купить билеты на спектакли, перформансы, события, тренинги, лаборатории и фестивали.">
+  <meta name="description" content="{% block description %}Манекен - театральная студия Челябинска. Любительский театр (от слова «Любить»). Билеты на спектакли, перформансы, события, тренинги, лаборатории и фестивали{% endblock description %}">
+  <meta name="keywords" content="{% block keywords %}Студия-Театр Манекен, Челябинск, ЮУрГУ, Спектакли, афиша, репертуар, билеты, молодежный театр{% endblock keywords %}">
 
   {# <link rel="dns-prefetch" href="https//vk.com"> #}
   <link rel="dns-prefetch" href="https//timepad.ru">
@@ -32,18 +32,24 @@
   <meta property="og:locale:alternate" content="en_US" />
   <meta property="og:url" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ request.get_full_path }}" />  
 
-  <script src="http://localhost:35729/livereload.js"></script>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146877365-1"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
+  {% if 'localhost' in request.get_host %}
 
-    gtag('config', 'UA-146877365-1');
-  </script>
+    <script src="http://localhost:35729/livereload.js"></script>
 
+  {% else %}
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-146877365-1"></script>
+
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'UA-146877365-1');
+    </script>
+
+  {% endif %}
 
   {# <meta property="og:title" content="{{ site_name }}"> #}
   {# <meta name="twitter:title" content="{{ site_name }}"> #}
@@ -52,56 +58,23 @@
 
   {% block head %}
   {% endblock head %}
+
   <script src="{% static 'js/libs/aload.min.js' %}"></script>
   <script src="{% static 'js/libs/jquery-3.4.1.slim.min.js' %}"></script>
 
-
   <link rel="stylesheet" href="{% static 'css/libs/lightbox.min.css' %}">
-
-  <!--
-  <script defer src="{% static 'js/webgl/three.js' %}"></script>
-  <script defer src="{% static 'js/webgl/TGALoader.js' %}"></script>
-  <script defer src="{% static 'js/webgl/WebGL.js' %}"></script>
-  <script defer src="{% static 'js/webgl/OrbitControls.js' %}"></script>
-  -->
-  {# preload #}
   <link rel="preload" as="script" href="{% static 'js/webgl/WebGL.js' %}" id="webgl">
-
   <link rel="preload" as="script" href="https://timepad.ru/js/tpwf/loader/min/loader.js">
   <link rel="preload" as="script" href="{% static 'js/webgl/three.js' %}" id="threejs">
   <link rel="preload" as="script" href="{% static 'js/webgl/TGALoader.js' %}" id="tga">
   <link rel="preload" as="script" href="{% static 'js/webgl/WebGL.js' %}" id="webgl">
 
-  <script>
-    // window.dataLayer = window.dataLayer || [];
-    // function gtag(){dataLayer.push(arguments);}
-    // gtag('js', new Date());
-    // gtag('config', 'UA-146877365-1');
-
-    // if( window.innerWidth > 600 ) {
-    //   function addScript(src) {
-    //     let s = document.createElement('script');
-    //     s.src = src;
-    //     document.getElementsByTagName('head')[0].appendChild( s );
-    //   }
-    // }
-  </script>
-
-  {# <link rel="preload" as="image" href="{% static 'textures/earth/map.png' %}"> #}
-  {# <link rel="preload" as="image" href="{% static 'textures/earth/here.png' %}"> #}
-  {# ## preload #}
-
-  {# SLIDER #}
-  {# <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/css/swiper.min.css"> #}
-  {# <script src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/4.5.1/js/swiper.min.js"></script> #}
-
-  <script src="{% static 'dist/dist.js' %}?v=20210303"></script>
-  <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=2">
+  <script src="{% static 'dist/dist.js' %}?v=0"></script>
+  <link rel="stylesheet" href="{% static 'dist/dist.css' %}?v=0">
 
 </head>
 
 <body class="body">
-
   <header class="header header_scroll">
       <div class="header__fixed header__fixed_top" id="mainMenu">
         <div class="header__logo logo">
@@ -184,44 +157,48 @@
           </div>
         </div>
       </div>
+      <div class="footer__info footer__info--jc-center">
+        <br>
+        <br>
+        <p>Студия-Театр Манекен - театральная студия Челябинска.</p>
+      </div>
     </div>
 
   </footer>
 
-
-  <div class="canvas cube">
-    <canvas id="canvasCube" width="400" height="400"></canvas>
-  </div>
-
-  {% comment %}
-    <div class="globe">
-      <div class="earth">
-        <div class="earth_loading"></div>
-        <canvas class="earth_canvas" id="canvasEarth" width="345" height="345"></canvas>
-      </div>
+  {% if 'localhost' in request.get_host %}
+  {% else %}
+    <div class="canvas cube">
+      <canvas id="canvasCube" width="400" height="400"></canvas>
     </div>
-  {% endcomment %}
 
-  <!-- Yandex.Metrika counter -->
-  {# <!-- #}
-  <script>
-     (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
-     m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
-     (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+    {% comment %}
+      <div class="globe">
+        <div class="earth">
+          <div class="earth_loading"></div>
+          <canvas class="earth_canvas" id="canvasEarth" width="345" height="345"></canvas>
+        </div>
+      </div>
+    {% endcomment %}
 
-     ym(55144651, "init", {
-          clickmap:true,
-          trackLinks:true,
-          accurateTrackBounce:true,
-          webvisor:true
-     });
-  </script>
+    <!-- Yandex.Metrika counter -->
+    <script>
+       (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+       m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+       (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+       ym(55144651, "init", {
+            clickmap:true,
+            trackLinks:true,
+            accurateTrackBounce:true,
+            webvisor:true
+       });
+    </script>
+    <noscript><img src="https://mc.yandex.ru/watch/55144651" style="position:absolute; left:-9999px;" alt="" /></noscript>
+    <!-- /Yandex.Metrika counter -->
+  {% endif %}
 
   <script src="{% static 'js/libs/lightbox-plus-jquery.min.js' %}"></script>
-
-  <noscript><img src="https://mc.yandex.ru/watch/55144651" style="position:absolute; left:-9999px;" alt="" /></noscript>
-  {# --> #}
-  <!-- /Yandex.Metrika counter -->
 
 </body>
 </html>

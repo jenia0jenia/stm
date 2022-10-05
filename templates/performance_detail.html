@@ -6,7 +6,8 @@
 {% load theatre_tags %}
 {#% load compress %#}
 
-{% block title %}{{ block.super }}Спектакль {{ object.name }}{% endblock %}
+{% block title %}{{ block.super }}Спектакль {{ object.name }}{% endblock title %}
+{% block description %}Студия-Театр Манекен - Спектакль {{ object.name }}{% endblock description %}
 
 {% block head %}
 	{{ block.super }}

@@ -6,8 +6,8 @@
 	mkdir uploads
 
 # New env
-	sudo -H pip3 install --upgrade pip
-	sudo -H pip3 install virtualenv virtualenvwrapper
+	pip install --upgrade pip
+	pip install virtualenv virtualenvwrapper
 
 	echo "export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3" >> ~/.bashrc
 	echo "export WORKON_HOME=~/Env" >> ~/.bashrc
@@ -25,16 +25,16 @@
 	python manage.py thumbnail cleanup
 
 # runing
-	npm run-script dev
-	npm run-script build
-	npm run-script watch
+	npm run dev
+	npm run build
+	npm run watch
 
 	and in another terminal
 
 	workon stm
 	python manage.py runserver
 
-# translateions
+# translations
 	django-admin makemessages -a
 	django-admin compilemessages
 

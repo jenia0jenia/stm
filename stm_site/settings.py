@@ -32,7 +32,7 @@ DEBUG = True
 
 THUMBNAIL_DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'maneken.studio']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'maneken.studio']
 
 INTERNAL_IPS = [
     # ...
@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'tinymce',
     'filebrowser',
     'content_gallery',
-    'debug_toolbar',
+    # 'debug_toolbar',
 
     # apps
     'stm_site',
@@ -77,7 +77,7 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'django.middleware.locale.LocaleMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     # 'stm_site.middleware.SiteMiddleware',
 ]
 

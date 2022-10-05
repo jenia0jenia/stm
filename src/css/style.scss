@@ -36,6 +36,12 @@ body {
 }
 
 a {
+	color: $color-blue;
+	@include transition-all;
+
+	&:hover {
+		color: $color-red;
+	}
 }
 
 .h1 {
