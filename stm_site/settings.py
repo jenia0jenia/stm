@@ -62,6 +62,8 @@ INSTALLED_APPS = [
     'content_gallery',
     # 'debug_toolbar',
 
+    'corsheaders',
+
     # apps
     'stm_site',
     # 'polls',
@@ -79,6 +81,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     # 'stm_site.middleware.SiteMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'stm_site.urls'
@@ -272,3 +275,6 @@ EMAIL_PORT = 587
 # X_FRAME_OPTIONS = 'DENY'
 # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 # CSRF_COOKIE_SECURE = True
+
+
+CORS_ORIGIN_ALLOW_ALL = True

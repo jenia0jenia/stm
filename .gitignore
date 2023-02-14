@@ -13,7 +13,7 @@ db.sqlite3
 migrations/
 collectedstatic/
 
-media/
+media/cache/
 node_modules/
 access.py
 tmp/
