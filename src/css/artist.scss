@@ -74,15 +74,24 @@
 	}
 
 	&-detail {
+		display: flex;
+		gap: 48px;
+		margin-bottom: 20px;
 
 		&__description {
-			margin-right: 20px;
+			flex-basis: 50%;
+		}
+
+		&__image {
+			flex-basis: 50%;
 		}
 	}
 
 	&__performance {
 
 		&-list {
+
+			margin-bottom: 24px;
 
 			
 			&.m--director {

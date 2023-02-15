@@ -62,11 +62,15 @@
 			{% endwith %}
 		</div>
 
-		<div class="performance-detail__image">
-			{% if object.photo %}
-    			<img class="entry-card__image-img performance-detail__image-img" src="{{ object.photo.url }}" width="{{ object.photo.width }}" height="{{ object.photo.height }}" title="{% get_propertie 'site_name' %} {{ object.name }}" alt="Спектакль {{ object.name }}">
-			{% endif %}
-		</div>
+		{% if object.photo %}
+			<div class="performance-detail__image">
+				{% thumbnail object.photo "685x500" crop="center" as im %}
+					<img class="entry-card__image-img performance-detail__image-img" src="{{ im.url }}" title="{% get_propertie 'site_name' %} {{ object.name }}" alt="Спектакль {{ object.name }}" width="{{ im.width }}" height="{{ im.height }}">
+				{% empty %}
+					<p>No image</p>
+				{% endthumbnail %}
+			</div>
+		{% endif %}
 
 	</div>
 

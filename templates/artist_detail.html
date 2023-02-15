@@ -33,7 +33,8 @@
 		{{ object.last_name }} {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}{% endif %}
 	</h1>
 
-	<div class="flex-block-row">
+	<div class="artist-detail">
+
 		{% if object.description %}
 			<div class="artist-detail__description">
 				{{ object.description|safe }}
@@ -42,20 +43,23 @@
 					<div>В студии с {{ object.year }} года.</div>
 				{% endif %}
 			</div>
-		
 		{% endif %}
-		
-		{% thumbnail object.photo "100x100" crop="center" as im %}
-		  	<div class="artist-detail__image">
-		  		<img src="{{ im.url }}" width="{{ im.width }}" height="{{ im.height }}" title="{% get_propertie 'site_name' %} {{ object.name }} {{ artist.last_name }}" alt="{{ object.name }} {{ artist.last_name }}">
-		  	</div>
-		{# {% empty %} #}
-			{# <p>No image</p> #}
-		{% endthumbnail %}
+
+
+		{% if object.photo %}
+			<div class="artist-detail__image">
+				{% thumbnail object.photo "685x500" crop="center" as im %}
+					<img class="entry-card__image-img artist-detail__image-img" src="{{ im.url }}" title="{% get_propertie 'site_name' %} {{ object.name }} {{ artist.last_name }}" alt="{{ object.name }} {{ artist.last_name }}" width="{{ im.width }}" height="{{ im.height }}">
+				{% empty %}
+					<p>No image</p>
+				{% endthumbnail %}
+			</div>
+		{% endif %}
+
 	</div>
 
 	{% if as_director or as_light or as_sound or as_painter or as_artist_list %}
-		<div>Можно увидеть в спектаклях:</div>
+		<p>Можно увидеть в спектаклях:</p>
 	{% endif %}
 
 	{% with name="director"%}  

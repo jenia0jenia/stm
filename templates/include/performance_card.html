@@ -5,9 +5,9 @@
 		<div class="performance-card__image">
 			{% thumbnail performance.photo "920x300" crop="center" as im %}
 		  		<img class="performance-card__image-img" src="{{ im.url }}" title="{% get_propertie 'site_name' %} {{ performance }}" alt="Спектакль {{ performance }}" width="{{ im.width }}" height="{{ im.height }}">
-		  {% empty %}
+		 	{% empty %}
 				<p>No image</p>
-		  {% endthumbnail %}
+		  	{% endthumbnail %}
 		</div>
 		<div class="performance-card__hover">
 				<div class="performance-card__title">{{ performance }}</div>

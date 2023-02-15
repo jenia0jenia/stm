@@ -62,7 +62,7 @@ INSTALLED_APPS = [
     'content_gallery',
     # 'debug_toolbar',
 
-    'corsheaders',
+    # 'corsheaders',
 
     # apps
     'stm_site',
@@ -81,7 +81,7 @@ MIDDLEWARE = [
     'django.middleware.locale.LocaleMiddleware',
     # 'debug_toolbar.middleware.DebugToolbarMiddleware',
     # 'stm_site.middleware.SiteMiddleware',
-    'corsheaders.middleware.CorsMiddleware',
+    # 'corsheaders.middleware.CorsMiddleware',
 ]
 
 ROOT_URLCONF = 'stm_site.urls'
