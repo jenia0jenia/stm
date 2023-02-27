@@ -172,6 +172,9 @@
   </footer>
 
   {% if 'localhost' in request.get_host %}
+    <script>
+      console.log('there is no canvas');
+    </script>
   {% else %}
     <div class="canvas cube">
       <canvas id="canvasCube" width="400" height="400"></canvas>
