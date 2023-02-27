@@ -35,6 +35,11 @@ body {
     font-family: 'Montserrat', Roboto, Arial;
 }
 
+:root {
+	--color-white: #d0e3ff;
+	--color-red-pale: #ffd0d0;
+}
+
 a {
 	color: $color-blue;
 	@include transition-all;

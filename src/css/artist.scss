@@ -78,12 +78,35 @@
 		gap: 48px;
 		margin-bottom: 20px;
 
+		
 		&__description {
 			flex-basis: 50%;
 		}
-
+		
 		&__image {
 			flex-basis: 50%;
+			
+			&-img {
+				max-width: 100%;
+				object-fit: contain;
+			}
+		}
+
+		@media screen and (max-width: 800px) {
+			display: block;
+			flex-wrap: wrap;
+
+			&__image,
+			&__description {
+				margin: 0 0 20px;
+			}
+
+			&__image {
+				&-img {
+					max-width: 100%;
+					height: auto;
+				}
+			}
 		}
 	}
 
@@ -104,7 +127,7 @@
 							}
 
 							&:hover {
-								background-color: #ffd0d0;
+								background-color: var(--color-red-pale);
 							}
 						}
 					}
@@ -116,7 +139,7 @@
 				.artist {
 					&__performance-list {
 						&__item {
-							/*background-color: #d0e3ff;*/
+							/*background-color: var(--color-white);*/
 							&__link {
 							}
 
@@ -133,7 +156,7 @@
 				.artist {
 					&__performance-list {
 						&__item {
-							background-color: #d0e3ff;
+							background-color: var(--color-white);
 							&__link {
 							}
 
@@ -150,7 +173,7 @@
 				.artist {
 					&__performance-list {
 						&__item {
-							background-color: #d0e3ff;
+							background-color: var(--color-white);
 							&__link {
 							}
 
@@ -166,7 +189,7 @@
 
 				display: inline-block;
 				border-radius: 10px;
-				background-color: #d0e3ff;
+				background-color: var(--color-white);
 				padding: 2px 4px;
 				margin: 2px 4px;
 

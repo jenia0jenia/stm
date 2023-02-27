@@ -20,16 +20,16 @@
     }
 }
 
-@media screen and (max-width: 767px) {
-    .logo {
-        display: none;
-    }
-}
-
 @media screen and (max-width: 1000px) {
     .logo {
         &__text {
             display: none;
         }
+    }
+}
+
+@media screen and (max-width: 767px) {
+    .logo {
+        // display: none;
     }
 }

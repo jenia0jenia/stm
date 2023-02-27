@@ -12,6 +12,7 @@
 	    position: fixed;
         height: 120px;
 	    width: 100%;
+        gap: 12px;
 
 	    transition: all 0.2s ease-in-out;
         z-index: 100;
@@ -53,7 +54,7 @@
     }
 
     &__logo {
-		margin-right: 20px;
+		// margin-right: 20px;
     }
 }
 

@@ -94,18 +94,18 @@
               </div>
               <div class="footer__info-block">
                 {% get_propertie 'phone' as phone %}
-                <a href="tel:{% phone_print phone %}" class="footer__tel" itemprop="telephone">{{ phone }}</a>
-                <a href="mailto:{% get_propertie 'email' %}" class="footer__mail" itemprop="email">{% get_propertie 'email' %}</a>
+                <a href="tel:{% phone_print phone %}" rel="nofollow" class="footer__tel" itemprop="telephone">{{ phone }}</a>
+                <a href="mailto:{% get_propertie 'email' %}" rel="nofollow" class="footer__mail" itemprop="email">{% get_propertie 'email' %}</a>
               </div>
             </div>
             <div class="footer__right">
               <div class="footer__info-block">
                 <div class="footer__tickets">Бронь и покупка билетов</div>
                 {% get_propertie 'tickets_phone' as tickets_phone %}
-                <a href="tel:{% phone_print tickets_phone %}" class="footer__maria">{{ tickets_phone }} Мария</a>
+                <a href="tel:{% phone_print tickets_phone %}" rel="nofollow" class="footer__maria">{{ tickets_phone }} Мария</a>
               </div>
               <div class="footer__info-block">
-                <a href="https://studio-maneken.timepad.ru" class="footer__timepad" target="_blank">studio-maneken.timepad.ru</a>
+                <a href="https://studio-maneken.timepad.ru" rel="nofollow" class="footer__timepad" target="_blank">studio-maneken.timepad.ru</a>
               </div>
               <div class="footer__info-block">
                 <div class="footer__text-white">Уважаемые зрители, обращаем Ваше внимание:</div>

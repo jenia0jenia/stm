@@ -1,6 +1,7 @@
 from django.contrib import admin
 from django.contrib.sitemaps.views import sitemap
-from django.urls import re_path, path, include
+from django.urls import path, include
+from django.views.generic.base import TemplateView
 
 from django.conf import settings
 from django.conf.urls.static import static
@@ -25,7 +26,10 @@ urlpatterns = [
     path('admin/filebrowser/', site.urls),
     path('tinymce/', include('tinymce.urls')),
     path('content_gallery/', include('content_gallery.urls')),
-    path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap')
+    path('sitemap.xml', sitemap, {'sitemaps': sitemaps},
+         name='django.contrib.sitemaps.views.sitemap'),
+    path('robots.txt', TemplateView.as_view(
+        template_name="robots.txt", content_type='text/plain')),
 ]
 
 urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

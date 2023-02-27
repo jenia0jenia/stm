@@ -27,7 +27,6 @@
         }
 
         &_tickets {
-
             .menu__link {
 
                 color: $color-base;
@@ -142,17 +141,30 @@
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .menu {
+        &__link {
+            font-size: 14px;
+        }
+
+        &__item {
+            &_tickets {
+            }
+        }
+    }
+}
+
 @media only screen and (max-width: 640px) {
     .menu {
         display: block;
         padding: 0;
+        overflow-y: hidden;
 
         &__item {
 
             &_tickets {
-                display: none !important;
-
                 .menu__link {
+                    line-height: 48px;
 
                     &::before {
                         display: none;

@@ -109,9 +109,9 @@
 
 	&-detail {
 		display: flex;
-		flex-flow: row;
 		flex-wrap: nowrap;
-		margin-bottom: 40px;
+		gap: 48px;
+		margin-bottom: 20px;
 
 		&__image {
 			flex-basis: 50%;
@@ -162,7 +162,7 @@
 						}
 
 						&:hover {
-							background-color: #ffd0d0;
+							background-color: var(--color-red-pale);
 						}
 					}
 				}
@@ -174,7 +174,7 @@
 			.performance {
 				&__artist-list {
 					&__item {
-						/*background-color: #d0e3ff;*/
+						/*background-color: var(--color-white);*/
 						&__link {
 						}
 
@@ -191,7 +191,7 @@
 			.performance {
 				&__artist-list {
 					&__item {
-						background-color: #d0e3ff;
+						background-color: var(--color-white);
 						&__link {
 						}
 
@@ -208,7 +208,7 @@
 			.performance {
 				&__artist-list {
 					&__item {
-						background-color: #d0e3ff;
+						background-color: var(--color-white);
 						&__link {
 						}
 
@@ -222,9 +222,9 @@
 
 		&__item {
 			display: inline-block;
-			border-radius: 10px;
-			background-color: #d0e3ff;
-			padding: 2px 4px;
+			border-radius: 18px;
+			background-color: var(--color-white);
+			padding: 4px 12px;
 			margin: 2px 4px;
 
 			transition: background-color 0.5s ease;
@@ -245,7 +245,7 @@
 	}
 }
 
-@media screen and (max-width: 640px) {
+@media screen and (max-width: 1000px) {
 	.performance {
 		&-card {
 			&__wrap {
