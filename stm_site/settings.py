@@ -110,6 +110,13 @@ TEMPLATES = [
     },
 ]
 
+CACHES = {
+    'default': {
+        'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'LOCATION': '/data/nginx/cache',
+    }
+}
+
 WSGI_APPLICATION = 'stm_site.wsgi.application'
 DEFAULT_AUTO_FIELD = 'django.db.models.AutoField'
 
