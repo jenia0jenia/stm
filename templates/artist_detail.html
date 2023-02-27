@@ -10,7 +10,7 @@
 {% endblock title %}
 
 {% block description %}
-	Студия-Театр Манекен - {{ object.name }}
+	Студия-Театр Манекен - {{ object.name }}{% if object.middle_name %} {{ object.middle_name }}
 {% endblock description %}
 
 {% block head %}
