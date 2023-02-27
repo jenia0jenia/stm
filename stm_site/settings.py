@@ -113,6 +113,7 @@ TEMPLATES = [
 CACHES = {
     'default': {
         'BACKEND': 'django.core.cache.backends.filebased.FileBasedCache',
+        'TIMEOUT': None,
         'LOCATION': '/data/nginx/cache',
     }
 }
