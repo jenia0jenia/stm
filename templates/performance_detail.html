@@ -12,13 +12,13 @@
 {% block head %}
 	{{ block.super }}
 	<meta property="og:image" content="{{ request.scheme }}://{{ request.META.HTTP_HOST }}{{ object.photo.url }}" />
-  <meta property="og:image:width" content="{{ object.photo.width }}" />
-  <meta property="og:image:height" content="{{ object.photo.height }}" />
+	<meta property="og:image:width" content="{{ object.photo.width }}" />
+	<meta property="og:image:height" content="{{ object.photo.height }}" />
 
-  <meta property="og:type" content="article" />
-  <meta property="og:article:published_time" content="" />
-  <meta property="og:title" content="Спектакль {{ object.name }} студии-театра «Манекен»" />
-  <meta property="og:description" content="{{ object.description|safe|truncatewords:15 }}" />
+	<meta property="og:type" content="article" />
+	<meta property="og:article:published_time" content="" />
+	<meta property="og:title" content="Спектакль {{ object.name }} студии-театра «Манекен»" />
+	<meta property="og:description" content="{{ object.description|safe|truncatewords:15 }}" />
 {% endblock head %}
 
 {% block content %}
