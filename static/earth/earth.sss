@@ -1,0 +1,53 @@
+.earth
+  cursor: grab
+
+  body.is-grabbing &
+    cursor: inherit
+
+  @media (width > 980px)
+    position: relative
+    width: calc(44vw - 250px)
+    height: calc(44vw - 250px)
+
+  @media (width <= 980px)
+    position: absolute
+    top: 43px
+    left: calc(50% - 45vw)
+    width: 90vw
+    height: 90vw
+
+.earth_canvas
+  width: 100%
+  height: 100%
+  opacity: 0
+
+.earth_loading
+  position: absolute
+  top: 50%
+  left: 50%
+  width: 88%
+  height: 88%
+  background: #e9e9e9
+  border-radius: 50%
+  animation: r 1.8s infinite linear
+
+@keyframes r
+  from
+    transform: translate3d(-50%, -50%, 0) rotate(0)
+
+  to
+    transform: translate3d(-50%, -50%, 0) rotate(360deg)
+
+.earth_loading::before
+  position: absolute
+  top: 0
+  right: 0
+  bottom: 0
+  left: 0
+  content: ""
+  border: 6px solid
+  border-color: #999 transparent transparent transparent
+  border-radius: 50%
+
+  .earth.is-disabled &
+    display: none

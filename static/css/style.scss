@@ -1,0 +1,88 @@
+/* style.scss */
+
+@import "normalize.scss",
+		"vars.scss";
+
+/* modules */
+@import "entry.scss",
+	"font.scss",
+	"animation.scss",
+	"header.scss",
+	"main.scss",
+	"logo.scss",
+	"button.scss",
+	"banner.scss",
+	"menu.scss",
+	"container.scss",
+	"content.scss",
+	"footer.scss",
+	"poster.scss",
+	"performance.scss",
+	"artist.scss",
+	"contacts.scss",
+	"page.scss",
+	"tickets.scss",
+	"sticky.scss",
+	"y-map.scss",
+	"social-menu.scss",
+	"earth.scss",
+	"cube.scss",
+	"fest.scss",
+	"u.scss",
+	"scroller.scss";
+
+body {
+    font-family: 'Montserrat', Roboto, Arial;
+}
+
+a {
+	color: $color-blue;
+	@include transition-all;
+
+	&:hover {
+		color: $color-red;
+	}
+}
+
+.h1 {
+	font-size: 2em;
+	margin: 0.67em 0;
+}
+
+.h2 {
+	font-size: 24px;
+}
+
+.line-title {
+	/*position: relative;*/
+
+	&::before {
+		display: none;
+		content: '';
+		width: 100%;
+		position: absolute;
+		height: 2px;
+		background-color: $color-black;
+		top: 10px;
+		left: 0;	
+	}
+}
+
+.singular-section {
+	padding: 100px 0 40px;
+}
+
+.text_orange {
+	color: $color-orange;
+}
+
+.text_red {
+	color: $color-red;
+}
+
+
+@media screen and (max-width: 768px) {
+	.singular-section {
+		padding: 20px 0;
+	}
+}

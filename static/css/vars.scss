@@ -1,0 +1,34 @@
+$i: '../../static/i';
+
+$color-white: rgba(255, 255, 255, .87);
+
+$color-fade: rgba(255, 255, 255, .9);
+$color-black: #161010;
+
+$color-gray: #757474;
+$color-gray-lightest: #bbb;
+
+/*$color-orange: #f99d3e;*/
+$color-orange: #ff7600;
+$color-orange-light: #FF9840;
+$color-orange-dark: #ad5408;
+$color-orange-darker: #BF7230;
+
+$color-blue: #01939A;
+
+$color-aqua: #4cd6f2;
+
+$color-red: #ff0042;
+
+$color-base: #ff0042;
+
+$slate-color: rgb(16,24,50);
+$blue-color: #00bcdd;
+$pink-color: #ff00ff;
+
+@mixin transition-all {
+  -webkit-transition: all 200ms ease-in-out;
+  -moz-transition: all 200ms ease-in-out;
+  -o-transition: all 200ms ease-in-out;
+    transition: all 200ms ease-in-out;
+}

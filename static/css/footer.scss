@@ -1,0 +1,210 @@
+.footer {
+
+  display: flex;
+  flex-direction: column;
+
+	&_scroll {
+    	padding-bottom: 50px;
+	}
+
+	&__fixed {
+    	/* display: flex;
+    	justify-content: center;
+    	align-items: center;
+	    
+	    position: fixed;
+	    height: 50px;
+	    width: 100%;
+
+	    transition: all 0.2s ease-in-out;
+
+	    z-index: 100; */
+  }
+
+  &_hide {
+      background-color: $color-black;
+      bottom: -45px;
+  }
+
+  &__social {
+    text-align: right;
+  }
+
+}
+
+.footer__filonov {
+  font-size: 32px;
+  padding: 20px;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  background-color: $color-base;
+}
+
+.footer__block {
+    padding: 120px 0;
+    background-color: $color-black;
+}
+
+.footer__info {
+    display: flex;
+    max-width: 1280px;
+    margin: 0 auto;
+    align-items: flex-start;
+    justify-content: space-around;
+    flex-wrap: nowrap;
+    color: #fff;
+
+    &.footer__info--jc-center {
+      justify-content: center;
+    }
+    &.footer__info--jc-right {
+      justify-content: right;
+    }
+}
+
+.footer__info-block {
+  margin-bottom: 20px;
+}
+
+.footer__left {
+  margin-left: 40px;
+}
+
+.footer__right {
+  margin-left: 40px;
+}
+
+.footer__stm {
+  font-size: 32px;
+  text-transform: uppercase;
+}
+
+.footer__address {
+  font-size: 32px;
+}
+
+.footer__tel {
+  display: block;
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $color-base;
+  }
+}
+
+.footer__mail {
+  display: block;
+  font-size: 28px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $color-base;
+  }
+}
+
+.footer__text-red {
+  font-size: 18px;
+  color: #fff;
+}
+
+.footer__text-red {
+  font-size: 18px;
+  color: $color-base;
+}
+
+.footer__tickets {
+  font-size: 32px;
+  color: $color-base;
+  text-transform: uppercase;
+}
+
+
+.footer__maria {
+  display: block;
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $color-base;
+  }
+}
+
+.footer__timepad {
+  font-size: 32px;
+  color: #fff;
+  text-decoration: none;
+  transition: all .3s ease;
+
+  &:hover {
+    color: $color-base;
+  }
+}
+
+.footer__space {
+  margin-top: 200px;
+}
+
+
+@media only screen and (max-width: 780px) {
+    .footer {
+    }
+
+    .footer__filonov {
+      font-size: 27px;
+      order: -1;
+    }
+
+    .footer__info {
+      flex-direction: column;
+    }
+
+    .footer__block {
+      padding: 40px 0;
+    }
+
+    .footer__right {
+      order: -1;
+    }
+}
+
+@media only screen and (max-width: 780px) {
+    .footer__stm {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .footer__address {
+      font-size: 24px;
+      margin-bottom: 5px;
+    }
+    .footer__tickets {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    .footer__maria {
+      font-size: 24px;
+    }
+    .footer__timepad {
+      font-size: 24px;
+    }
+    .footer__tel {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    .footer__mail {
+      font-size: 18px;
+    }
+    .footer__text-white {
+      font-size: 14px;
+    }
+    .footer__text-red {
+      font-size: 14px;
+    }
+}

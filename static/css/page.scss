@@ -1,0 +1,29 @@
+.page {
+	&__content {
+		line-height: 1.6;
+	}
+
+	&__container {
+		max-width: 640px;
+		padding: 0 10px;
+		margin: 0 auto;
+	}
+}
+
+.decoration {
+  cursor: pointer;
+  letter-spacing: -3px;
+
+  &__letter {
+    color: #b5b4b496;
+    transition: color .2s ease-out;
+
+    &:hover {
+      color: #f6763b;
+    }
+  }
+}
+
+.max-width {
+	width: 100%;
+}
